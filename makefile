@@ -18,10 +18,11 @@ CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -I ./libft -L./ -lft
 RM			= rm -rf
 SOURCES		= push_swap.c
+INCLUDE		= push_swap.h
 
 all: $(NAME)
 
-$(NAME): $(MAKE) $(SOURCES)
+$(NAME): $(MAKE) $(SOURCES) $(INCLUDE)
 	$(CC) $(CFLAGS) $(SOURCES) -o $@
 	@echo "Compilado!!"
 

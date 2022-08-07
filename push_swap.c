@@ -11,18 +11,32 @@
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
+#include "push_swap.h"
 
 int main(int argc, char **argv)
 {
+	t_values *pt;
+
+	pt = 0;
+
 	if (argc <= 1)
 	{
 		ft_printf("Error\n");
 		return (0);
 	}
 	int	i;
+
+	i = 1;
+	
+	pt->x = *(int *)argv[i];
+	ft_printf("%d\n", pt->x);
 	
 	i = 1;
 	while (argv[i] != 0)
-		ft_printf("Esto es argv: %s\n", argv[i++]);
+	{
+		pt->x = *(int *)argv[i];
+		i++;
+	}
+	ft_printf("Esto es argv: %s\n", argv[i++]);
 	return (0);
 }
