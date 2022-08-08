@@ -15,7 +15,7 @@
 
 # include "./libft/libft.h"
 
-typedef struct t_values
+struct t_values
 {
 	int	x;
 	int	y;

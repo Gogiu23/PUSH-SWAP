@@ -15,9 +15,7 @@
 
 int main(int argc, char **argv)
 {
-	t_values *pt;
-
-	pt = 0;
+	struct	t_values pt;
 
 	if (argc <= 1)
 	{
@@ -27,16 +25,12 @@ int main(int argc, char **argv)
 	int	i;
 
 	i = 1;
-	
-	pt->x = *(int *)argv[i];
-	ft_printf("%d\n", pt->x);
-	
-	i = 1;
 	while (argv[i] != 0)
 	{
-		pt->x = *(int *)argv[i];
+		pt.x = *(int *)argv[i];
 		i++;
+		ft_printf("Esto es argv: %c\n", pt.x);
 	}
-	ft_printf("Esto es argv: %s\n", argv[i++]);
+//	ft_printf("Esto es argv: %c\n", pt.x);
 	return (0);
 }
