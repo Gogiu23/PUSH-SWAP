@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
+/*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 20:41:58 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/05 20:56:47 by gdominic         ###   ########.fr       */
+/*   Created: 2022/08/08 19:19:43 by gdominic          #+#    #+#             */
+/*   Updated: 2022/08/08 21:57:35 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
 
-struct t_values
+typedef struct s_values
 {
-	int	x;
+	int	x[501];
 	int	y;
 }	t_values;
 
