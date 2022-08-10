@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 19:19:43 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/08 21:57:35 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/10 00:56:52 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 typedef struct s_values
 {
-	int	x[501];
-	int	y;
+	int	lenght;
+	int	**numbers;
 }	t_values;
 
 #endif
