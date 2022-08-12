@@ -27,35 +27,37 @@ int main(int argc, char **argv)
 	ft_printf("\nNumero de argumentos pasados: %d\n", lenght.lenght);
 
 //	checkarguments(*argv);
-	int	i;
 	int count;
+	int	i;
 
-	count = 0;
 	i = 1;
-
-	pt1.numbers = (int **)malloc(sizeof(int) * argc + 1);
+	count = 0;
+	ft_printf("El valor de argc antes del malloc grande: %d\n", argc);
+	pt1.numbers = (int **)malloc(sizeof(int *) * argc);
 	if (!pt1.numbers)
 		return (0);
-	pt1.numbers[argc - 1] = NULL;
-	while (count < argc)
+	pt1.numbers[argc] = 0;
+	ft_printf("Il valore di pt1.numbers[%d]\n", argc);
+	while (count < lenght.lenght)
 	{
+		ft_printf("valor de count: %d\t Valor de argc: %d\n", count, argc);
 		pt1.numbers[count] = (int *)malloc(sizeof(int) * 2);
+		if (!pt1.numbers[count])
+		{
+			free (pt1.numbers);
+			return (0);
+		}
+		pt1.numbers[count][0] = ft_atoi(argv[i]);
+		pt1.numbers[count][2] = 0;
+		ft_printf("\nesto es argv[%d]: %d\n", count, pt1.numbers[count][0]);
 		count++;
+		i++;
 	}
-	if (!pt1.numbers)
-		return (0);
-	ft_printf("\n Filas de numbers: %d\n", sizeof(pt1.numbers)/sizeof(*pt1.numbers[0]));
-	ft_printf("elementos de la fila 0: %d\n", sizeof(*pt1.numbers[0])/sizeof(int));
-	ft_printf("elementos de la fila 1: %d\n", sizeof(*pt1.numbers[1])/sizeof(int));
-	count = 1;
-	while (count < argc)
-	{
-		pt1.numbers[count][0] = ft_atoi(argv[count]);
-		ft_printf("\nesto es argv: %d\n", pt1.numbers[count][0]);
-		count++;
-	}
-	ft_printf("\nest es el x: %d", pt1.numbers[2][0]);
-	ft_printf("\nEste es argv en la segunda posicion: %d", pt1.numbers[2][0]);
+	ft_printf("aqui a ver si me da error\n");
+	ft_printf("El valor de count: %d\n", count);
+//	pt1.numbers[count][0] = '\0';
+	ft_printf("\neste es el elemento de la fila 2 en la primera columna: %d", pt1.numbers[1][0]);
+	ft_printf("\nEste es argv en la primera posicion: %d", pt1.numbers[0][0]);
 	return (0);
 }
 
