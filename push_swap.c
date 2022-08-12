@@ -41,10 +41,10 @@ int main(int argc, char **argv)
 	while (count < lenght.lenght)
 	{
 		ft_printf("valor de count: %d\t Valor de argc: %d\n", count, argc);
-		pt1.numbers[count] = (int *)malloc(sizeof(int) * 2);
+		pt1.numbers[count] = (int *)malloc(sizeof(int) * 3);
 		if (!pt1.numbers[count])
 		{
-			free (pt1.numbers);
+			ft_free(pt1, count);
 			return (0);
 		}
 		pt1.numbers[count][0] = ft_atoi(argv[i]);
@@ -53,12 +53,21 @@ int main(int argc, char **argv)
 		count++;
 		i++;
 	}
-	ft_printf("aqui a ver si me da error\n");
-	ft_printf("El valor de count: %d\n", count);
-//	pt1.numbers[count][0] = '\0';
 	ft_printf("\neste es el elemento de la fila 2 en la primera columna: %d", pt1.numbers[1][0]);
 	ft_printf("\nEste es argv en la primera posicion: %d", pt1.numbers[0][0]);
+	ft_printf("\nTamaño de tu array: %d\n", sizeof(pt1.numbers));
+	ft_printf("\nEl tamaño de tus filas: %d", sizeof(pt1.numbers)/sizeof(*pt1.numbers[0]));
 	return (0);
 }
 
+int	ft_free(t_values pt1, int count)
+{
+	while (count >= 0)
+	{
+		free(pt1.numbers[count]);
+		count--;
+	}
+	free(pt1.numbers);
+	return (0);
+}
 //void  checkarguments(char *argv

@@ -22,4 +22,6 @@ typedef struct s_values
 	int	**numbers;
 }	t_values;
 
+int	ft_free(t_values pt1, int count);
+
 #endif
