@@ -15,6 +15,8 @@
 
 # include "./libft/libft.h"
 # include <stdlib.h>
+# include <limits.h>
+# include <stdio.h>
 
 typedef struct s_values
 {
@@ -22,6 +24,7 @@ typedef struct s_values
 	int	**numbers;
 }	t_values;
 
-int	ft_free(t_values pt1, int count);
+int			ft_free(t_values pt1, int count);
+t_values	ft_check_errors(t_values pt1, t_values lenght);
 
 #endif
