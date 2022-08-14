@@ -24,7 +24,13 @@ typedef struct s_values
 	int	**numbers;
 }	t_values;
 
+typedef struct s_oppte
+{
+	int	lenght;
+	int	**numbers;
+}	t_oppte;
+
 int			ft_free(t_values pt1, int count);
-t_values	ft_check_errors(t_values pt1, t_values lenght);
+char		ft_checks_args(int argc, char **argv);
 
 #endif
