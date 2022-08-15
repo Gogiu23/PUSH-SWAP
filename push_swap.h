@@ -16,7 +16,6 @@
 # include "./libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
-#include <limits.h>
 
 typedef struct s_values
 {

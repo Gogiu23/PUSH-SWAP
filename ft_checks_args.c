@@ -11,7 +11,7 @@ char	ft_checks_args(int argc, char **argv)
 		if (*argv[checks] < '0' || *argv[checks] > '9')
 		{
 			ft_printf("\n\tError: the characters passed are not integers\n");
-			break;
+			break ;
 		}
 		checks--;
 	}
@@ -22,4 +22,3 @@ char	ft_checks_args(int argc, char **argv)
 	}
 	return (**argv);
 }
- 

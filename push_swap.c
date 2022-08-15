@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	while (i < (argc - 1))
 	{
 		printf("Valor de pt1.numbers[%d][0]: %d\n", i, pt1.numbers[i][0]);
-		if (pt1.numbers[i][0] < INT_MIN || pt1.numbers[i][0] > INT_MAX)
+		if (pt1.numbers[i][0] < (INT_MIN) || pt1.numbers[i][0] > (INT_MAX))
 		{	
 			ft_printf("\n\tError: You are trespassing ints limits.");
 			return (0);
@@ -36,9 +36,9 @@ int	main(int argc, char **argv)
 	}
 	count = 0;
 	ft_printf("Valor de count: %d\t, Valor de argc: %d\n", count, argc);
-	while (count < (argc -1)) 
+	while (count < (argc -1))
 	{
-		ft_printf("test para ver si han pasado pt1.numbers[%d][0]: %d\n", count, pt1.numbers[count][0]);
+		ft_printf("test para ver si ha pasado pt1.numbers[%d][0]: %d\n", count, pt1.numbers[count][0]);
 		count++;
 	}
 	return (0);
