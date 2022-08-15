@@ -17,19 +17,21 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct s_values
+typedef struct s_piece
+{
+	int	number;
+	int	game_number;
+}	t_piece;
+
+typedef struct s_stack
 {
 	int	lenght;
-	int	**numbers;
-}	t_values;
+	t_piece **array;
+}	t_stack;
 
-typedef struct s_oppte
-{
-	int	lenght;
-	int	**numbers;
-}	t_oppte;
-
-int			ft_free(t_values pt1, int count);
-char		ft_checks_args(int argc, char **argv);
-t_values	ft_array_generator(int argc, int i, int count, char **argv);
+// int			ft_free(t_values pt1, int count);
+int			ft_checks_args(int argc, char **argv);
+// t_values	ft_array_generator(int argc, int i, int count, char **argv);
+void 		ft_init_stack_a(t_stack *a, int argc, char **argv);
+void 		ft_init_stack_b(t_stack *b, int argc);
 #endif
