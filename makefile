@@ -17,7 +17,7 @@ MAKE		= libft.a
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -I ./libft -L./ -lft
 RM			= rm -rf
-SOURCES		= push_swap.c ft_checks_args.c
+SOURCES		= push_swap.c ft_checks_args.c ft_array_generator.c
 INCLUDE		= push_swap.h
 
 all: $(NAME)

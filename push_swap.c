@@ -15,40 +15,19 @@
 
 int	main(int argc, char **argv)
 {
-	t_values	pt1;
-	t_values	lenght;
 	int			count;
 	int			i;
+	t_values	pt1;
 
-	lenght.lenght = argc - 1;
 	i = 1;
 	count = 0;
 	ft_checks_args(argc, argv);
-	pt1.numbers = (int **)malloc(sizeof(int *) * argc);
-	if (!pt1.numbers)
-		return (0);
-	pt1.numbers[argc - 1] = 0;
-	while (count < lenght.lenght)
-	{
-		pt1.numbers[count] = (int *)malloc(sizeof(int) * 3);
-		if (!pt1.numbers[count])
-		{
-			ft_free(pt1, count);
-			free(pt1.numbers);
-			return (0);
-		}
-		pt1.numbers[count][0] = ft_atoi(argv[i]);
-		pt1.numbers[count][2] = 0;
-		count++;
-		i++;
-	}
-	long	test;
+	pt1 = ft_array_generator(argc, i, count, argv);
 	i = 0;
-	while (i < lenght.lenght)
+	while (i < (argc - 1))
 	{
-		test = pt1.numbers[i][0];
-		printf("Valor de test: %lu\n", test);
-		if (test > INT_MAX || test < INT_MIN)
+		printf("Valor de pt1.numbers[%d][0]: %d\n", i, pt1.numbers[i][0]);
+		if (pt1.numbers[i][0] < INT_MIN || pt1.numbers[i][0] > INT_MAX)
 		{	
 			ft_printf("\n\tError: You are trespassing ints limits.");
 			return (0);
@@ -56,7 +35,8 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	count = 0;
-	while (count < lenght.lenght)
+	ft_printf("Valor de count: %d\t, Valor de argc: %d\n", count, argc);
+	while (count < (argc -1)) 
 	{
 		ft_printf("test para ver si han pasado pt1.numbers[%d][0]: %d\n", count, pt1.numbers[count][0]);
 		count++;

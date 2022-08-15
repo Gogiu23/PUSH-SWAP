@@ -15,8 +15,8 @@
 
 # include "./libft/libft.h"
 # include <stdlib.h>
-# include <limits.h>
 # include <stdio.h>
+#include <limits.h>
 
 typedef struct s_values
 {
@@ -32,5 +32,5 @@ typedef struct s_oppte
 
 int			ft_free(t_values pt1, int count);
 char		ft_checks_args(int argc, char **argv);
-
+t_values	ft_array_generator(int argc, int i, int count, char **argv);
 #endif
