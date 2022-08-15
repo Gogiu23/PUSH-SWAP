@@ -42,6 +42,19 @@ int	main(int argc, char **argv)
 		count++;
 		i++;
 	}
+	long	test;
+	i = 0;
+	while (i < lenght.lenght)
+	{
+		test = pt1.numbers[i][0];
+		printf("Valor de test: %lu\n", test);
+		if (test > INT_MAX || test < INT_MIN)
+		{	
+			ft_printf("\n\tError: You are trespassing ints limits.");
+			return (0);
+		}
+		i++;
+	}
 	count = 0;
 	while (count < lenght.lenght)
 	{
