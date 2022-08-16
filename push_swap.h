@@ -19,8 +19,8 @@
 
 typedef struct s_values
 {
-	int	lenght;
-	int	**numbers;
+	int		lenght;
+	long	**numbers;
 }	t_values;
 
 typedef struct s_oppte
@@ -30,6 +30,8 @@ typedef struct s_oppte
 }	t_oppte;
 
 int			ft_free(t_values pt1, int count);
-char		ft_checks_args(int argc, char **argv);
+void		ft_checks_args(int argc, char **argv);
 t_values	ft_array_generator(int argc, int i, int count, char **argv);
+void		ft_checks_ints(t_values pt1, int argc);
+
 #endif

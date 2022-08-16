@@ -1,4 +1,5 @@
 SOURCES += ft_atoi.c
+SOURCES += ft_atoi_plus.c
 SOURCES += ft_bzero.c
 SOURCES += ft_calloc.c
 SOURCES += ft_convertx.c

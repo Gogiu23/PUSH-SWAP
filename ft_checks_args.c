@@ -1,24 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
+/*   Updated: 2022/08/11 01:33:21 by gdominic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-char	ft_checks_args(int argc, char **argv)
+void	ft_checks_args(int argc, char **argv)
 {
-	int	checks;
+	int	a;
+	int	b;
 
-	checks = argc -1;
-	while (checks > 0)
+	a = 1;
+	if (argc <= 1)
+		exit (0);
+	while (argv[a])
 	{
-		if (*argv[checks] < '0' || *argv[checks] > '9')
+		b = 0;
+		while (argv[a][b])
 		{
-			ft_printf("\n\tError: the characters passed are not integers\n");
-			break ;
+			if ((argv[a][b] == '-' && (argv[a][b + 1] >= '0'
+				&& argv[a][b + 1] <= '9'))
+				|| (argv[a][b] >= '0' && argv[a][b] <= '9'))
+				b++;
+			else
+			{
+				ft_printf("\n\tError: the characters passed are not integers\n");
+				exit (-1);
+			}
 		}
-		checks--;
+		a++;
 	}
-	if (argc <= 2)
-	{
-		ft_printf("\n\tError: fewer args than allowed (min 2 integers)\n");
-		return (0);
-	}
-	return (**argv);
 }

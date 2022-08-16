@@ -15,6 +15,7 @@
 # include "libft.h"
 
 int		ft_atoi(const char *str);
+long	ft_atoi_plus(const char *str);
 int		ft_convertx(unsigned int num, int base, int mode);
 char	*ft_itoa(int n);
 int		ft_ptr(unsigned long long strike, int nextbase);
