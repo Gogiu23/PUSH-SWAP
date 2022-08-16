@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checks_ints.c                                   :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,17 +13,8 @@
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void	ft_checks_ints(t_values pt1, int argc)
+void	ft_error(char *c)
 {
-	int	i;
-
-	i = 0;
-	while (i < (argc - 1))
-	{
-		if (pt1.numbers[i][0] < (INT_MIN) || pt1.numbers[i][0] > (INT_MAX))
-		{
-			ft_error("\n\tError\n");
-		}
-		i++;
-	}
+	ft_putstr(c);
+	exit(-1);
 }

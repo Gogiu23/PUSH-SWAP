@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_checks_args.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -32,8 +32,7 @@ void	ft_checks_args(int argc, char **argv)
 				b++;
 			else
 			{
-				ft_printf("\n\tError: the characters passed are not integers\n");
-				exit (-1);
+				ft_error("\n\tError\n");
 			}
 		}
 		a++;

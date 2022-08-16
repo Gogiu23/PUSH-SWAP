@@ -44,5 +44,3 @@ long	ft_atoi_plus(const char *str)
 	//3 mientras este entre '0' i '9' sumo a resultado (linea magica)
 	//4 devuelo resultado * signo
 	//result = (result * 10) + (str[i] - '0');
-
-

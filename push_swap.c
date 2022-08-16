@@ -26,14 +26,3 @@ int	main(int argc, char **argv)
 	ft_checks_ints(pt1, argc);
 	return (0);
 }
-
-int	ft_free(t_values pt1, int count)
-{
-	while (count >= 0)
-	{
-		free(pt1.numbers[count]);
-		count--;
-	}
-	free(pt1.numbers);
-	return (0);
-}
