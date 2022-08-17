@@ -37,4 +37,26 @@ void	ft_checks_args(int argc, char **argv)
 		}
 		a++;
 	}
+	ft_checks_duplicates(argv);
+}
+
+void	ft_checks_duplicates(char **argv)
+{
+	int	previous;
+	int	forward;
+
+	previous = 1;
+	forward = 1;
+	while (argv[previous])
+	{
+		forward = previous + 1;
+		while (argv[forward])
+		{
+			if (ft_strcmp(argv[previous], argv[forward]) != 0)
+				forward++;
+			else
+				ft_error("\n\tError\n");
+		}
+		previous++;
+	}
 }

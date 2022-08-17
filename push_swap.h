@@ -34,5 +34,6 @@ void		ft_checks_args(int argc, char **argv);
 t_values	ft_array_generator(int argc, int i, int count, char **argv);
 void		ft_checks_ints(t_values pt1, int argc);
 void		ft_error(char *c);
+void		ft_checks_duplicates(char **argv);
 
 #endif

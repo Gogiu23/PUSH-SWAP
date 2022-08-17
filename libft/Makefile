@@ -43,6 +43,7 @@ SOURCES += ft_strlcpy.c
 SOURCES += ft_strlen.c
 SOURCES += ft_strmapi.c
 SOURCES += ft_strncmp.c
+SOURCES += ft_strcmp.c
 SOURCES += ft_strnstr.c
 SOURCES += ft_strrchr.c
 SOURCES += ft_strtrim.c
