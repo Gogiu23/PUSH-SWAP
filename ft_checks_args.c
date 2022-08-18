@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checks_args.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/18 23:59:17 by gdominic         ###   ########.fr       */
+/*   Created: 2022/08/19 00:27:52 by gdominic          #+#    #+#             */
+/*   Updated: 2022/08/19 00:33:39 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ void	ft_checks_args(int argc, char **argv)
 				&& argv[a][b + 1] <= '9'))
 				|| (argv[a][b] >= '0' && argv[a][b] <= '9'))
 				b++;
-			ft_printf("argv[%d][%d]: %c\n", a, b, argv);
 			else
 			{
-				ft_error("\n\tError\n");
+				ft_error("Error\n");
 			}
 		}
 		a++;
@@ -56,7 +55,7 @@ void	ft_checks_duplicates(char **argv)
 			if (ft_strcmp(argv[previous], argv[forward]) != 0)
 				forward++;
 			else
-				ft_error("\n\tError\n");
+				ft_error("Error\n");
 		}
 		previous++;
 	}

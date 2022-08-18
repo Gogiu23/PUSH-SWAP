@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checks_ints.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/11 01:33:21 by gdominic         ###   ########.fr       */
+/*   Created: 2022/08/19 00:27:32 by gdominic          #+#    #+#             */
+/*   Updated: 2022/08/19 00:27:36 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_checks_ints(t_values pt1, int argc)
 	while (i < (argc - 1))
 	{
 		if (pt1.numbers[i][0] < (INT_MIN) || pt1.numbers[i][0] > (INT_MAX))
-		{
-			ft_error("\n\tError\n");
-		}
+			ft_error("Error\n");
+		if (pt1.numbers[i][0] == 0)
+			ft_error("Errore\n");
 		i++;
 	}
 }
