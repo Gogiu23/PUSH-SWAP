@@ -12,13 +12,13 @@
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-int	ft_free(t_values pt1, int argc)
+int	ft_free(t_stack a, int argc)
 {
 	while (argc > 0)
 	{
-		free(pt1.numbers[argc]);
+		free(a.numbers[argc]);
 		argc--;
 	}
-	free(pt1.numbers);
+	free(a.numbers);
 	return (0);
 }

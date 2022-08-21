@@ -17,13 +17,13 @@ int	main(int argc, char **argv)
 {
 	int			count;
 	int			i;
-	t_values	pt1;
+	t_stack		a;
 
 	i = 1;
 	count = (argc - 2);
 	ft_checks_args(argc, argv);
-	pt1 = ft_array_generator(argc, i, count, argv);
+	a = ft_array_generator(argc, i, count, argv);
 	count = 0;
-	ft_checks_ints(pt1, argc);
+	ft_checks_ints(a, argc);
 	return (1);
 }

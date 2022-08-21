@@ -13,16 +13,16 @@
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void	ft_checks_ints(t_values pt1, int argc)
+void	ft_checks_ints(t_stack a, int argc)
 {
 	int	i;
 
 	i = 0;
 	while (i < (argc - 1))
 	{
-		if (pt1.numbers[i][0] < (INT_MIN) || pt1.numbers[i][0] > (INT_MAX))
+		if (a.numbers[i][0] < (INT_MIN) || a.numbers[i][0] > (INT_MAX))
 			ft_error("Error\n");
-		if (pt1.numbers[i][0] == 0)
+		if (a.numbers[i][0] == 0)
 			ft_error("Error\n");
 		i++;
 	}

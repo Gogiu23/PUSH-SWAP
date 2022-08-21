@@ -16,13 +16,12 @@
 # include "./libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>
-#include <limits.h>
 
-typedef struct s_values
+typedef struct s_stack
 {
 	int		lenght;
 	long	**numbers;
-}	t_values;
+}	t_stack;
 
 typedef struct s_oppte
 {
@@ -30,10 +29,10 @@ typedef struct s_oppte
 	int	**numbers;
 }	t_oppte;
 
-int			ft_free(t_values pt1, int argc);
+int			ft_free(t_stack a, int argc);
 void		ft_checks_args(int argc, char **argv);
-t_values	ft_array_generator(int argc, int i, int count, char **argv);
-void		ft_checks_ints(t_values pt1, int argc);
+t_stack		ft_array_generator(int argc, int i, int count, char **argv);
+void		ft_checks_ints(t_stack a, int argc);
 void		ft_error(char *c);
 void		ft_checks_duplicates(char **argv);
 
