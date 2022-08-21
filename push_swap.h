@@ -35,5 +35,6 @@ t_stack		ft_array_generator(int argc, int i, int count, char **argv);
 void		ft_checks_ints(t_stack a, int argc);
 void		ft_error(char *c);
 void		ft_checks_duplicates(char **argv);
+t_stack		ft_array_plus(int argc);
 
 #endif

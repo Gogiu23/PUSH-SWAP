@@ -18,12 +18,13 @@ int	main(int argc, char **argv)
 	int			count;
 	int			i;
 	t_stack		a;
+	t_stack		b;
 
 	i = 1;
 	count = (argc - 2);
 	ft_checks_args(argc, argv);
 	a = ft_array_generator(argc, i, count, argv);
-	count = 0;
+	b = ft_array_plus(argc);
 	ft_checks_ints(a, argc);
 	return (1);
 }
