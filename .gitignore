@@ -3,3 +3,4 @@ exec
 exec.*
 *.png
 README.md
+*.dSYM

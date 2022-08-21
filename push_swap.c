@@ -20,15 +20,10 @@ int	main(int argc, char **argv)
 	t_values	pt1;
 
 	i = 1;
-	count = (argc);
+	count = (argc - 2);
 	ft_checks_args(argc, argv);
 	pt1 = ft_array_generator(argc, i, count, argv);
-	while (count > 0)
-	{
-		ft_printf("El pt1.numbers[%d][0]: %d\n", count, pt1.numbers[count][0]);
-		count--;
-	}
-	ft_printf("hola\n");
+	count = 0;
 	ft_checks_ints(pt1, argc);
 	return (1);
 }

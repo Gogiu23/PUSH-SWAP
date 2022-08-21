@@ -17,13 +17,13 @@ void	ft_checks_ints(t_values pt1, int argc)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (i < (argc - 1))
 	{
 		if (pt1.numbers[i][0] < (INT_MIN) || pt1.numbers[i][0] > (INT_MAX))
 			ft_error("Error\n");
-		else if (pt1.numbers[i][0] == 0)
-			ft_error("Errore\n");
+		if (pt1.numbers[i][0] == 0)
+			ft_error("Error\n");
 		i++;
 	}
 }

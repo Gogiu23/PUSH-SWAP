@@ -21,7 +21,7 @@ t_values	ft_array_generator(int argc, int i, int count, char **argv)
 	if (!pt1.numbers)
 		ft_free(pt1, argc);
 	pt1.numbers[argc - 1] = 0;
-	while (count > 0)
+	while (count >= 0)
 	{
 		pt1.numbers[count] = (long *)malloc(sizeof(long) * 2);
 		if (!pt1.numbers[count])
@@ -31,8 +31,6 @@ t_values	ft_array_generator(int argc, int i, int count, char **argv)
 			break ;
 		}
 		pt1.numbers[count][0] = ft_atoi_plus(argv[i]);
-//		pt1.numbers[count][2] = 0;
-		ft_printf("Pt1.numbers[%d][0]: %d\n", count, pt1.numbers[count][0]);
 		count--;
 		i++;
 	}
