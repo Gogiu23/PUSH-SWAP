@@ -39,7 +39,7 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 
 t_stack	ft_array_plus(int argc)
 {
-	t_stack b;
+	t_stack	b;
 
 	b.numbers = (long **)malloc(sizeof(long *) * argc);
 	if (!b.numbers)
