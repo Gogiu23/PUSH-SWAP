@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   ft_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 20:40:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/24 20:59:09 by gdominic         ###   ########.fr       */
+/*   Created: 2022/08/25 05:01:18 by gdominic          #+#    #+#             */
+/*   Updated: 2022/08/25 06:24:43 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void  ft_sa(t_stack a)
+void  ft_sa(t_stack a, int argc)
 {
-	int		count;
+	int		rows;
 	t_stack	t;
 
-	count = 0;
-	t.numbers = 0;
-
-	while (a.numbers[count])
+	rows = 0;
+	t.numbers = (long **)malloc(sizeof(long *) * argc);
+	if (!t.numbers)
+		free(t.numbers);
+	ft_printf("Valor de a: %d\n", a.numbers[0][0]);
+	while (rows < (argc - 2))
 	{
-		a.numbers[count] = t.numbers[count];
-		a.numbers[count] = a.numbers[count + 1];
-		a.numbers[count + 1] = t.numbers[count];
-		count++;
+		ft_printf("hola\n");
+		ft_printf("Valor de t.numbers: %d\n", t.numbers[0]);
+		a.numbers[rows] = t.numbers[rows];
+		ft_printf("Valor de t.numbers: %d\n", t.numbers[0]);
+		a.numbers[rows] = a.numbers[rows + 1];
+		a.numbers[rows + 1] = t.numbers[rows];
+		rows++;
 	}
 	ft_printf("sa\n");
 }

@@ -6,14 +6,14 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 20:19:56 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/24 21:08:39 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/25 06:22:56 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void  ft_sort_two(t_stack a)
+void  ft_sort_two(t_stack a, int argc)
 {
 	int	count;
 
@@ -24,7 +24,7 @@ void  ft_sort_two(t_stack a)
 			exit (1);
 		else
 		{
-			ft_sa(a);
+			ft_sa(a, argc);
 		}
 		count++;
 	}
