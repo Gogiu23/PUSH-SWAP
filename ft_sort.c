@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 20:19:56 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/25 06:22:56 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/25 21:45:54 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void  ft_sort_two(t_stack a, int argc)
 {
 	int	count;
 
-	count = 1;
-	while (a.numbers[count])
+	count = 0;
+	while (count < (argc -2))
 	{
-		if (a.numbers[count] < a.numbers[count + 1])
+		if (a.numbers[count][0] < a.numbers[count + 1][0])
 			exit (1);
 		else
 		{
@@ -28,4 +28,11 @@ void  ft_sort_two(t_stack a, int argc)
 		}
 		count++;
 	}
+}
+
+void  ft_sort_three(t_stack a, int argc)
+{
+	int count;
+
+	count = 0;
 }

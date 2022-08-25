@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 05:01:18 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/25 06:24:43 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/25 18:39:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ void  ft_sa(t_stack a, int argc)
 	t.numbers = (long **)malloc(sizeof(long *) * argc);
 	if (!t.numbers)
 		free(t.numbers);
-	ft_printf("Valor de a: %d\n", a.numbers[0][0]);
+//	ft_printf("Valor de a: %d\n", a.numbers[0][0]);
 	while (rows < (argc - 2))
 	{
-		ft_printf("hola\n");
+//		ft_printf("hola\n");
+		ft_printf("En el sa el a.numbers[0] es : %d\n", a.numbers[0][0]);
 		ft_printf("Valor de t.numbers: %d\n", t.numbers[0]);
-		a.numbers[rows] = t.numbers[rows];
+		t.numbers[rows] = a.numbers[rows];
 		ft_printf("Valor de t.numbers: %d\n", t.numbers[0]);
 		a.numbers[rows] = a.numbers[rows + 1];
 		a.numbers[rows + 1] = t.numbers[rows];
