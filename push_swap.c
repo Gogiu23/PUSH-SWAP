@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/25 21:45:57 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/27 05:03:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ int	main(int argc, char **argv)
 	a = ft_array_generator(argc, i, count, argv);
 	b = ft_array_plus(argc);
 	ft_checks_ints(a, argc);
-	ft_printf("argc is: %d\n", argc);
 	count = 0;
 	while (count < (argc - 1))
 	{
-		ft_printf("valor de a.numbers[%d][0]: %d\n", count, a.numbers[count][0]);
+		ft_printf("valor antes de ser ordenado = a.numbers[%d][0]: %d\n", count, a.numbers[count][0]);
 		count++;
 	}
 	ft_printf("argc is: %d\n", argc);
@@ -42,7 +41,7 @@ int	main(int argc, char **argv)
 	count = 0;
 	while (count < (argc - 1))
 	{
-		ft_printf("valor de a.numbers[%d][0]: %d\n", count, a.numbers[count][0]);
+		ft_printf("Despues de ser sorteado = a.numbers[%d][0]: %d\n", count, a.numbers[count][0]);
 		count++;
 	}
 	return (1);
