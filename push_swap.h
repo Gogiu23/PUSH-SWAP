@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/27 04:08:40 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/31 01:34:28 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ void		ft_sort_two(t_stack a, int argc);
 void		ft_sa(t_stack a, int argc);
 void		ft_sort_three(t_stack a, int argc);
 void		ft_ra(t_stack a, int argc);
+void		ft_aissorted(char **argv);
+t_stack		ft_assign_alias(t_stack a, int argc);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/20 21:33:36 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/31 02:05:33 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 	if (!a.numbers)
 		ft_free(a, argc);
 	a.numbers[argc - 1] = 0;
-	while (count >= 0)
+	while (count <= (argc - 2))
 	{
 		a.numbers[count] = (long *)malloc(sizeof(long) * 2);
 		if (!a.numbers[count])
@@ -31,9 +31,10 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 			break ;
 		}
 		a.numbers[count][0] = ft_atoi_plus(argv[i]);
-		count--;
+		count++;
 		i++;
 	}
+	ft_assign_alias(a, argc);
 	return (a);
 }
 
@@ -46,4 +47,29 @@ t_stack	ft_array_plus(int argc)
 		ft_free(b, argc);
 	b.numbers[0] = 0;
 	return (b);
+}
+
+t_stack	ft_assign_alias(t_stack a, int argc)
+{
+	int	rows;
+	int	columns;
+	int	index;
+	int	counter;
+
+	rows = 0;
+	columns = 1;
+	while (rows < (argc - 1))
+	{
+		counter = 0;
+		index = 0;
+		while (counter < (argc - 1))
+		{
+			if (a.numbers[rows][0] > a.numbers[counter][0])
+				index++;
+			counter++;
+		}
+	a.numbers[rows][columns] = index;
+		rows++;
+	}
+	return (a);
 }

@@ -6,14 +6,14 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 03:53:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/27 04:50:44 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/31 01:58:49 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void  ft_ra(t_stack a, int argc)
+void	ft_ra(t_stack a, int argc)
 {
 	int		rows;
 	int		max;
@@ -27,7 +27,6 @@ void  ft_ra(t_stack a, int argc)
 	t.numbers[rows] = a.numbers[rows];
 	while (rows <= max)
 	{
-	//	ft_printf("Valor dentro del while de a.numbers[%d]: %d\n", rows, a.numbers[rows][0]);
 		a.numbers[rows] = a.numbers[rows + 1];
 		rows++;
 	}

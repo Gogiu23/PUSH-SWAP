@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 00:27:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/19 00:33:39 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/08/31 02:00:54 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,23 @@ void	ft_checks_duplicates(char **argv)
 		}
 		previous++;
 	}
+	ft_aissorted(argv);
+}
+
+void	ft_aissorted(char **argv)
+{
+	int	present;
+	int	count;
+
+	present = 1;
+	count = 0;
+	while (argv[present + 1])
+	{
+		if (ft_atoi(argv[present]) > ft_atoi(argv[present + 1]))
+			count++;
+		present++;
+	}
+	ft_printf("Count en aissorted es: %d\n", count);
+	if (count == 0)
+		exit (EXIT_SUCCESS);
 }
