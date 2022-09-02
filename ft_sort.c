@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/31 02:10:40 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/02 05:48:21 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,39 +24,35 @@ void	ft_sort_two(t_stack a, int argc)
 			exit (1);
 		else
 		{
-			ft_sa(a, argc);
+			ft_sa(a);
 		}
 		count++;
 	}
 }
 
-void	ft_sort_three(t_stack a, int argc)
+void	ft_sort_three(t_stack a, /*t_stack b,*/ int argc)
 {
 	int	count;
 
 	count = 0;
-	if (a.numbers[count][0] > a.numbers[count + 1][0]
-		&& a.numbers[count][0] < a.numbers[count + 2][0])
-		ft_sa(a, argc);
-	if (a.numbers[count + 1][0] < a.numbers[count + 2][0])
+	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 2)//sequencia 2 1 3
+		ft_sa(a);
+	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 1)//sequencia 3 1 2
 		ft_ra(a, argc);
-	if (a.numbers[count][0] > a.numbers[count + 1][0]
-		&& a.numbers[count + 1][0] > a.numbers[count + 2][0])
+	if (a.numbers[count][1] == 2 && a.numbers[count + 1][1] == 1)//sequencia 3 2 1
 	{
 		ft_ra(a, argc);
-		ft_sa(a, argc);
+		ft_sa(a);
 	}
-	if (a.numbers[count][0] < a.numbers[count + 1][0]
-		&& a.numbers[count][0] > a.numbers[count + 2][0])
+	if (a.numbers[count][1] == 1 && a.numbers[count + 1][1] == 2)//sequencia 2 3 1
 	{
 		ft_ra(a, argc);
 		ft_ra(a, argc);
 	}
- /*  if (a.numbers[count][0] < a.numbers[count + 1][0]
-   		&& a.numbers[count + 1][0] > a.numbers[count + 2][0])
-   {
-   	ft_pb(a, argc);
-   	ft_sa(a, argc);
-   	ft_pa(a, argc);
-   }*/
+	if (a.numbers[count][1] == 0)//sequencia 1 3 2
+	{
+		ft_ra(a, argc);
+		ft_ra(a, argc);
+		ft_sa(a);
+	}
 }
