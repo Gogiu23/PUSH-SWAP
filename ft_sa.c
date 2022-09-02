@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 05:01:18 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/02 20:04:01 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/03 00:56:14 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	ft_sa(t_stack a)
 	rows = 0;
 	columns = 0;
 	temp = (long *)malloc(sizeof(long));
-	if(!temp)
+	if (!temp)
 		free(temp);
 	*temp = a.numbers[rows][columns];
-	a.numbers[rows][columns] = a.numbers[ rows + 1][columns];
+	a.numbers[rows][columns] = a.numbers[rows + 1][columns];
 	a.numbers[rows + 1][columns] = *temp;
 	ft_printf("sa\n");
 }

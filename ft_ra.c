@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 03:53:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/31 01:58:49 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/03 00:52:10 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,22 @@
 void	ft_ra(t_stack a, int argc)
 {
 	int		rows;
+	int		columns;
 	int		max;
-	t_stack	t;
+	long	*temp;
 
-	max = argc - 2;
+	columns = 0;
+	max = (argc - 2);
 	rows = 0;
-	t.numbers = (long **)malloc(sizeof(long *) * argc);
-	if (!t.numbers)
-		free(t.numbers);
-	t.numbers[rows] = a.numbers[rows];
-	while (rows <= max)
+	temp = (long *)malloc(sizeof(long));
+	if (!temp)
+		free(temp);
+	*temp = a.numbers[rows][columns];
+	while (rows < max)
 	{
-		a.numbers[rows] = a.numbers[rows + 1];
+		a.numbers[rows][columns] = a.numbers[rows + 1][columns];
 		rows++;
 	}
-	a.numbers[max] = t.numbers[0];
+	a.numbers[rows][columns] = *temp;
 	ft_printf("ra\n");
 }
