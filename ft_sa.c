@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 05:01:18 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/02 05:56:41 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/02 20:04:01 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,17 @@
 
 void	ft_sa(t_stack a)
 {
+	int		columns;
 	int		rows;
-	t_stack	t;
+	long	*temp;
 
 	rows = 0;
-	t.numbers = (long **)malloc(sizeof(long *));
-	if (!t.numbers)
-		free(t.numbers);
-	t.numbers[rows] = &a.numbers[rows][0];
-	ft_printf("Valor de t.numbers: %d\n", t.numbers[0][0]);
-	a.numbers[rows][0] = a.numbers[rows + 1][0];
-	ft_printf("a.numbers en sa: %d\n", a.numbers[0][0]);
-	a.numbers[rows + 1] = &t.numbers[rows][0];
-	ft_printf("a.numbers: %d\n", a.numbers[1][0]);
+	columns = 0;
+	temp = (long *)malloc(sizeof(long));
+	if(!temp)
+		free(temp);
+	*temp = a.numbers[rows][columns];
+	a.numbers[rows][columns] = a.numbers[ rows + 1][columns];
+	a.numbers[rows + 1][columns] = *temp;
 	ft_printf("sa\n");
 }

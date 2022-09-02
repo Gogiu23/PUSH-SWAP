@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/02 05:18:11 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/02 19:51:31 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ int	main(int argc, char **argv)
 	if (argc == 4)
 		ft_sort_three(a,/* b,*/ argc);
 	ft_printf("count: %d\n", count);
+	count = 0;
+	while (count < (argc - 1))
+	{
+		ft_printf("valor antes de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][count2]);
+		count++;
+	}
 	count = 0;
 	while (count < (argc - 1))
 	{
