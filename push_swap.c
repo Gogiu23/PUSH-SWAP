@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/02 19:51:31 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/03 04:13:45 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ int	main(int argc, char **argv)
 	if (argc == 3)
 		ft_sort_two(a, argc);
 	if (argc == 4)
-		ft_sort_three(a,/* b,*/ argc);
+		ft_sort_three(a, argc);
 	ft_printf("count: %d\n", count);
+/*	if (argc == 6)
+		ft_sort_five(a, argc);*/
 	count = 0;
 	while (count < (argc - 1))
 	{
@@ -52,5 +54,6 @@ int	main(int argc, char **argv)
 		ft_printf("Despues de ser sorteado = a.numbers[%d][0]: %d\n", count, a.numbers[count][0]);
 		count++;
 	}
+	printf("Tamaño de la matriz: %lu\n", sizeof(a));
 	return (1);
 }
