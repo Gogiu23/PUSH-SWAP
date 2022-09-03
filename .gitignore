@@ -4,3 +4,5 @@ exec.*
 *.png
 README.md
 *.dSYM
+*.vim
+*.vim.*
