@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/03 19:37:52 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/04 15:59:04 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,5 @@ int	main(int argc, char **argv)
 		ft_printf("Despues de ser sorteado = a.numbers[%d][0]: %d\n", count, a.numbers[count][0]);
 		count++;
 	}
-	printf("Tamaño de la matriz: %lu\n", sizeof(a));
 	return (1);
 }
