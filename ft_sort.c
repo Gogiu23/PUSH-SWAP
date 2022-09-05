@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/03 19:32:29 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:17:11 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,33 @@ void	ft_sort_three(t_stack a, int argc)
 	}
 }
 
-void	ft_sort_five(t_stack a, int argc)
+void	ft_sort_five(t_stack a, t_stack b, int argc)
 {
-	
+	int	rows;
+	int	columns;
+	int	count;
+	int	counter;
+
+	counter = 0;
+	count = 0;
+	rows = 0;
+	columns = 0;
+	ft_printf("Dentro del sort five 1\n");
+	while(count < 2)
+	{
+		ft_printf("Dentro del sort five 2\n");
+//		rows = 0;
+		while(counter < (argc - 2))
+		{
+			ft_printf("Valor de count dentro del sort five: %d\n", count);
+			ft_printf("Dentro del sort five 3\n");
+			ft_printf("Valor de b.numbers en el sort 5: %d\n", b.numbers[0]);
+			if (a.numbers[rows][columns + 1] == count)
+				ft_pb(a, b, argc, counter);
+			else
+				rows++;
+			counter++;
+		}
+		count++;
+	}
 }
