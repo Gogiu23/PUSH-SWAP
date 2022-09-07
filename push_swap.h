@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/05 19:41:59 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/07 21:49:35 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void		ft_aissorted(char **argv);
 //==================MOVEMENTS=========================
 void		ft_sa(t_stack a);
 void		ft_ra(t_stack a, int argc);
-void		ft_pb(t_stack a, t_stack b, int argc, int counter);
+void		ft_pb(t_stack a, t_stack b, int argc);
 
 #endif
