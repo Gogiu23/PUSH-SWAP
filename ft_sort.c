@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/07 21:56:49 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/09 19:08:43 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,27 +69,28 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 	rows = 0;
 	columns = 0;
 	ft_printf("Dentro del sort five 1\n");
-	while(count < 2)
+	while(count < 1)
 	{
 		ft_printf("Dentro del sort five 2\n");
-//		rows = 0;
-		while(counter < (argc - 3))
+		while(rows < (argc - 4))
 		{
 			ft_printf("\t\t\tAlias: %d\n", a.numbers[rows][1]);
 			ft_printf("Valor de count dentro del sort five: %d\n", count);
 			ft_printf("Dentro del sort five 3\n");
-			ft_printf("Valor de b.numbers en el sort 5: %d\n", b.numbers[0]);
-			if (a.numbers[rows][columns + 1] == 0)
+			ft_printf("Valor de b.numbers en el sort 5: %d\n", b.numbers[0][0]);
+			if (a.numbers[rows][1] == count)
 			{
 				ft_printf("\t\tAlias dentro del while: %d\n", a.numbers[rows][1]);
-				while (rows-->0)
-					ft_ra(a, argc);
 				ft_pb(a, b, argc);
+	//			ft_printf("error aqui?\n");
 			}
-			else
-				rows++;
-			counter++;
+			rows++;
+			count++;
+		//	counter++;
+	//		ft_printf("error 3 aqui?\n");
 		}
+	//	ft_printf("error 3.5 aqui?\n");
 		count++;
+	//	ft_printf("error 4 aqui?\n");
 	}
 }

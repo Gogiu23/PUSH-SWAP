@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/05 19:08:42 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/09 17:34:40 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,25 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 t_stack	ft_array_plus(int argc)
 {
 	t_stack	b;
+	int		count;
 
+	count = 0;
 	b.numbers = (long **)malloc(sizeof(long *) * argc);
 	if (!b.numbers)
 		ft_free(b, argc);
+	while (count <= (argc - 2))
+	{
+		b.numbers[count] = (long *)malloc(sizeof(long) * 2);
+		if (!b.numbers[count])
+		{
+			ft_free(b, argc);
+			free(b.numbers);
+			break ;
+		}
+		b.numbers[count][count] = 0;
+		count++;
+	}
+
 //	b.numbers[0] = 0;
 	return (b);
 }

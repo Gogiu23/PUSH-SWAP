@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/07 21:54:47 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/09 19:39:49 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,26 @@
 
 void	ft_pb(t_stack a, t_stack b, int argc)
 {
-	int	  rows;
-	int	  count;
+	long	  rows;
+	int		  count;
+	long	  max;
 
+	max = 0;
 	rows = 0;
 	ft_printf("Entramos en el pb\n");
-	count = (argc - 3);
-	if (b.numbers[rows] != 0)
-		b.numbers[rows]++;
-	b.numbers[rows] = a.numbers[rows];
-	while (count > 0)
+	count = (argc - 2);
+	b.numbers[rows][0] = a.numbers[rows][0];
+	while (rows < count)
 	{
-		ft_printf("Entramos en el pb\n");
-		a.numbers[count - 1][0] = a.numbers[count][0];
-		count--;
+//		ft_printf("Entramos en el pb\n");
+		a.numbers[rows] = a.numbers[rows + 1];
+		rows++;
 	}
+	ft_printf("Valor de rows: %d\t Valor de argc: %d\n", rows, argc);
+	a.numbers[rows] = &max;
+	a.numbers[rows][1] = max;
+	ft_printf("Valor de a.numbers al final: %d\n", a.numbers[4][0]);
 	ft_printf("pb\n");
+	ft_printf("==========================================================\n");
+	//ft_printf("error aqui?\n");
 }
