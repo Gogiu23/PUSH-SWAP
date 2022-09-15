@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/09 19:39:49 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/15 21:52:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 void	ft_pb(t_stack a, t_stack b, int argc)
 {
 	long	  rows;
-	int		  count;
 	long	  max;
 
 	max = 0;
 	rows = 0;
 	ft_printf("Entramos en el pb\n");
-	count = (argc - 2);
+	if () 
 	b.numbers[rows][0] = a.numbers[rows][0];
-	while (rows < count)
+	while (rows < (argc - 2))
 	{
 //		ft_printf("Entramos en el pb\n");
 		a.numbers[rows] = a.numbers[rows + 1];

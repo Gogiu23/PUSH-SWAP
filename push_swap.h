@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/07 21:49:35 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/15 20:37:36 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ typedef struct s_stack
 	long	**numbers;
 }	t_stack;
 
-typedef struct s_oppte
-{
-	int	lenght;
-	int	**numbers;
-}	t_oppte;
 //=====================SRC============================
 int			ft_free(t_stack a, int argc);
 t_stack		ft_array_generator(int argc, int i, int count, char **argv);
