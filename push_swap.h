@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/15 20:37:36 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:50:13 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_stack
 {
 	int		lenght;
 	long	**numbers;
+	long	*sstack;
 }	t_stack;
 
 //=====================SRC============================

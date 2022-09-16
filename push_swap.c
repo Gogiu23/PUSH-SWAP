@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/15 18:30:54 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:42:07 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,26 @@ int	main(int argc, char **argv)
 		ft_printf("valor antes de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][count2]);
 		count++;
 	}
+	ft_printf("==========================================================\n");
 	ft_printf("argc is: %d\n", argc);
 	if (argc == 3)
 		ft_sort_two(a, argc);
 	if (argc == 4)
 		ft_sort_three(a, argc);
 	ft_printf("count: %d\n", count);
+	ft_printf("==========================================================\n");
 	if (argc == 6)
 		ft_sort_five(a, b, argc);
+	ft_printf("==========================================================\n");
 	count = 0;
 	count2 = 0;
 	while (count < (argc - 1))
 	{
-		ft_printf("valor despues de ser ordenado = b.numbers[%d]: %d\n", count, b.numbers[0][0]);
+		ft_printf("valor despues de ser ordenado = b.sstack[%d]: %d\n", count, b.sstack[0]);
 //		count2++;
 		count++;
 	}
+	ft_printf("==========================================================\n");
 	count = 0;
 	count2 = 1;
 	while (count < (argc - 1))
@@ -57,5 +61,6 @@ int	main(int argc, char **argv)
 		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][count2]);
 		count++;
 	}
+	ft_printf("==========================================================\n");
 	return (0);
 }
