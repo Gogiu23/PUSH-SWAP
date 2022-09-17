@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/17 20:05:55 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/18 00:03:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ void	ft_sort_three(t_stack a, int argc)
 		ft_sa(a);
 	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 1)
 		ft_ra(&a, argc);
-	if (a.numbers[count][1] == 2 && a.numbers[count + 1][1] == 1)
+	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 0)
 	{
 		ft_ra(&a, argc);
 		ft_sa(a);
 	}
-	if (a.numbers[count][1] == 1 && a.numbers[count + 1][1] == 2)
+	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 0)
 	{
 		ft_ra(&a, argc);
 		ft_ra(&a, argc);
 	}
-	if (a.numbers[count][1] == 0)
+	if (a.numbers[count][1] == 0 && a.numbers[count + 2][1] == 1)
 	{
 		ft_ra(&a, argc);
 		ft_ra(&a, argc);
@@ -69,8 +69,9 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 	rows = 0;
 	columns = 0;
 //	ft_printf("Dentro del sort five 1\n");
-	while(count < 1)
+	while(count <= 1)
 	{
+		rows = 0;
 	//	ft_printf("Dentro del sort five 2\n");
 		while(rows < (argc - 2))
 		{
@@ -83,7 +84,7 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 			{
 				ft_printf("El valor de count es: %d\n", count);
 				columns = rows;
-				while (columns >= 0)
+				while (columns > 0)
 				{
 					ft_ra(&a, argc);
 					columns--;
@@ -94,7 +95,7 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 			}
 			ft_printf("Valor de a.lenght cuando vuelve de pb: %d\n", a.lenght);
 			rows++;
-			count++;
+	//		count++;
 		//	counter++;
 	//		ft_printf("error 3 aqui?\n");
 		}
@@ -103,4 +104,8 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 	//	ft_printf("error 4 aqui?\n");
 	}
 	ft_printf("==============================================\n");
+	ft_assign_alias(a, argc);
+	ft_sort_three(a, argc);
 }
+
+

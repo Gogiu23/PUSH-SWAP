@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/17 18:13:36 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/17 23:47:41 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,21 +60,39 @@ t_stack	ft_assign_alias(t_stack a, int argc)
 	int	columns;
 	int	index;
 	int	counter;
+	int	count;
+	int	count2;
+//	argc = 0;
 
 	rows = 0;
 	columns = 1;
-	while (rows < (argc - 1))
+	ft_printf("Valor de a->lenght asigandno alias: %d\n", a.lenght);
+	count = 0;
+	count2 = 1;
+	while (count < (argc - 1))
+	{
+		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
+		count++;
+	}
+	while (rows < a.lenght)
 	{
 		counter = 0;
 		index = 0;
-		while (counter < (argc - 1))
+		while (counter < a.lenght)
 		{
 			if (a.numbers[rows][0] > a.numbers[counter][0])
 				index++;
 			counter++;
 		}
-	a.numbers[rows][columns] = index;
+		a.numbers[rows][columns] = index;
 		rows++;
+	}
+	count = 0;
+	count2 = 1;
+	while (count < (argc - 1))
+	{
+		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
+		count++;
 	}
 	return (a);
 }

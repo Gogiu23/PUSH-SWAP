@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/17 20:23:18 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/17 22:58:57 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_pb(t_stack *a, t_stack *b, int argc)
 //	a->lenght--;
 	while (rows < (a->lenght - 1))
 	{
-		ft_printf("Valor de a->lenght dentro del while: %d\nValue %d\n", a->lenght, a->numbers[rows][0]);
+		ft_printf("Valor de a->lenght dentro del while: %d\n", a->lenght);
 		a->numbers[rows] = a->numbers[rows + 1];
 		rows++;
 	}
