@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/16 20:42:46 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/17 18:23:32 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,21 @@ void	ft_sort_three(t_stack a, int argc)
 	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 2)
 		ft_sa(a);
 	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 1)
-		ft_ra(a, argc);
+		ft_ra(&a, argc);
 	if (a.numbers[count][1] == 2 && a.numbers[count + 1][1] == 1)
 	{
-		ft_ra(a, argc);
+		ft_ra(&a, argc);
 		ft_sa(a);
 	}
 	if (a.numbers[count][1] == 1 && a.numbers[count + 1][1] == 2)
 	{
-		ft_ra(a, argc);
-		ft_ra(a, argc);
+		ft_ra(&a, argc);
+		ft_ra(&a, argc);
 	}
 	if (a.numbers[count][1] == 0)
 	{
-		ft_ra(a, argc);
-		ft_ra(a, argc);
+		ft_ra(&a, argc);
+		ft_ra(&a, argc);
 		ft_sa(a);
 	}
 }
@@ -68,11 +68,11 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 	count = 0;
 	rows = 0;
 	columns = 0;
-	ft_printf("Dentro del sort five 1\n");
+//	ft_printf("Dentro del sort five 1\n");
 	while(count < 1)
 	{
-		ft_printf("Dentro del sort five 2\n");
-		while(rows < (argc - 4))
+	//	ft_printf("Dentro del sort five 2\n");
+		while(rows < (argc - 2))
 		{
 			ft_printf("\t\t\tAlias: %d\n", a.numbers[rows][1]);
 			ft_printf("Valor de count dentro del sort five: %d\n", count);
@@ -81,10 +81,18 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 			ft_printf("==========================================================\n");
 			if (a.numbers[rows][1] == count)
 			{
-				ft_printf("\t\tAlias dentro del while: %d\n", a.numbers[rows][1]);
-				ft_pb(a, b, argc);
+				ft_printf("El valor de count es: %d\n", count);
+				columns = rows;
+				while (columns >= 0)
+				{
+					ft_ra(&a, argc);
+					columns--;
+				}
+				ft_printf("\t\tAlias dentro de if que iran a pb: %d\n", a.numbers[rows][1]);
+				ft_pb(&a, b, argc);
 	//			ft_printf("error aqui?\n");
 			}
+			ft_printf("Valor de a.lenght cuando vuelve de pb: %d\n", a.lenght);
 			rows++;
 			count++;
 		//	counter++;

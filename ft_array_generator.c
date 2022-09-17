@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/16 20:25:24 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/17 18:13:36 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,6 @@ t_stack	ft_array_plus(int argc)
 	b.sstack = (long *)malloc(sizeof(long) * argc);
 	if (!b.sstack)
 		ft_free(b, argc);
-//	while (count <= (argc - 2))
-//	{
-//		b.sstack[count] = (long *)malloc(sizeof(long));
-//		if (!b.sstack[count])
-//		{
-//			ft_free(b, argc);
-//			free(b.sstack);
-//			break ;
-//		}
-//		count++;
-//	}
 	return (b);
 }
 

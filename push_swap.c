@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/16 20:42:07 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/17 17:21:21 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	count2 = 0;
 	while (count < (argc - 1))
 	{
-		ft_printf("valor despues de ser ordenado = b.sstack[%d]: %d\n", count, b.sstack[0]);
+		ft_printf("valor despues de ser ordenado = b.sstack[%d]: %d\n", count, b.sstack[count]);
 //		count2++;
 		count++;
 	}
