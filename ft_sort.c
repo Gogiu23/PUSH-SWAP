@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/17 18:23:32 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/17 20:05:55 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 					columns--;
 				}
 				ft_printf("\t\tAlias dentro de if que iran a pb: %d\n", a.numbers[rows][1]);
-				ft_pb(&a, b, argc);
+				ft_pb(&a, &b, argc);
 	//			ft_printf("error aqui?\n");
 			}
 			ft_printf("Valor de a.lenght cuando vuelve de pb: %d\n", a.lenght);
