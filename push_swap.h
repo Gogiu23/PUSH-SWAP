@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/17 19:01:27 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:47:48 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 {
 	int		lenght;
 	long	**numbers;
-	long	*sstack;
 }	t_stack;
 
 //=====================SRC============================
@@ -42,5 +41,5 @@ void		ft_aissorted(char **argv);
 void		ft_sa(t_stack a);
 void		ft_ra(t_stack *a, int argc);
 void		ft_pb(t_stack *a, t_stack *b, int argc);
-
+void		ft_pa(t_stack *a, t_stack *b);
 #endif

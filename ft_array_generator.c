@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/17 23:47:41 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/19 14:04:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,20 @@ t_stack	ft_array_plus(int argc)
 
 	b.lenght = 0;
 	count = 0;
-	b.sstack = (long *)malloc(sizeof(long) * argc);
-	if (!b.sstack)
+	b.numbers = (long **)malloc(sizeof(long *) * argc);
+	if (!b.numbers)
 		ft_free(b, argc);
+	while (count <= (argc - 2))
+	{
+		b.numbers[count] = (long *)malloc(sizeof(long) * 2);
+		if (!b.numbers[count])
+		{
+			ft_free(b, argc);
+			free(b.numbers);
+			break ;
+		}
+		count++;
+	}
 	return (b);
 }
 
@@ -66,7 +77,7 @@ t_stack	ft_assign_alias(t_stack a, int argc)
 
 	rows = 0;
 	columns = 1;
-	ft_printf("Valor de a->lenght asigandno alias: %d\n", a.lenght);
+	ft_printf("Valor de a->lenght asignando alias: %d\n", a.lenght);
 	count = 0;
 	count2 = 1;
 	while (count < (argc - 1))
@@ -91,7 +102,7 @@ t_stack	ft_assign_alias(t_stack a, int argc)
 	count2 = 1;
 	while (count < (argc - 1))
 	{
-		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
+		ft_printf("el segundo valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
 		count++;
 	}
 	return (a);
