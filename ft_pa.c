@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:50:00 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/19 13:46:17 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:03:51 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./libft/libft.h"
@@ -31,16 +31,10 @@ void  ft_pa(t_stack *a, t_stack *b)
 		}
 		a->lenght++;
 	}
-//	while (counter < (a->lenght))
-//	{
-//		ft_printf("Dentro del while en pa\n");
-//		a->numbers[rows + 1] = a->numbers[rows];
-//		counter++;
-//		rows++;
-//	}
 	ft_printf("salimos del while\n");
-//	a->lenght++;
 	rows = 0;
 	a->numbers[rows] = b->numbers[rows];
+	ft_printf("pa\n");
+	ft_printf("==========================================================\n");
 	b->lenght--;
 }
