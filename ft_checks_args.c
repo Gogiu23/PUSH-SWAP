@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 00:27:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/31 02:00:54 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/21 22:06:03 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void	ft_checks_args(int argc, char **argv)
 	while (argv[a])
 	{
 		b = 0;
-		while (argv[a][b])
+		if ((argv[a][b] == '-' && (argv[a][b + 1] >= '0'
+			&& argv[a][b + 1] <= '9'))
+			|| (argv[a][b] >= '0' && argv[a][b] <= '9'))
 		{
-			if ((argv[a][b] == '-' && (argv[a][b + 1] >= '0'
-				&& argv[a][b + 1] <= '9'))
-				|| (argv[a][b] >= '0' && argv[a][b] <= '9'))
+			while (argv[a][b] >= '0' && argv[a][b] <= '9')
 				b++;
-			else
-			{
-				ft_error("Error\n");
-			}
+			if (argv[a][b] != '\0')
+				ft_printf("error2\n");
 		}
+		else
+			ft_error("Error\n");
 		a++;
 	}
 	ft_checks_duplicates(argv);
@@ -42,8 +42,8 @@ void	ft_checks_args(int argc, char **argv)
 
 void	ft_checks_duplicates(char **argv)
 {
-	int	previous;
-	int	forward;
+	int		previous;
+	int		forward;
 
 	previous = 1;
 	forward = 1;
