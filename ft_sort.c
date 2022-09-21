@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/20 14:01:48 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:24:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,5 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 	ft_sort_three(a, argc);
 	ft_printf("==============================================\n");
 	ft_pa(&a, &b);
+	ft_pa(&a, &b);
 }
-
-

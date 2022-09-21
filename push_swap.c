@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/20 11:59:20 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:02:55 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	main(int argc, char **argv)
 	while (count < (argc - 1))
 	{
 		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
+//		ft_printf("valor despues de ser ordenado = a.numbers[%d]: %d\n", count, a.numbers[count]);
 		count++;
 	}
 	ft_printf("==========================================================\n");

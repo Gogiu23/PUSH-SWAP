@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:50:00 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/20 14:03:51 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/21 17:25:53 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./libft/libft.h"
@@ -20,20 +20,22 @@ void  ft_pa(t_stack *a, t_stack *b)
 	i = a->lenght;
 	ft_printf("Valor de a->lenght: %d\n", a->lenght);
 	ft_printf("valor de i: %d\n", i);
-	rows = 0;
+	rows = (a->lenght);
 	if (a->lenght != 0)
 	{
-		while (i >= 0)
+		while (rows > 0)
 		{
-			a->numbers[rows + 1] = a->numbers[rows];
+			a->numbers[i] = a->numbers[i - 1];
 			i--;
-			rows++;
+			rows--;
+			ft_printf("Valor de a.numbers[%d]: %d\n", (rows), a->numbers[rows][0]);
 		}
 		a->lenght++;
 	}
 	ft_printf("salimos del while\n");
 	rows = 0;
-	a->numbers[rows] = b->numbers[rows];
+	a->numbers[0] = b->numbers[0];
+	b->numbers[rows] = b->numbers[rows + 1];
 	ft_printf("pa\n");
 	ft_printf("==========================================================\n");
 	b->lenght--;
