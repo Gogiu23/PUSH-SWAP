@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/22 06:42:54 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:57:05 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,11 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 		count++;
 	}
 	ft_printf("==============================================\n");
-	ft_assign_alias(a, argc);
-//	ft_sort_three(a);
+	ft_assign_alias(a);
+	ft_sort_three(a);
 	ft_printf("==============================================\n");
-//	while (b.lenght >= 0)
-//		ft_pa(&a, &b);
+	ft_printf("Longitud de b.lenght al final de sortfive: %d\n", b.lenght);
+	while (b.lenght >= 0)
+		ft_pa(&a, &b);
 //	ft_pa(&a, &b);
 }
