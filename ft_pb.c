@@ -6,14 +6,43 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/21 17:03:32 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/22 02:47:40 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
+/*
+void  ft_pb(t_stack *a, t_stack *b)
+{
+	long  rows;
+	int	  i;
 
-void	ft_pb(t_stack *a, t_stack *b, int argc)
+	i = b->lenght;
+	ft_printf("Valor de b->lenght: %d\n", b->lenght);
+	ft_printf("valor de i: %d\n", i);
+	rows = (b->lenght);
+	if (b->lenght != 0)
+	{
+		while (rows > 0)
+		{
+			b->numbers[i] = b->numbers[i - 1];
+			i--;
+			rows--;
+			ft_printf("Valor de b.numbers[%d]: %d\n", (rows), b->numbers[rows][0]);
+		}
+	}
+	b->lenght++;
+	ft_printf("salimos del while\n");
+	rows = 0;
+	b->numbers[rows] = a->numbers[rows];
+	//b->numbers[rows] = b->numbers[rows + 1];
+	ft_printf("pb\n");
+	ft_printf("==========================================================\n");
+	a->lenght--;
+}*/
+
+void	ft_pb(t_stack *a, t_stack *b)
 {
 	long	  rows;
 	long	  max;
@@ -43,13 +72,11 @@ void	ft_pb(t_stack *a, t_stack *b, int argc)
 		rows++;
 	}
 	a->lenght--;
-	ft_printf("Valor de rows: %d\t Valor de argc: %d\n", rows, argc);
+//	ft_printf("Valor de rows: %d\t Valor de argc: %d\n", rows, argc);
 	a->numbers[rows] = &max;
 	a->numbers[rows][1] = max;
 	b->lenght++;
 	ft_printf("El valor de b->lenght en el pb: %d\n", b->lenght);
-	//ft_printf("Valor de a->numbers al final: %d\n", a->numbers[4][0]);
 	ft_printf("pb\n");
 	ft_printf("==========================================================\n");
-	//ft_printf("error aqui?\n");
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/21 17:21:28 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/22 02:14:34 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ t_stack	ft_assign_alias(t_stack a, int argc)
 	int	counter;
 	int	count;
 	int	count2;
-//	argc = 0;
 
 	rows = 0;
 	columns = 1;

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/21 19:14:16 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/22 06:42:54 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_sort_two(t_stack a, int argc)
 	}
 }
 
-void	ft_sort_three(t_stack a, int argc)
+void	ft_sort_three(t_stack a)
 {
 	int	count;
 
@@ -38,21 +38,21 @@ void	ft_sort_three(t_stack a, int argc)
 	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 2)
 		ft_sa(a);
 	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 1)
-		ft_ra(&a, argc);
+		ft_ra(&a);
 	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 0)
 	{
-		ft_ra(&a, argc);
+		ft_ra(&a);
 		ft_sa(a);
 	}
 	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 0)
 	{
-		ft_ra(&a, argc);
-		ft_ra(&a, argc);
+		ft_ra(&a);
+		ft_ra(&a);
 	}
 	if (a.numbers[count][1] == 0 && a.numbers[count + 2][1] == 1)
 	{
-		ft_ra(&a, argc);
-		ft_ra(&a, argc);
+		ft_ra(&a);
+		ft_ra(&a);
 		ft_sa(a);
 	}
 }
@@ -73,7 +73,7 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 	{
 		rows = 0;
 	//	ft_printf("Dentro del sort five 2\n");
-		while(rows < (argc - 2))
+		while(rows < (argc - 1))
 		{
 			ft_printf("\t\t\tAlias: %d\n", a.numbers[rows][1]);
 			ft_printf("Valor de count dentro del sort five: %d\n", count);
@@ -86,28 +86,22 @@ void	ft_sort_five(t_stack a, t_stack b, int argc)
 				columns = rows;
 				while (columns > 0)
 				{
-					ft_ra(&a, argc);
+					ft_ra(&a);
 					columns--;
 				}
 				ft_printf("\t\tAlias dentro de if que iran a pb: %d\n", a.numbers[rows][1]);
-				ft_pb(&a, &b, argc);
-	//			ft_printf("error aqui?\n");
+				ft_pb(&a, &b);
 			}
 			ft_printf("Valor de a.lenght cuando vuelve de pb: %d\n", a.lenght);
 			rows++;
-	//		count++;
-		//	counter++;
-	//		ft_printf("error 3 aqui?\n");
 		}
-	//	ft_printf("error 3.5 aqui?\n");
 		count++;
-	//	ft_printf("error 4 aqui?\n");
 	}
 	ft_printf("==============================================\n");
 	ft_assign_alias(a, argc);
-	ft_sort_three(a, argc);
+//	ft_sort_three(a);
 	ft_printf("==============================================\n");
-	while (b.lenght >= 0)
-		ft_pa(&a, &b);
+//	while (b.lenght >= 0)
+//		ft_pa(&a, &b);
 //	ft_pa(&a, &b);
 }

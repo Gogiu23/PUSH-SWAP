@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/21 17:02:55 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/22 02:17:18 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	if (argc == 3)
 		ft_sort_two(a, argc);
 	if (argc == 4)
-		ft_sort_three(a, argc);
+		ft_sort_three(a);
 	ft_printf("count: %d\n", count);
 	ft_printf("==========================================================\n");
 	if (argc == 6)

@@ -6,14 +6,14 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 03:53:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/17 22:54:42 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/22 02:29:58 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void	ft_ra(t_stack *a, int argc)
+void	ft_ra(t_stack *a)
 {
 	int		rows;
 	int		columns;
@@ -21,7 +21,6 @@ void	ft_ra(t_stack *a, int argc)
 	long	*temp;
 
 	columns = 0;
-	argc = 1;
 	max = (a->lenght - 1);
 	rows = 0;
 	temp = (long *)malloc(sizeof(long));
