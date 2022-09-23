@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/22 20:19:19 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/24 01:39:09 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void		ft_error(char *c);
 t_stack		ft_array_plus(int argc);
 void		ft_sort_two(t_stack a, int argc);
 void		ft_sort_three(t_stack a);
-void		ft_sort_five(t_stack a, t_stack b, int argc);
+void		ft_sort_five(t_stack *a, t_stack *b, int i);
+//==================FIXED ARRAYS=======================
+t_stack		ft_remode_stacka(t_stack a);
 //==================CHECKS ERRORS=====================
 void		ft_checks_args(int argc, char **argv);
 void		ft_checks_ints(t_stack a, int argc);

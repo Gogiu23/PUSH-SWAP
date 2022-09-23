@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/22 20:50:23 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/24 01:43:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 		count++;
 		i++;
 	}
-	ft_printf("lenght longitud: %d\n", a.lenght);
 	ft_assign_alias(a);
 	return (a);
 }
@@ -72,19 +71,9 @@ t_stack	ft_assign_alias(t_stack a)
 	int	columns;
 	int	index;
 	int	counter;
-//	int	count;
-//	int	count2;
 
 	rows = 0;
 	columns = 1;
-	ft_printf("Valor de a->lenght asignando alias: %d\n", a.lenght);
-//	count = 0;
-//	count2 = 1;
-//	while (count < (a.lenght))
-//	{
-//		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
-//		count++;
-//	}
 	while (rows < a.lenght)
 	{
 		counter = 0;
@@ -98,12 +87,5 @@ t_stack	ft_assign_alias(t_stack a)
 		a.numbers[rows][columns] = index;
 		rows++;
 	}
-//	count = 0;
-//	count2 = 1;
-//	while (count < a.lenght)
-//	{
-//		ft_printf("el segundo valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
-//		count++;
-//	}
 	return (a);
 }

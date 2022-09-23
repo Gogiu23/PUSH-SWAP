@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/22 20:47:41 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/24 01:42:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 		ft_sort_three(a);
 	ft_printf("==========================================================\n");
 	if (argc == 6)
-		ft_sort_five(a, b, argc);
+		ft_sort_five(&a, &b, i);
 	ft_printf("==========================================================\n");
 	count = 0;
 	count2 = 0;
@@ -53,10 +53,11 @@ int	main(int argc, char **argv)
 	ft_printf("==========================================================\n");
 	count = 0;
 	count2 = 1;
-	while (count < (argc - 1))
+	ft_printf("Valor de a.lenght: %d\n", a.lenght);
+	ft_printf("Valor de b.lenght: %d\n", b.lenght);
+	while (count < a.lenght)
 	{
 		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", count, count2, a.numbers[count][0], a.numbers[count][1]);
-//		ft_printf("valor despues de ser ordenado = a.numbers[%d]: %d\n", count, a.numbers[count]);
 		count++;
 	}
 	ft_printf("==========================================================\n");

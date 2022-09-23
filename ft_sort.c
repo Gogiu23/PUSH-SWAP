@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/22 20:57:05 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/24 01:40:33 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,52 +57,31 @@ void	ft_sort_three(t_stack a)
 	}
 }
 
-void	ft_sort_five(t_stack a, t_stack b, int argc)
+void	ft_sort_five(t_stack *a, t_stack *b, int i)
 {
 	int	rows;
-	int	columns;
 	int	count;
-	int	counter;
 
-	counter = 0;
 	count = 0;
-	rows = 0;
-	columns = 0;
-//	ft_printf("Dentro del sort five 1\n");
-	while(count <= 1)
+	i = 0;
+	while (count <= 1)
 	{
 		rows = 0;
-	//	ft_printf("Dentro del sort five 2\n");
-		while(rows < (argc - 1))
+		while (rows < a->lenght)
 		{
-			ft_printf("\t\t\tAlias: %d\n", a.numbers[rows][1]);
-			ft_printf("Valor de count dentro del sort five: %d\n", count);
-			ft_printf("Dentro del sort five 3\n");
-			ft_printf("Valor de b.numbers en el sort 5: %d\n", b.numbers[0][0]);
-			ft_printf("==========================================================\n");
-			if (a.numbers[rows][1] == count)
+			if (a->numbers[rows][1] == count)
 			{
-				ft_printf("El valor de count es: %d\n", count);
-				columns = rows;
-				while (columns > 0)
-				{
-					ft_ra(&a);
-					columns--;
-				}
-				ft_printf("\t\tAlias dentro de if que iran a pb: %d\n", a.numbers[rows][1]);
-				ft_pb(&a, &b);
+				i = rows;
+				while (i -- > 0)
+					ft_ra(a);
+				ft_pb(a, b);
 			}
-			ft_printf("Valor de a.lenght cuando vuelve de pb: %d\n", a.lenght);
 			rows++;
 		}
 		count++;
 	}
-	ft_printf("==============================================\n");
-	ft_assign_alias(a);
-	ft_sort_three(a);
-	ft_printf("==============================================\n");
-	ft_printf("Longitud de b.lenght al final de sortfive: %d\n", b.lenght);
-	while (b.lenght >= 0)
-		ft_pa(&a, &b);
-//	ft_pa(&a, &b);
+	ft_assign_alias(*a);
+	ft_sort_three(*a);
+	while (b->lenght > 0)
+		ft_pa(a, b);
 }

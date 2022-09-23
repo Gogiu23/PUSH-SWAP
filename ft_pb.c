@@ -6,39 +6,48 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/22 20:46:49 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/24 01:48:31 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void  ft_pb(t_stack *a, t_stack *b)
+void	ft_pb(t_stack *a, t_stack *b)
 {
-	long  rows;
-	int	  i;
+	long	rows;
+	int		i;
 
 	i = b->lenght;
-	ft_printf("Valor de b->lenght: %d\n", b->lenght);
-	ft_printf("valor de i: %d\n", i);
-	rows = 0;
-	if (b->lenght != 0)
+	rows = b->lenght;
+	if (b->lenght > 0)
 	{
-		while (rows <= b->lenght)
+		while (i -- > 0)
 		{
 			b->numbers[rows] = b->numbers[rows - 1];
-			i--;
-			rows++;
-			ft_printf("Valor en el PB de b.numbers[%d]: %d\n", (rows), b->numbers[rows][0]);
+			rows--;
 		}
-		b->lenght++;
 	}
 	b->lenght++;
-	ft_printf("salimos del while\n");
 	rows = 0;
 	b->numbers[rows] = a->numbers[rows];
-	b->numbers[rows] = b->numbers[rows + 1];
+	ft_remode_stacka(*a);
 	ft_printf("pb\n");
-	ft_printf("==========================================================\n");
 	a->lenght--;
+}
+
+t_stack	ft_remode_stacka(t_stack a)
+{
+	int	rows;
+	int	i;
+
+	i = 0;
+	rows = 0;
+	while (i < a.lenght)
+	{
+		a.numbers[rows] = a.numbers[rows + 1];
+		rows++;
+		i++;
+	}
+	return (a);
 }
