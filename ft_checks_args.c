@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 00:27:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/21 22:06:03 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/24 21:53:15 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_checks_args(int argc, char **argv)
 			while (argv[a][b] >= '0' && argv[a][b] <= '9')
 				b++;
 			if (argv[a][b] != '\0')
-				ft_printf("error2\n");
+					ft_error("error\n");
 		}
 		else
 			ft_error("Error\n");

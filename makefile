@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/04 18:36:02 by gdominic          #+#    #+#              #
-#    Updated: 2022/09/23 02:34:21 by gdominic         ###   ########.fr        #
+#    Updated: 2022/09/24 18:26:54 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME		= push_swap
@@ -19,6 +19,7 @@ CFLAGS		= -Wall -Wextra -Werror -I ./libft
 RM			= rm -rf
 SOURCES		= push_swap.c ft_checks_args.c ft_array_generator.c ft_checks_ints.c \
 			  ft_free_mem.c ft_error.c ft_sa.c ft_sort.c ft_ra.c ft_pb.c ft_pa.c \
+			  ft_rb.c ft_sb.c
 
 INCLUDE		= push_swap.h
 
