@@ -1,60 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rr.c                                            :+:      :+:    :+:   */
+/*   ft_rrr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 18:33:11 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/25 12:59:07 by gdominic         ###   ########.fr       */
+/*   Created: 2022/09/25 16:30:21 by gdominic          #+#    #+#             */
+/*   Updated: 2022/09/25 16:59:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void	ft_rr(t_stack *a, t_stack *b)
+void	ft_rrr(t_stack *a, t_stack *b)
 {
 	int		rows;
-	int		columns;
-	int		max;
 	long	*temp;
+	int		i;
 
-	columns = 0;
-	max = (a->lenght - 1);
-	rows = 0;
+	i = (a->lenght - 1);
+	rows = a->lenght;
 	temp = (long *)malloc(sizeof(long));
 	if (!temp)
 		free(temp);
-	temp = a->numbers[rows];
-	while (rows < max)
+	temp = a->numbers[i];
+	while (rows > 0)
 	{
-		a->numbers[rows] = a->numbers[rows + 1];
-		rows++;
+		a->numbers[i] = a->numbers[i - 1];
+		rows--;
+		i--;
 	}
+	rows = 0;
 	a->numbers[rows] = temp;
-	ft_second_rr(*b);
-	ft_printf("rr");
+	free(temp);
+	ft_second_rrr(*b);
+	ft_printf("rrr\n");
 }
 
-void	ft_second_rr(t_stack b)
+void	ft_second_rrr(t_stack b)
 {
 	int		rows;
-	int		columns;
-	int		max;
 	long	*temp;
+	int		i;
 
-	columns = 0;
-	max = (b.lenght - 1);
-	rows = 0;
+	i = (b.lenght - 1);
+	rows = b.lenght;
 	temp = (long *)malloc(sizeof(long));
 	if (!temp)
 		free(temp);
-	temp = b.numbers[rows];
-	while (rows < max)
+	temp = b.numbers[i];
+	while (rows > 0)
 	{
-		b.numbers[rows] = b.numbers[rows + 1];
-		rows++;
+		b.numbers[i] = b.numbers[i - 1];
+		rows--;
+		i--;
 	}
+	rows = 0;
 	b.numbers[rows] = temp;
+	free(temp);
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/24 01:42:16 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/25 18:19:48 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ int	main(int argc, char **argv)
 		count++;
 	}
 	ft_printf("==========================================================\n");
+//	ft_rra(&a);
+	ft_rrr(&a, &b);
+	ft_rrr(&a, &b);
 	count = 0;
 	count2 = 1;
 	ft_printf("Valor de a.lenght: %d\n", a.lenght);
