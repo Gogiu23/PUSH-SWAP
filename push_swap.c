@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/25 18:19:48 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/26 20:48:18 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ int	main(int argc, char **argv)
 	if (argc == 4)
 		ft_sort_three(a);
 	ft_printf("==========================================================\n");
-	if (argc == 6)
-		ft_sort_five(&a, &b, i);
+	if (argc <= 6)
+		ft_sort_till_five(&a, &b, i, argc);
+	if (argc > 6 && argc <= 100)
+		ft_sort_till_hundred(&a, &b, i);
 	ft_printf("==========================================================\n");
 	count = 0;
 	count2 = 0;
@@ -51,9 +53,6 @@ int	main(int argc, char **argv)
 		count++;
 	}
 	ft_printf("==========================================================\n");
-//	ft_rra(&a);
-	ft_rrr(&a, &b);
-	ft_rrr(&a, &b);
 	count = 0;
 	count2 = 1;
 	ft_printf("Valor de a.lenght: %d\n", a.lenght);

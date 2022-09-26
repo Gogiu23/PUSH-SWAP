@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/24 01:40:33 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:29:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,42 +46,63 @@ void	ft_sort_three(t_stack a)
 	}
 	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 0)
 	{
-		ft_ra(&a);
-		ft_ra(&a);
+		ft_rra(&a);
 	}
 	if (a.numbers[count][1] == 0 && a.numbers[count + 2][1] == 1)
 	{
-		ft_ra(&a);
-		ft_ra(&a);
+		ft_rra(&a);
 		ft_sa(a);
 	}
+}
+
+void	ft_sort_till_five(t_stack *a, t_stack *b, int i, int argc)
+{
+	if (argc == 5)
+		ft_sort_four(a, b, i);
+	if (argc == 6)
+		ft_sort_five(a, b, i);
+}
+
+void	ft_sort_four(t_stack *a, t_stack *b, int i)
+{
+	int	rows;
+
+	i = 0;
+	rows = 0;
+	while (rows < a->lenght)
+	{
+		if (a->numbers[rows][1] == 0)
+		{
+			i = rows;
+			ft_smart_rotate_a(a, rows);
+			ft_pb(a, b);
+		}
+		rows++;
+	}
+	ft_assign_alias(*a);
+	ft_sort_three(*a);
+	while (b->lenght > 0)
+		ft_pa(a, b);
 }
 
 void	ft_sort_five(t_stack *a, t_stack *b, int i)
 {
 	int	rows;
-	int	count;
 
-	count = 0;
 	i = 0;
-	while (count <= 1)
+	rows = 0;
+	while (rows < a->lenght)
 	{
-		rows = 0;
-		while (rows < a->lenght)
+		if (a->numbers[rows][1] == 0)
 		{
-			if (a->numbers[rows][1] == count)
-			{
-				i = rows;
-				while (i -- > 0)
-					ft_ra(a);
-				ft_pb(a, b);
-			}
-			rows++;
+			i = rows;
+			ft_smart_rotate_a(a, rows);
+			ft_pb(a, b);
 		}
-		count++;
+		rows++;
 	}
 	ft_assign_alias(*a);
-	ft_sort_three(*a);
+	ft_sort_four(a, b, i);
 	while (b->lenght > 0)
 		ft_pa(a, b);
 }

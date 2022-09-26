@@ -1,37 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rra.c                                           :+:      :+:    :+:   */
+/*   ft_smart_rotate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 14:09:40 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/26 13:41:55 by gdominic         ###   ########.fr       */
+/*   Created: 2022/09/26 17:09:11 by gdominic          #+#    #+#             */
+/*   Updated: 2022/09/26 20:20:54 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void	ft_rra(t_stack *a)
+void	ft_smart_rotate_a(t_stack *a, int rows)
 {
-	int		rows;
-	long	*temp;
-	int		i;
-	
-	i = (a->lenght - 1);
-	rows = a->lenght;
-	temp = (long *)malloc(sizeof(long));
-	if (!temp)
-		free(temp);
-	temp = a->numbers[i];
-	while (rows > 0)
+	int	i;
+
+	i = rows;
+	if (rows >= (a->lenght/2))
 	{
-		a->numbers[i] = a->numbers[i - 1];
-		rows--;
-		i--;
+		while (i <= (a->lenght - 1))
+		{
+			ft_rra(a);
+			i++;
+		}
 	}
-	rows = 0;
-	a->numbers[rows] = temp;
-	ft_printf("rra\n");
+	else
+	{
+		while (i -- > 0)
+			ft_ra(a);
+	}	
+}
+
+void	ft_smart_rotate_b(t_stack *b, int rows)
+{
+	int	i;
+
+	i = (b->lenght/2);
+	if (b->numbers[rows][1] >= (b->lenght/2))
+	{
+		while (i <= (b->lenght - 1))
+		{
+			ft_rra(b);
+			i++;
+		}
+	}
+	else
+	{
+		while (i -- > 0)
+			ft_ra(b);
+	}	
 }
