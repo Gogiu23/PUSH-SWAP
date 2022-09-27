@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/24 01:48:31 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:50:11 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	ft_pb(t_stack *a, t_stack *b)
 	b->lenght++;
 	rows = 0;
 	b->numbers[rows] = a->numbers[rows];
-	ft_remode_stacka(*a);
+	if (a->lenght > 0)
+		ft_remode_stacka(*a);
 	ft_printf("pb\n");
 	a->lenght--;
 }
