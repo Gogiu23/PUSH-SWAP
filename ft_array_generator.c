@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/27 20:25:15 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/29 14:01:50 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,14 @@ t_stack	ft_array_plus(int argc)
 		count++;
 	}
 	return (b);
+}
+
+t_stack	  ft_chunks_generator(int argc)
+{
+	t_stack	c;
+
+	c.intervals = 0;
+	c.intervals = (int *)malloc(sizeof(int) * )
 }
 
 t_stack	ft_assign_alias(t_stack a)

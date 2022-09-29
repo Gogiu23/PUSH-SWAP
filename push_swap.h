@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/26 17:22:14 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/09/29 13:58:41 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_stack
 {
 	int		lenght;
 	long	**numbers;
+	int		*intervals;
 }	t_stack;
 
 //=====================SRC============================
@@ -34,11 +35,12 @@ void		ft_sort_three(t_stack a);
 void		ft_sort_till_five(t_stack *a, t_stack *b, int i, int argc);
 void		ft_sort_four(t_stack *a, t_stack *b, int i);
 void		ft_sort_five(t_stack *a, t_stack *b, int i);
-void		ft_sort_till_hundred(t_stack *a, t_stack *b, int i);
+void		ft_sort_till_hundred(t_stack *a, t_stack *b);
 //==================FIXED ARRAYS=======================
 t_stack		ft_remode_stacka(t_stack a);
 void		ft_smart_rotate_a(t_stack *a, int rows);
 void		ft_smart_rotate_b(t_stack *b, int rows);
+//void		ft_relocate_stackb(*b);
 //==================CHECKS ERRORS=====================
 void		ft_checks_args(int argc, char **argv);
 void		ft_checks_ints(t_stack a, int argc);
