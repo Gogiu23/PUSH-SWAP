@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/01 13:39:12 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/01 22:21:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	a = ft_array_generator(argc, i, count, argv);
 	b = ft_array_plus(argc);
 	ft_checks_ints(a, argc);
-	ft_print_stack(&a, &b);
+//	ft_print_stack(&a, &b);
 	if (argc == 3)
 		ft_sort_two(a, argc);
 	if (argc == 4)
@@ -35,6 +35,6 @@ int	main(int argc, char **argv)
 		ft_sort_till_five(&a, &b, i, argc);
 	if (argc > 6 && argc <= 100)
 		ft_sort_till_hundred(&a, &b);
-	ft_print_stack(&a, &b);
+//	ft_print_stack(&a, &b);
 	return (0);
 }
