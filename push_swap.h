@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/29 13:58:41 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/01 13:45:30 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_stack
 {
 	int		lenght;
 	long	**numbers;
-	int		*intervals;
+	long	*intervals;
 }	t_stack;
 
 //=====================SRC============================
@@ -59,4 +59,6 @@ void		ft_rrr(t_stack *a, t_stack *b);
 void		ft_second_rrr(t_stack b);
 void		ft_pb(t_stack *a, t_stack *b);
 void		ft_pa(t_stack *a, t_stack *b);
+//================PRINT STACK======================
+void		ft_print_stack(t_stack *a, t_stack *b);
 #endif
