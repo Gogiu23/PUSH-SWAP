@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:50:00 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/24 01:49:04 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/02 20:44:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./libft/libft.h"
@@ -19,19 +19,35 @@ void	ft_pa(t_stack *a, t_stack *b)
 
 	i = a->lenght;
 	rows = (a->lenght);
-	if (a->lenght != 0)
+	if (a->lenght > 0)
 	{
-		while (rows > 0)
+		while (i -- > 0)
 		{
-			a->numbers[i] = a->numbers[i - 1];
-			i--;
+			a->numbers[rows] = a->numbers[rows - 1];
 			rows--;
 		}
-		a->lenght++;
 	}
+	a->lenght++;
 	rows = 0;
-	a->numbers[0] = b->numbers[0];
-	b->numbers[rows] = b->numbers[rows + 1];
+	a->numbers[rows] = b->numbers[rows];
+	if (b->lenght > 0)
+		ft_remode_stackb(*b);
 	ft_printf("pa\n");
 	b->lenght--;
+}
+
+t_stack	ft_remode_stackb(t_stack b)
+{
+	int	rows;
+	int	i;
+
+	i = 0;
+	rows = 0;
+	while (i < b.lenght)
+	{
+		b.numbers[rows] = b.numbers[rows + 1];
+		rows++;
+		i++;
+	}
+	return (b);
 }
