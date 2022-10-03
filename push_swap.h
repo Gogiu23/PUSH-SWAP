@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/02 20:36:32 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/03 21:51:04 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ typedef struct s_stack
 //=====================SRC============================
 int			ft_free(t_stack a, int argc);
 t_stack		ft_array_generator(int argc, int i, int count, char **argv);
-t_stack		ft_assign_alias(t_stack a);
+t_stack		ft_assign_alias_a(t_stack *a);
+t_stack		ft_assign_alias_b(t_stack *b);
 void		ft_error(char *c);
 t_stack		ft_array_plus(int argc);
 void		ft_sort_two(t_stack a, int argc);
@@ -43,7 +44,6 @@ t_stack		ft_remode_stackb(t_stack b);
 void		ft_smart_rotate_a(t_stack *a, int rows);
 void		ft_smart_rotate_b(t_stack *b, int rows);
 //void		ft_relocate_stackb(*b);
-void		ft_generate_chunks(t_stack *a);
 //==================CHECKS ERRORS=====================
 void		ft_checks_args(int argc, char **argv);
 void		ft_checks_ints(t_stack a, int argc);

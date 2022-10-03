@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/02 20:45:40 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/03 21:53:35 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(int argc, char **argv)
 		ft_sort_three(a);
 	if (argc <= 6)
 		ft_sort_till_five(&a, &b, i, argc);
-	if (argc > 6 && argc <= 100)
+	if (argc > 6 && argc <= 101)
 		ft_sort_till_hundred(&a, &b);
-//	ft_print_stack(&a, &b);
+	ft_print_stack(&a, &b);
 	return (0);
 }

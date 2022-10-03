@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/27 22:50:11 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/03 18:25:38 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_pb(t_stack *a, t_stack *b)
 
 	i = b->lenght;
 	rows = b->lenght;
-	if (b->lenght > 0)
+	if (b->lenght >= 0)
 	{
 		while (i -- > 0)
 		{

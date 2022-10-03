@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:50:00 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/02 20:44:46 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/03 18:25:19 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./libft/libft.h"
@@ -19,7 +19,7 @@ void	ft_pa(t_stack *a, t_stack *b)
 
 	i = a->lenght;
 	rows = (a->lenght);
-	if (a->lenght > 0)
+	if (a->lenght >= 0)
 	{
 		while (i -- > 0)
 		{

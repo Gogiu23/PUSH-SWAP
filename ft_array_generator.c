@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/01 13:31:45 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/03 21:39:02 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 		count++;
 		i++;
 	}
-	ft_assign_alias(a);
+	ft_assign_alias_a(&a);
 	return (a);
 }
 
@@ -65,27 +65,48 @@ t_stack	ft_array_plus(int argc)
 	return (b);
 }
 
-t_stack	ft_assign_alias(t_stack a)
+t_stack	ft_assign_alias_a(t_stack *a)
 {
 	int	rows;
-	int	columns;
 	int	index;
 	int	counter;
 
 	rows = 0;
-	columns = 1;
-	while (rows < a.lenght)
+	while (rows < a->lenght)
 	{
 		counter = 0;
 		index = 0;
-		while (counter < a.lenght)
+		while (counter < a->lenght)
 		{
-			if (a.numbers[rows][0] > a.numbers[counter][0])
+			if (a->numbers[rows][0] > a->numbers[counter][0])
 				index++;
 			counter++;
 		}
-		a.numbers[rows][columns] = index;
+		a->numbers[rows][1] = index;
 		rows++;
 	}
-	return (a);
+	return (*a);
+}
+
+t_stack	ft_assign_alias_b(t_stack *b)
+{
+	int	rows;
+	int	index;
+	int	counter;
+
+	rows = 0;
+	while (rows < b->lenght)
+	{
+		counter = 0;
+		index = 0;
+		while (counter < b->lenght)
+		{
+			if (b->numbers[rows][0] > b->numbers[counter][0])
+				index++;
+			counter++;
+		}
+		b->numbers[rows][1] = index;
+		rows++;
+	}
+	return (*b);
 }
