@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 14:09:40 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/26 13:41:55 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:39:24 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ void	ft_rra(t_stack *a)
 	temp = a->numbers[i];
 	while (rows > 0)
 	{
-		a->numbers[i] = a->numbers[i - 1];
+		if (i > 0)
+		{
+			a->numbers[i] = a->numbers[i - 1];
+			i--;
+		}
 		rows--;
-		i--;
 	}
 	rows = 0;
 	a->numbers[rows] = temp;

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 14:11:09 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/25 16:28:17 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:40:38 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ void	ft_rrb(t_stack *b)
 	temp = b->numbers[i];
 	while (rows > 0)
 	{
-		b->numbers[i] = b->numbers[i - 1];
+		if (i > 0)
+		{
+			b->numbers[i] = b->numbers[i - 1];
+			i--;
+		}
 		rows--;
-		i--;
 	}
 	rows = 0;
 	b->numbers[rows] = temp;
-	free(temp);
 	ft_printf("rrb\n");
 }

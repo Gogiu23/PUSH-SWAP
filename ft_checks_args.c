@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 00:27:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/26 20:20:18 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:24:45 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	ft_checks_args(int argc, char **argv)
 		{
 			while (argv[a][b] >= '0' && argv[a][b] <= '9')
 				b++;
-		//	if (argv[a][b] == '\0')
-		//			ft_error("error\n");
 		}
 		else
 			ft_error("Error\n");
@@ -75,7 +73,6 @@ void	ft_aissorted(char **argv)
 			count++;
 		present++;
 	}
-//	ft_printf("Count en aissorted es: %d\n", count);
 	if (count == 0)
 		exit (EXIT_SUCCESS);
 }
