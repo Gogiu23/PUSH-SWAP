@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 19:49:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/03 21:51:14 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/04 16:24:35 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void	ft_sort_till_hundred(t_stack *a, t_stack *b)
 	int		full_lenght;
 	int		rows;
 	int		count;
+	int		counter;
+
+	counter = 0;
 	rows = 0;
 	full_lenght = 0;
 //	ft_print_stack(a, b);
@@ -41,12 +44,14 @@ void	ft_sort_till_hundred(t_stack *a, t_stack *b)
 //				ft_print_stack(a, b);
 				count--;
 				ft_assign_alias_a(a);
+				counter++;
 			}
 			else
 				rows++;
 		}
 //		full_lenght++;
 	}
+	ft_printf("Valor de counter: %d\n", counter);
 	ft_coming_back(a, b);
 }
 
