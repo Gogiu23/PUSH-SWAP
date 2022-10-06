@@ -32,6 +32,7 @@ SOURCES += ft_putnbr.c
 SOURCES += ft_putnbr_fd.c
 SOURCES += ft_putnbr_u.c
 SOURCES += ft_putstr.c
+SOURCES += ft_putstr_error.c
 SOURCES += ft_putstr_fd.c
 SOURCES += ft_split.c
 SOURCES += ft_strchr.c

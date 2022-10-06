@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 19:49:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/04 21:00:21 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/06 22:52:47 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,27 +46,37 @@ void	ft_sort_till_hundred(t_stack *a, t_stack *b)
 
 void	ft_coming_back(t_stack *a, t_stack *b)
 {
-	int	  max;
 	int	  count;
 	int	  rows;
 
 	rows = 0;
 	ft_assign_alias_b(b);
 	count = (b->lenght - 1);
-	max = (b->lenght);
 	while (b->lenght > 0)
 	{
-		while (count >= 0 && b->lenght > 0)
+		while (count > 0 && b->lenght > 0)
 		{
+			ft_print_stack(a, b);
+			if (count > 0 && b->numbers[rows][1] == (count - 1))
+			{
+				ft_smart_rotate_b(b, rows);
+				ft_pa(a, b);
+		//		rows = 0;
+			}
+			ft_printf("Valor de ccount: %d\n", count);
 			if (b->numbers[rows][1] == count)
 			{
 				ft_smart_rotate_b(b, rows);
 				ft_pa(a, b);
-				rows = 0;
 				count--;
+				rows = 0;
 			}
-			else
-				rows++;
+			ft_printf("Valor de ccount: %d\n", count);
+//			else
+			rows++;
+			if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
+				ft_sa(*a);
+			ft_print_stack(a, b);
 		}
 	}
 }
