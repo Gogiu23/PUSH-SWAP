@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 14:09:40 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/04 20:39:24 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:43:31 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_rra(t_stack *a)
 	int		rows;
 	long	*temp;
 	int		i;
-	
+
 	i = (a->lenght - 1);
 	rows = a->lenght;
 	temp = (long *)malloc(sizeof(long));

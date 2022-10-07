@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_till_hundred.c                             :+:      :+:    :+:   */
+/*   ft_sort_beyond_hundred.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 19:49:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/07 12:42:44 by gdominic         ###   ########.fr       */
+/*   Created: 2022/10/07 12:48:16 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/07 13:57:26 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void	ft_sort_till_hundred(t_stack *a, t_stack *b)
+void		ft_sort_beyond_hundred(t_stack *a, t_stack *b)
 {
 	int		rows;
 	int		count;
 
 	while (a->lenght > 0)
 	{
-		count = (a->lenght / 3);
+		count = (a->lenght / 6);
 		rows = 0;
 		while (count >= 0 && a->lenght > 0)
 		{
@@ -38,33 +38,32 @@ void	ft_sort_till_hundred(t_stack *a, t_stack *b)
 				rows++;
 		}
 	}
-	ft_coming_back(a, b);
+	ft_coming_back_again(a, b);
 }
 
-void	ft_coming_back(t_stack *a, t_stack *b)
+void	ft_coming_back_again(t_stack *a, t_stack *b)
 {
 	long	count;
 	int		rows;
 
 	rows = 0;
 	ft_assign_alias_b(b);
-	count = (b->lenght - 1);
+	count = b->lenght;
 	while (b->lenght > 0)
 	{
 		rows = 0;
+		count--;
 		while (rows < b->lenght)
 		{
-			if (b->numbers[rows][1] == (count - 1) \
-					|| b->numbers[rows][1] == count)
+			if (b->numbers[rows][1] >= (count - 1))
 			{
 				ft_smart_rotate_b(b, rows);
 				ft_pa(a, b);
 			}
 			else
 				rows++;
-			if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
-				ft_sa(*a);
 		}
-		count--;
+		if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
+			ft_sa(*a);
 	}
 }

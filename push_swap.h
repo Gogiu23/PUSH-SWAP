@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/06 22:41:51 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:51:29 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ void		ft_sort_till_five(t_stack *a, t_stack *b, int i, int argc);
 void		ft_sort_four(t_stack *a, t_stack *b, int i);
 void		ft_sort_five(t_stack *a, t_stack *b, int i);
 void		ft_sort_till_hundred(t_stack *a, t_stack *b);
+void		ft_sort_beyond_hundred(t_stack *a, t_stack *b);
 void		ft_coming_back(t_stack *a, t_stack *b);
+void		ft_coming_back_again(t_stack *a, t_stack *b);
 //==================FIXED ARRAYS=======================
 t_stack		ft_remode_stacka(t_stack a);
 t_stack		ft_remode_stackb(t_stack b);
 void		ft_smart_rotate_a(t_stack *a, int rows);
 void		ft_smart_rotate_b(t_stack *b, int rows);
-//void		ft_relocate_stackb(*b);
 //==================CHECKS ERRORS=====================
 void		ft_checks_args(int argc, char **argv);
 void		ft_checks_ints(t_stack a, int argc);
@@ -64,4 +65,5 @@ void		ft_pb(t_stack *a, t_stack *b);
 void		ft_pa(t_stack *a, t_stack *b);
 //================PRINT STACK======================
 void		ft_print_stack(t_stack *a, t_stack *b);
+
 #endif
