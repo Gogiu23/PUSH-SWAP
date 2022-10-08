@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:48:16 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/07 13:57:26 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/08 13:49:30 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		ft_sort_beyond_hundred(t_stack *a, t_stack *b)
 
 	while (a->lenght > 0)
 	{
-		count = (a->lenght / 6);
+		count = (a->lenght / 8);
 		rows = 0;
 		while (count >= 0 && a->lenght > 0)
 		{
@@ -53,17 +53,24 @@ void	ft_coming_back_again(t_stack *a, t_stack *b)
 	{
 		rows = 0;
 		count--;
-		while (rows < b->lenght)
+		while (count > 0 && rows < b->lenght)
 		{
-			if (b->numbers[rows][1] >= (count - 1))
+		//	//ft_print_stack(a, b);
+			if (b->numbers[rows][1] == count)
 			{
-				ft_smart_rotate_b(b, rows);
+				//ft_printf("Hay un bucle aqui\n");
+				ft_smart_rotate_plus_b(a, b, rows, count);
 				ft_pa(a, b);
 			}
-			else
-				rows++;
+			ft_printf("valor de rows: %d\n", rows);
+			ft_printf("Valor de b->lenght: %d\n", b->lenght);
+			ft_printf("Valor de count: %d\n", count);
+			rows++;
 		}
+//		ft_print_stack(a, b);
 		if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
 			ft_sa(*a);
+		ft_assign_alias_a(a);
 	}
+	//ft_print_stack(a, b);
 }

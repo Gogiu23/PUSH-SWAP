@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:09:11 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/07 12:40:34 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/08 13:59:52 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,33 @@ void	ft_smart_rotate_b(t_stack *b, int rows)
 		while (i <= (b->lenght - 1))
 		{
 			ft_rrb(b);
+			i++;
+		}
+	}
+	else
+	{
+		while (i -- > 0)
+			ft_rb(b);
+	}	
+}
+
+void	ft_smart_rotate_plus_b(t_stack *a, t_stack *b, int rows, int count)
+{
+	int	i;
+
+	i = rows;
+	ft_printf("Valor de count: %d\n", count);
+	if (rows >= (b->lenght / 2))
+	{
+		while (i <= (b->lenght - 1))
+		{
+			if (b->numbers[0][1] == (count - 1))
+			{
+				ft_pa(a, b);
+				ft_smart_rotate_plus_b(a, b, (rows - 1), 0);
+			}
+			else
+				ft_rrb(b);
 			i++;
 		}
 	}
