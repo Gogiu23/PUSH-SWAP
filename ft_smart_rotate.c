@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:09:11 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/08 13:59:52 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:50:47 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_smart_rotate_plus_b(t_stack *a, t_stack *b, int rows, int count)
 			if (b->numbers[0][1] == (count - 1))
 			{
 				ft_pa(a, b);
-				ft_smart_rotate_plus_b(a, b, (rows - 1), 0);
+			//	i++;
 			}
 			else
 				ft_rrb(b);
@@ -75,7 +75,15 @@ void	ft_smart_rotate_plus_b(t_stack *a, t_stack *b, int rows, int count)
 	}
 	else
 	{
-		while (i -- > 0)
+		while (i >= 0)
+		{
+			if (b->numbers[0][1] == (count - 1))
+			{
+				ft_pa(a, b);
+			//	i++;
+			}
 			ft_rb(b);
+			i--;
+		}
 	}	
 }

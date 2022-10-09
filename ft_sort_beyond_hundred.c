@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:48:16 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/08 13:49:30 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:55:08 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ void		ft_sort_beyond_hundred(t_stack *a, t_stack *b)
 
 void	ft_coming_back_again(t_stack *a, t_stack *b)
 {
-	long	count;
+	int	  	count;
 	int		rows;
 
 	rows = 0;
 	ft_assign_alias_b(b);
 	count = b->lenght;
-	while (b->lenght > 0)
+	while (count >= 0)
 	{
 		rows = 0;
 		count--;
-		while (count > 0 && rows < b->lenght)
+		while (count >= 0 && rows < b->lenght)
 		{
 		//	//ft_print_stack(a, b);
 			if (b->numbers[rows][1] == count)
@@ -66,11 +66,14 @@ void	ft_coming_back_again(t_stack *a, t_stack *b)
 			ft_printf("Valor de b->lenght: %d\n", b->lenght);
 			ft_printf("Valor de count: %d\n", count);
 			rows++;
+			if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
+				ft_sa(*a);
 		}
-//		ft_print_stack(a, b);
-		if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
-			ft_sa(*a);
-		ft_assign_alias_a(a);
+		ft_printf("valor de rows fuera del while: %d\n", rows);
+		ft_printf("Valor de b->lenght fuera del while: %d\n", b->lenght);
+		ft_printf("Valor de count fuera del while: %d\n", count);
+		ft_print_stack(a, b);
+//		ft_assign_alias_a(a);
 	}
 	//ft_print_stack(a, b);
 }
