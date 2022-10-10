@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:48:16 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/09 13:55:08 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/10 00:22:07 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_coming_back_again(t_stack *a, t_stack *b)
 	{
 		rows = 0;
 		count--;
-		while (count >= 0 && rows < b->lenght)
+		while (rows < b->lenght)
 		{
 		//	//ft_print_stack(a, b);
 			if (b->numbers[rows][1] == count)

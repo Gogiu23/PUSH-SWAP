@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/08 11:25:37 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/10 03:52:03 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_stack		ft_remode_stacka(t_stack a);
 t_stack		ft_remode_stackb(t_stack b);
 void		ft_smart_rotate_a(t_stack *a, int rows);
 void		ft_smart_rotate_b(t_stack *b, int rows);
-void		ft_smart_rotate_plus_b(t_stack *a, t_stack *b, int rows, int count);
+void		ft_smart_rotate_plus_b(t_stack *a, t_stack *b, int rows);
 //==================CHECKS ERRORS=====================
 void		ft_checks_args(int argc, char **argv);
 void		ft_checks_ints(t_stack a, int argc);

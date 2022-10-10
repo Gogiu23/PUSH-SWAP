@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 19:49:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/07 12:42:44 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/10 04:03:53 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,30 +41,56 @@ void	ft_sort_till_hundred(t_stack *a, t_stack *b)
 	ft_coming_back(a, b);
 }
 
+//void	ft_coming_back(t_stack *a, t_stack *b)
+//{
+//	long	count;
+//	int		rows;
+//
+//	rows = 0;
+//	ft_assign_alias_b(b);
+//	count = (b->lenght - 1);
+//	while (b->lenght > 0)
+//	{
+//		rows = 0;
+//		while (rows < b->lenght)
+//		{
+//			if (b->numbers[rows][1] == (count - 1) \
+//					|| b->numbers[rows][1] == count)
+//			{
+//				ft_smart_rotate_b(b, rows);
+//				ft_pa(a, b);
+//			}
+//			else
+//				rows++;
+//			if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
+//				ft_sa(*a);
+//		}
+//		count--;
+//	}
+//}
+
 void	ft_coming_back(t_stack *a, t_stack *b)
 {
-	long	count;
-	int		rows;
+	int	rows;
 
-	rows = 0;
+	ft_print_stack(a, b);
 	ft_assign_alias_b(b);
-	count = (b->lenght - 1);
 	while (b->lenght > 0)
 	{
 		rows = 0;
 		while (rows < b->lenght)
 		{
-			if (b->numbers[rows][1] == (count - 1) \
-					|| b->numbers[rows][1] == count)
+			if (b->numbers[rows][1] == b->lenght -1)
 			{
-				ft_smart_rotate_b(b, rows);
+				ft_smart_rotate_plus_b(a, b, rows);
 				ft_pa(a, b);
+				if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
+					ft_sa(*a);
+				break ;
 			}
-			else
-				rows++;
-			if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
-				ft_sa(*a);
+			rows++;
+			//ft_print_stack(a, b);
+			ft_assign_alias_a(a);
 		}
-		count--;
 	}
 }
