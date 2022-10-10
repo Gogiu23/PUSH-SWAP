@@ -6,51 +6,48 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/03 21:40:00 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:05:14 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "push_swap.h"
 
-void	ft_sort_two(t_stack a, int argc)
+void	ft_sort_two(t_stack *a)
 {
 	int	count;
 
 	count = 0;
-	while (count < (argc -2))
-	{
-		if (a.numbers[count][0] < a.numbers[count + 1][0])
-			exit (1);
-		else
-		{
-			ft_sa(a);
-		}
-		count++;
-	}
+	ft_printf("Valor de a->lenght: %d\n", a->lenght);
+	ft_printf("Valor de a->numbers[0][0]: %d\n", a->numbers[0][0]);
+	ft_printf("Valor de a->numbers[1][0]: %d\n", a->numbers[1][0]);
+	if (a->numbers[count][0] < a->numbers[count + 1][0])
+		exit (1);
+	else
+		ft_sa(a);
 }
 
-void	ft_sort_three(t_stack a)
+void	ft_sort_three(t_stack *a)
 {
 	int	count;
 
 	count = 0;
-	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 2)
+	if (a->numbers[count][1] == 1 && a->numbers[count + 2][1] == 2)
 		ft_sa(a);
-	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 1)
-		ft_ra(&a);
-	if (a.numbers[count][1] == 2 && a.numbers[count + 2][1] == 0)
+	if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 1)
+		ft_ra(a);
+	if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 0)
 	{
-		ft_ra(&a);
+		ft_ra(a);
 		ft_sa(a);
 	}
-	if (a.numbers[count][1] == 1 && a.numbers[count + 2][1] == 0)
+	if (a->numbers[count][1] == 1 && a->numbers[count + 2][1] == 0)
 	{
-		ft_rra(&a);
+		ft_rra(a);
 	}
-	if (a.numbers[count][1] == 0 && a.numbers[count + 2][1] == 1)
+	if (a->numbers[count][1] == 0 && a->numbers[count + 2][1] == 1)
 	{
-		ft_rra(&a);
+		ft_rra(a);
 		ft_sa(a);
 	}
 }
@@ -80,7 +77,7 @@ void	ft_sort_four(t_stack *a, t_stack *b, int i)
 		rows++;
 	}
 	ft_assign_alias_a(a);
-	ft_sort_three(*a);
+	ft_sort_three(a);
 	while (b->lenght > 0)
 		ft_pa(a, b);
 }

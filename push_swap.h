@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/10 03:52:03 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:08:45 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ t_stack		ft_assign_alias_a(t_stack *a);
 t_stack		ft_assign_alias_b(t_stack *b);
 void		ft_error(char *c);
 t_stack		ft_array_plus(int argc);
-void		ft_sort_two(t_stack a, int argc);
-void		ft_sort_three(t_stack a);
+void		ft_sort_two(t_stack *a);
+void		ft_sort_three(t_stack *a);
 void		ft_sort_till_five(t_stack *a, t_stack *b, int i, int argc);
 void		ft_sort_four(t_stack *a, t_stack *b, int i);
 void		ft_sort_five(t_stack *a, t_stack *b, int i);
@@ -52,7 +52,7 @@ void		ft_checks_ints(t_stack a, int argc);
 void		ft_checks_duplicates(char **argv);
 void		ft_aissorted(char **argv);
 //==================MOVEMENTS=========================
-void		ft_sa(t_stack a);
+void		ft_sa(t_stack *a);
 void		ft_sb(t_stack b);
 void		ft_ra(t_stack *a);
 void		ft_rb(t_stack *b);

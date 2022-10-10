@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:48:16 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/10 00:22:07 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:20:28 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,15 @@ void	ft_coming_back_again(t_stack *a, t_stack *b)
 			if (b->numbers[rows][1] == count)
 			{
 				//ft_printf("Hay un bucle aqui\n");
-				ft_smart_rotate_plus_b(a, b, rows, count);
+//				ft_smart_rotate_plus_b(a, b, rows, count);
 				ft_pa(a, b);
 			}
 			ft_printf("valor de rows: %d\n", rows);
 			ft_printf("Valor de b->lenght: %d\n", b->lenght);
 			ft_printf("Valor de count: %d\n", count);
 			rows++;
-			if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
-				ft_sa(*a);
+			if (a->lenght > 1 && a->numbers[1] < a->numbers[0])
+				ft_sa(a);
 		}
 		ft_printf("valor de rows fuera del while: %d\n", rows);
 		ft_printf("Valor de b->lenght fuera del while: %d\n", b->lenght);

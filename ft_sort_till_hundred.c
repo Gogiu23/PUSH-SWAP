@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 19:49:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/10 04:03:53 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:17:01 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,25 +72,35 @@ void	ft_sort_till_hundred(t_stack *a, t_stack *b)
 void	ft_coming_back(t_stack *a, t_stack *b)
 {
 	int	rows;
+	int	count;
 
-	ft_print_stack(a, b);
 	ft_assign_alias_b(b);
-	while (b->lenght > 0)
+//	ft_print_stack(a, b);
+	while (b->numbers)
 	{
+		count = b->lenght - 1;
 		rows = 0;
 		while (rows < b->lenght)
 		{
-			if (b->numbers[rows][1] == b->lenght -1)
+			if (b->lenght > 0 && b->numbers[rows][1] == count)
 			{
+				ft_printf("Valor de b->lenght real: %d\n", b->lenght - 1);
 				ft_smart_rotate_plus_b(a, b, rows);
-				ft_pa(a, b);
+				ft_printf("Vuelvo AQUI y pa se hace en coming back\n");
+				if (b->lenght > 0 && b->numbers[0][1] >= count - 1)
+					ft_pa(a, b);
+				ft_printf("Vuelvo AQUI y pa se hace en coming back\n");
+			//	ft_print_stack(a, b);
 				if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
-					ft_sa(*a);
-				break ;
+				{
+					ft_sa(a);
+				//	b->lenght--;
+				}
+				ft_print_stack(a, b);
 			}
 			rows++;
-			//ft_print_stack(a, b);
-			ft_assign_alias_a(a);
+//			ft_printf("Valor de b->lenght: %d\n", b->lenght);
+//			ft_printf("Valor rows: %d\n", rows);
 		}
 	}
 }
