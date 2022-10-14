@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rra.c                                           :+:      :+:    :+:   */
+/*   ft_rrr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 14:09:40 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/07 12:43:31 by gdominic         ###   ########.fr       */
+/*   Created: 2022/09/25 16:30:21 by gdominic          #+#    #+#             */
+/*   Updated: 2022/09/25 16:59:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_rra(t_stack *a)
+void	ft_rrr(t_stack *a, t_stack *b)
 {
 	int		rows;
 	long	*temp;
@@ -27,14 +27,36 @@ void	ft_rra(t_stack *a)
 	temp = a->numbers[i];
 	while (rows > 0)
 	{
-		if (i > 0)
-		{
-			a->numbers[i] = a->numbers[i - 1];
-			i--;
-		}
+		a->numbers[i] = a->numbers[i - 1];
 		rows--;
+		i--;
 	}
 	rows = 0;
 	a->numbers[rows] = temp;
-	ft_printf("rra\n");
+	free(temp);
+	ft_second_rrr(*b);
+	ft_printf("rrr\n");
+}
+
+void	ft_second_rrr(t_stack b)
+{
+	int		rows;
+	long	*temp;
+	int		i;
+
+	i = (b.lenght - 1);
+	rows = b.lenght;
+	temp = (long *)malloc(sizeof(long));
+	if (!temp)
+		free(temp);
+	temp = b.numbers[i];
+	while (rows > 0)
+	{
+		b.numbers[i] = b.numbers[i - 1];
+		rows--;
+		i--;
+	}
+	rows = 0;
+	b.numbers[rows] = temp;
+	free(temp);
 }

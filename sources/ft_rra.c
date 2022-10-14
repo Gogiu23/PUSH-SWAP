@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra.c                                            :+:      :+:    :+:   */
+/*   ft_rra.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 03:53:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/22 02:29:58 by gdominic         ###   ########.fr       */
+/*   Created: 2022/09/25 14:09:40 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/07 12:43:31 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_ra(t_stack *a)
+void	ft_rra(t_stack *a)
 {
 	int		rows;
-	int		columns;
-	int		max;
 	long	*temp;
+	int		i;
 
-	columns = 0;
-	max = (a->lenght - 1);
-	rows = 0;
+	i = (a->lenght - 1);
+	rows = a->lenght;
 	temp = (long *)malloc(sizeof(long));
 	if (!temp)
 		free(temp);
-	temp = a->numbers[rows];
-	while (rows < max)
+	temp = a->numbers[i];
+	while (rows > 0)
 	{
-		a->numbers[rows] = a->numbers[rows + 1];
-		rows++;
+		if (i > 0)
+		{
+			a->numbers[i] = a->numbers[i - 1];
+			i--;
+		}
+		rows--;
 	}
+	rows = 0;
 	a->numbers[rows] = temp;
-	ft_printf("ra\n");
+	ft_printf("rra\n");
 }

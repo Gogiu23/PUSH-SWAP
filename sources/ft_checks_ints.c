@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_mem.c                                      :+:      :+:    :+:   */
+/*   ft_checks_ints.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/20 21:21:07 by gdominic         ###   ########.fr       */
+/*   Created: 2022/08/19 00:27:32 by gdominic          #+#    #+#             */
+/*   Updated: 2022/09/21 20:32:51 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "./libft/libft.h"
-#include "push_swap.h"
 
-int	ft_free(t_stack a, int argc)
+#include "../libft/libft.h"
+#include "../includes/push_swap.h"
+
+void	ft_checks_ints(t_stack a, int argc)
 {
-	while (argc > 0)
+	int	i;
+
+	i = 0;
+	while (i < (argc - 1))
 	{
-		free(a.numbers[argc]);
-		argc--;
+		if (a.numbers[i][0] < (INT_MIN) || a.numbers[i][0] > (INT_MAX))
+			ft_error("Error\n");
+		i++;
 	}
-	free(a.numbers);
-	return (0);
 }

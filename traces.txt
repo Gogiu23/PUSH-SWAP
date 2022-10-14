@@ -1,4 +1,0 @@
-Multible size <= 100
-OK
-Multible size <= 500
-OK

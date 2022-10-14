@@ -1,28 +1,44 @@
-NAME		= push_swap
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-OBJS		= $(SOURCES:.c=.o)
+-include sources.mk
+-include includes.mk 
+
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
+
+NAME		= push_swap
+BONUS		= checker
+
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
 MAKE		= libft.a
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -I ./libft  
 RM			= rm -rf
-SOURCES		= push_swap.c ft_checks_args.c ft_array_generator.c ft_checks_ints.c \
-			  ft_free_mem.c ft_error.c ft_sa.c ft_sort.c ft_ra.c ft_pb.c ft_pa.c \
-			  ft_rb.c ft_sb.c ft_rra.c ft_rrb.c ft_rrr.c ft_smart_rotate.c \
-			  ft_sort_till_hundred.c ft_print_stack.c ft_sort_beyond_hundred.c\
-			  ft_smart_rotate_plus.c
+MKFL		= Makefile
+MD			= mkdir -p
 
-INCLUDE		= push_swap.h
+#=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=#
+
+INCLUDE_PATH	=./includes
+
+OBJS			=$(SOURCES:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(MAKE) $(OBJS) $(INCLUDE)
-	$(CC) $(CFLAGS) $(OBJS) $< -o $@
-	@echo "Compilado!!"
+$(NAME): $(MAKE) $(OBJS) $(INCLUDES)
+	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
+	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
+	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
 
 $(MAKE):
 	make -C libft
 	cp libft/libft.a .
+
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
+
+gmk:
+	@find sources -name '*.c' | sed 's/^/SOURCES += /' > sources.mk
+	@find includes -name '*.h' | sed 's/^/INCLUDES += /' > includes.mk
 
 clean:
 	@make fclean -C libft
@@ -37,5 +53,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re make
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
+.PHONY: all clean fclean re make gmk
+
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#

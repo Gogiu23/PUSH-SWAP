@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checks_ints.c                                   :+:      :+:    :+:   */
+/*   ft_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/19 00:27:32 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/21 20:32:51 by gdominic         ###   ########.fr       */
+/*   Created: 2022/08/25 05:01:18 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/11 19:25:50 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_checks_ints(t_stack a, int argc)
+void	ft_sa(t_stack *a)
 {
-	int	i;
+	int		columns;
+	int		rows;
+	long	**temp;
 
-	i = 0;
-	while (i < (argc - 1))
-	{
-		if (a.numbers[i][0] < (INT_MIN) || a.numbers[i][0] > (INT_MAX))
-			ft_error("Error\n");
-		i++;
-	}
+	rows = 0;
+	columns = 0;
+	temp = (long **)malloc(sizeof(long *) * 2);
+	if (!temp)
+		free(temp);
+	temp[0] = (long *)malloc(sizeof(long) * 2);
+	if (!temp[rows])
+		free(temp);
+	temp[0] = a->numbers[0];
+	a->numbers[0] = a->numbers[1];
+	a->numbers[1] = temp[0];
+	ft_printf("sa\n");
 }

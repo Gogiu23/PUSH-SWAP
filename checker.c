@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sb.c                                            :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 18:23:28 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/07 12:43:48 by gdominic         ###   ########.fr       */
+/*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/14 14:00:01 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include "push_swap.h"
+#include "../libft/libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_sb(t_stack b)
+int	main(int argc, char **argv)
 {
-	int		columns;
-	int		rows;
-	long	*temp;
+	int			count;
+	int			i;
+	t_stack		a;
+	t_stack		b;
 
-	rows = 0;
-	columns = 0;
-	temp = (long *)malloc(sizeof(long));
-	if (!temp)
-		free(temp);
-	*temp = b.numbers[rows][columns];
-	b.numbers[rows][columns] = b.numbers[rows + 1][columns];
-	b.numbers[rows + 1][columns] = *temp;
-	ft_printf("sb\n");
-}
+	i = 1;
+	count = 0;
+	ft_checks_args_bonus(argc, argv);
+	a = ft_array_generator_bonus(argc, i, count, argv);
+	b = ft_array_plus_bonus(argc);
+	ft_checks_ints_bonus(a, argc);
+}	
