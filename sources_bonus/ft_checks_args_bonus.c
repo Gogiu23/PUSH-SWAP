@@ -6,12 +6,12 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:52:31 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/14 14:01:57 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:56:12 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include "../includes/push_swap.h"
+#include "../includes_bonus/push_swap_bonus.h"
 
 
 void	ft_checks_args_bonus(int argc, char **argv)
@@ -33,10 +33,10 @@ void	ft_checks_args_bonus(int argc, char **argv)
 				b++;
 		}
 		else
-			ft_error("Error\n");
+			ft_error_bonus("Error\n");
 		a++;
 	}
-	ft_checks_duplicates(argv);
+	ft_checks_duplicates_bonus(argv);
 }
 
 void	ft_checks_duplicates_bonus(char **argv)
@@ -54,9 +54,26 @@ void	ft_checks_duplicates_bonus(char **argv)
 			if (ft_strcmp(argv[previous], argv[forward]) != 0)
 				forward++;
 			else
-				ft_error("Error\n");
+				ft_error_bonus("Error\n");
 		}
 		previous++;
 	}
-	ft_aissorted(argv);
+	ft_aissorted_bonus(argv);
+}
+
+void	ft_aissorted_bonus(char **argv)
+{
+	int	present;
+	int	count;
+
+	present = 1;
+	count = 0;
+	while (argv[present + 1])
+	{
+		if (ft_atoi(argv[present]) > ft_atoi(argv[present + 1]))
+			count++;
+		present++;
+	}
+	if (count == 0)
+		exit (EXIT_SUCCESS);
 }

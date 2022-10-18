@@ -2,11 +2,12 @@
 
 -include sources.mk
 -include includes.mk 
+-include sources_bonus.mk
+-include includes_bonus.mk
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
 NAME		= push_swap
-BONUS		= checker
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
@@ -36,26 +37,45 @@ $(MAKE):
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
+#=-=-=-=-=-=-=-=-=- BONUS =-=-=-=-=-=-=-=-=-=-=-=-=-#
+
+NAME_BONUS				= checker
+
+INCLUDE_PATH_BONUS	=./includes_bonus
+
+OBJS_BONUS			=$(SOURCES_BONUS:.c=.o)
+
+all: $(NAME_BONUS)
+
+bonus: $(MAKE) $(OBJS_BONUS) $(INCLUDES_BONUS) $(MKFL)
+	$(CC) $(CFLAGS) -I $(INCLUDE_PATH_BONUS) $(OBJS_BONUS) $< -o $(NAME_BONUS)
+	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Bonus compiled and ready[√]$(RESET)\n"
+	
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
+
 gmk:
 	@find sources -name '*.c' | sed 's/^/SOURCES += /' > sources.mk
 	@find includes -name '*.h' | sed 's/^/INCLUDES += /' > includes.mk
-	@find sources -name '*_bonus.c' | sed 's/^/SOURCES += /' > sources.mk
+
+gmk_bonus:
+	@find sources_bonus -name '*.c' | sed 's/^/SOURCES_BONUS += /' > sources_bonus.mk
+	@find includes_bonus -name '*.h' | sed 's/^/INCLUDES_BONUS += /' > includes_bonus.mk
 
 clean:
 	@make fclean -C libft
 	@$(RM) $(MAKE)
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(OBJS_BONUS)
 	@$(RM) a.out
 	@echo "Cleaning all the .o in your libft and project!"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(NAME_BONUS)
 	@echo "Cleaning all the compiled library!"
 
 re: fclean all
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-.PHONY: all clean fclean re make gmk
+.PHONY: all clean fclean re make gmk bonus gmk_bonus
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#

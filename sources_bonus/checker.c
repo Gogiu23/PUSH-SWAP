@@ -6,12 +6,12 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/15 23:47:48 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:16:59 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include "../includes/push_swap.h"
+#include "../includes_bonus/push_swap_bonus.h"
 
 int	main(int argc, char **argv)
 {
