@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_commands_bonus.c                          :+:      :+:    :+:   */
+/*   ft_ra_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 13:07:15 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/19 15:54:44 by gdominic         ###   ########.fr       */
+/*   Created: 2022/10/19 14:41:14 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/19 15:43:52 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes_bonus/push_swap_bonus.h"
 
-void	ft_check_commands(char *command, t_stack *a, t_stack *b)
+void	ft_ra_bonus(t_stack *a)
 {
-	b = 0;
-	if (ft_strncmp(command, "sa\n", 3) == 0)
-		ft_sa_bonus(a);
-	if (ft_strncmp(command, "ra\n", 3) == 0)
-		ft_ra_bonus(a);
-}
+	int		rows;
+	int		columns;
+	int		max;
+	long	*temp;
 
-void	ft_check_stacks_bonus(t_stack *a, t_stack *b)
-{
-
+	columns = 0;
+	max = (a->lenght - 1);
+	rows = 0;
+	temp = (long *)malloc(sizeof(long));
+	if (!temp)
+		free(temp);
+	temp = a->numbers[rows];
+	while (rows < max)
+	{
+		a->numbers[rows] = a->numbers[rows + 1];
+		rows++;
+	}
+	a->numbers[rows] = temp;
+	ft_printf("ra\n");
 }

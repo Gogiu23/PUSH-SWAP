@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:44 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/19 13:29:51 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/19 15:47:37 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void		ft_aissorted_bonus(char **argv);
 void		ft_check_commands(char *command, t_stack *a, t_stack *b);
 //============== MOVEMENTS BONUS =================
 void		ft_sa_bonus(t_stack *a);
+void		ft_ra_bonus(t_stack *a);
 
 #endif
