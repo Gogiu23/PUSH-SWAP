@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_sa_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/19 13:27:26 by gdominic         ###   ########.fr       */
+/*   Created: 2022/10/19 13:36:03 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/19 13:36:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes_bonus/push_swap_bonus.h"
 
-int	main(int argc, char **argv)
+void	ft_sa_bonus(t_stack *a)
 {
-	int			count;
-	int			i;
-	t_stack		a;
-	t_stack		b;
-	char		*command;
+	int		columns;
+	int		rows;
+	long	**temp;
 
-	command = 0;
-	i = 1;
-	count = 0;
-	ft_checks_args_bonus(argc, argv);
-	a = ft_array_generator_bonus(argc, i, count, argv);
-	b = ft_array_plus_bonus(argc);
-	ft_checks_ints_bonus(a, argc);
-	command = get_next_line(0);
-	ft_check_commands(command, &a, &b);
-
-}	
+	rows = 0;
+	columns = 0;
+	temp = (long **)malloc(sizeof(long *) * 2);
+	if (!temp)
+		free(temp);
+	temp[0] = (long *)malloc(sizeof(long) * 2);
+	if (!temp[rows])
+		free(temp);
+	temp[0] = a->numbers[0];
+	a->numbers[0] = a->numbers[1];
+	a->numbers[1] = temp[0];
+	ft_printf("sa\n");
+}

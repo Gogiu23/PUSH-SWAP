@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_check_commands_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/19 13:27:26 by gdominic         ###   ########.fr       */
+/*   Created: 2022/10/19 13:07:15 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/19 13:34:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes_bonus/push_swap_bonus.h"
 
-int	main(int argc, char **argv)
+void	ft_check_commands(char *command, t_stack *a, t_stack *b)
 {
-	int			count;
-	int			i;
-	t_stack		a;
-	t_stack		b;
-	char		*command;
-
-	command = 0;
-	i = 1;
-	count = 0;
-	ft_checks_args_bonus(argc, argv);
-	a = ft_array_generator_bonus(argc, i, count, argv);
-	b = ft_array_plus_bonus(argc);
-	ft_checks_ints_bonus(a, argc);
-	command = get_next_line(0);
-	ft_check_commands(command, &a, &b);
-
-}	
+	b = 0;
+	if (ft_strncmp(command, "sa\n", 3) == 0)
+		ft_sa_bonus(a);
+}
