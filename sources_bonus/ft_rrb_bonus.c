@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   ft_rrb_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/20 17:53:01 by gdominic         ###   ########.fr       */
+/*   Created: 2022/10/20 18:44:27 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/20 18:45:15 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes_bonus/push_swap_bonus.h"
 
-int	main(int argc, char **argv)
+void	ft_rrb_bonus(t_stack *b)
 {
-	int			count;
-	int			i;
-	t_stack		a;
-	t_stack		b;
-	char		*command;
+	int		rows;
+	long	*temp;
+	int		i;
 
-	command = 0;
-	i = 1;
-	count = 0;
-	ft_checks_args_bonus(argc, argv);
-	a = ft_array_generator_bonus(argc, i, count, argv);
-	b = ft_array_plus_bonus(argc);
-	ft_checks_ints_bonus(a, argc);
-	command = get_next_line(0);
-	while (command)
+	i = (b->lenght - 1);
+	rows = b->lenght;
+	temp = (long *)malloc(sizeof(long));
+	if (!temp)
+		free(temp);
+	temp = b->numbers[i];
+	while (rows > 0)
 	{
-		ft_check_commands(command, &a, &b);
-		command = get_next_line(0);
+		if (i > 0)
+		{
+			b->numbers[i] = b->numbers[i - 1];
+			i--;
+		}
+		rows--;
 	}
-	free(command);
-	command = NULL;
-}	
+	rows = 0;
+	b->numbers[rows] = temp;
+	ft_printf("rrb\n");
+}

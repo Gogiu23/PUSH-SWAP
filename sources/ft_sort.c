@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/10 14:05:14 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/20 21:24:03 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ void	ft_sort_two(t_stack *a)
 	int	count;
 
 	count = 0;
-	ft_printf("Valor de a->lenght: %d\n", a->lenght);
-	ft_printf("Valor de a->numbers[0][0]: %d\n", a->numbers[0][0]);
-	ft_printf("Valor de a->numbers[1][0]: %d\n", a->numbers[1][0]);
 	if (a->numbers[count][0] < a->numbers[count + 1][0])
 		exit (1);
 	else

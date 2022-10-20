@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:44 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/19 15:47:37 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/20 19:28:00 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,24 @@ int			ft_free_bonus(t_stack a, int argc);
 void		ft_error_bonus(char *c);
 void		ft_aissorted_bonus(char **argv);
 void		ft_check_commands(char *command, t_stack *a, t_stack *b);
+
+//============== EDIT ARRAYS ====================
+t_stack		ft_remode_stackb_bonus(t_stack b);
+t_stack		ft_remode_stacka_bonus(t_stack a);
+
 //============== MOVEMENTS BONUS =================
 void		ft_sa_bonus(t_stack *a);
+void		ft_sb_bonus(t_stack b);
+void		ft_ss_bonus(t_stack *a, t_stack *b);
 void		ft_ra_bonus(t_stack *a);
+void		ft_rb_bonus(t_stack *b);
+void		ft_rr_bonus(t_stack *a, t_stack *b);
+void		ft_second_rr_bonus(t_stack b);
+void		ft_rra_bonus(t_stack *a);
+void		ft_rrb_bonus(t_stack *b);
+void		ft_rrr_bonus(t_stack *a, t_stack *b);
+void		ft_second_rrr_bonus(t_stack b);
+void		ft_pa_bonus(t_stack *a, t_stack *b);
+void		ft_pb_bonus(t_stack *a, t_stack *b);
 
 #endif
