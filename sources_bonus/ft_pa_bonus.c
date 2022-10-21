@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:48:34 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/20 18:51:14 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:55:40 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ft_pa_bonus(t_stack *a, t_stack *b)
 	a->numbers[rows] = b->numbers[rows];
 	if (b->lenght > 0)
 		ft_remode_stackb_bonus(*b);
-	ft_printf("pa\n");
 	b->lenght--;
 }
 

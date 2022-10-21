@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:44 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/20 19:28:00 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:47:48 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	long	*intervals;
 }	t_stack;
 
-//=============== BONUS ==========================
+//=============== CHECKS ERRORS ===================
 void		ft_checks_args_bonus(int argc, char **argv);
 void		ft_checks_duplicates_bonus(char **argv);
 t_stack		ft_array_generator_bonus(int argc, int i, int count, char **argv);
@@ -36,6 +36,8 @@ int			ft_free_bonus(t_stack a, int argc);
 void		ft_error_bonus(char *c);
 void		ft_aissorted_bonus(char **argv);
 void		ft_check_commands(char *command, t_stack *a, t_stack *b);
+void		ft_checks_stacks_bonus(t_stack *a, t_stack *b);
+int			ft_stack_is_sorted_bonus(t_stack *a);
 
 //============== EDIT ARRAYS ====================
 t_stack		ft_remode_stackb_bonus(t_stack b);

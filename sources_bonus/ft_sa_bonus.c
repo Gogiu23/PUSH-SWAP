@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:36:03 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/19 13:36:44 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:57:37 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void	ft_sa_bonus(t_stack *a)
 	temp[0] = a->numbers[0];
 	a->numbers[0] = a->numbers[1];
 	a->numbers[1] = temp[0];
-	ft_printf("sa\n");
 }

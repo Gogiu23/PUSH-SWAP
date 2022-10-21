@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:24:51 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/20 19:28:45 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:57:45 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ void	ft_sb_bonus(t_stack b)
 	*temp = b.numbers[rows][columns];
 	b.numbers[rows][columns] = b.numbers[rows + 1][columns];
 	b.numbers[rows + 1][columns] = *temp;
-	ft_printf("sb\n");
 }

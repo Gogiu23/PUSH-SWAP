@@ -6,12 +6,12 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:39:49 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/20 18:40:29 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:58:20 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include "../includes/push_swap.h"
+#include "../includes_bonus/push_swap_bonus.h"
 
 void	ft_rb_bonus(t_stack *b)
 {
@@ -33,5 +33,4 @@ void	ft_rb_bonus(t_stack *b)
 		rows++;
 	}
 	b->numbers[rows] = temp;
-	ft_printf("rb\n");
 }

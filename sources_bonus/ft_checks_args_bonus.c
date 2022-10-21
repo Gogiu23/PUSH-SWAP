@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:52:31 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/18 11:56:12 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:51:13 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,19 @@ void	ft_aissorted_bonus(char **argv)
 	}
 	if (count == 0)
 		exit (EXIT_SUCCESS);
+}
+
+int	ft_stack_is_sorted_bonus(t_stack *a)
+{
+	int	count;
+
+	count = 0;
+	while (count < a->lenght - 1)
+	{
+		if (a->numbers[count + 1][0] > a->numbers[count][0])
+			count++;
+		else
+			return (0);
+	}
+	return (1);
 }
