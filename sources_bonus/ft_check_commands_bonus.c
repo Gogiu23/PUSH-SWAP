@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:07:15 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 08:49:45 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:34:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_check_commands(char *command, t_stack *a, t_stack *b)
 void	ft_checks_stacks_bonus(t_stack *a, t_stack *b)
 {
 	if (ft_stack_is_sorted_bonus(a) == 1 && b->lenght == 0)
-		ft_printf("Ok\n");
+		ft_printf("OK\n");
 	else
-		ft_error_bonus("Ko\n");
+		ft_error_bonus("KO\n");
 }
