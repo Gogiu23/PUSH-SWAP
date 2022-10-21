@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 00:26:17 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/19 00:27:15 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 20:45:07 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ long	ft_atoi_plus(const char *str)
 		i++;
 	}
 	result *= r;
+	ft_check_arg_atoi(str, i);
 	return (result);
 }
 	//1 while espacios avanzo ++
@@ -45,3 +46,13 @@ long	ft_atoi_plus(const char *str)
 	//3 mientras este entre '0' i '9' sumo a resultado (linea magica)
 	//4 devuelo resultado * signo
 	//result = (result * 10) + (str[i] - '0');
+void	ft_check_arg_atoi(const char *str, int i)
+{
+	if (ft_strlen(str) == i)
+		return ;
+	else
+	{
+		ft_putstr_error("Error\n");
+		exit(0);
+	}
+}

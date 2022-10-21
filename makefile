@@ -12,11 +12,11 @@ NAME		= push_swap
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
 MAKE_LIB		= libft.a
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -I ./libft  
-RM			= rm -rf
-MKFL		= Makefile
-MD			= mkdir -p
+CC				= gcc
+CFLAGS			= -Wall -Wextra -Werror -I ./libft  
+RM				= rm -rf
+MKFL			= Makefile
+MD				= mkdir -p
 
 #=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=#
 
@@ -27,7 +27,7 @@ OBJS			=$(SOURCES:.c=.o)
 all:
 	$(MAKE) $(NAME)
 
-$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) ./includes/push_swap.h
+$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH)
 	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
