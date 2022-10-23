@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 00:27:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 20:44:34 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/23 22:12:53 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_checks_duplicates(char **argv)
 		forward = previous + 1;
 		while (argv[forward])
 		{
-			if (ft_strcmp(argv[previous], argv[forward]) != 0)
+			if (ft_atoi_plus(argv[previous]) != ft_atoi_plus(argv[forward]))
 				forward++;
 			else
 				ft_error("Error\n");

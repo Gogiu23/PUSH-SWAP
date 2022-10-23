@@ -6,13 +6,12 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:52:31 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 08:51:13 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/23 22:03:29 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes_bonus/push_swap_bonus.h"
-
 
 void	ft_checks_args_bonus(int argc, char **argv)
 {
