@@ -4,6 +4,7 @@
 -include includes.mk 
 -include sources_bonus.mk
 -include includes_bonus.mk
+-include $(DEPS)
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
@@ -13,16 +14,18 @@ NAME		= push_swap
 
 MAKE_LIB		= libft.a
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -I ./libft  
+CFLAGS			= -Wall -Wextra -Werror -MMD -MT -MP -I ./libft  
 RM				= rm -rf
 MKFL			= Makefile
 MD				= mkdir -p
 
 #=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=#
 
-INCLUDE_PATH	=./includes
+INCLUDES		= $(INCLUDE_PATH)/push_swap.h
+INCLUDE_PATH	= ./includes
 
-OBJS			=$(SOURCES:.c=.o)
+OBJS			= $(SOURCES:.c=.o)
+DEPS			= $(SOURCES:.c=.d)
 
 all:
 	$(MAKE) $(NAME)
@@ -35,8 +38,6 @@ $(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH)
 $(MAKE_LIB):
 	make -C libft
 	cp libft/libft.a .
-
-#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
 #=-=-=-=-=-=-=-=-=- BONUS =-=-=-=-=-=-=-=-=-=-=-=-=-#
 
@@ -67,6 +68,7 @@ clean:
 	@make fclean -C libft
 	@$(RM) $(MAKE_LIB)
 	@$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(DEPS)
 	@$(RM) a.out
 	@echo "Cleaning all the .o in your libft and project!"
 
