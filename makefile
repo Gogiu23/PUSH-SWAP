@@ -46,6 +46,7 @@ NAME_BONUS				= checker
 INCLUDE_PATH_BONUS	=./includes_bonus
 
 OBJS_BONUS			=$(SOURCES_BONUS:.c=.o)
+DEPS_BONUS			=$(SOURCES_BONUS:.c=.d)
 
 bonus:
 	$(MAKE) $(NAME_BONUS)
@@ -69,6 +70,7 @@ clean:
 	@$(RM) $(MAKE_LIB)
 	@$(RM) $(OBJS) $(OBJS_BONUS)
 	@$(RM) $(DEPS)
+	@$(RM) $(DEPS_BONUS)
 	@$(RM) a.out
 	@echo "Cleaning all the .o in your libft and project!"
 

@@ -15,3 +15,4 @@ SOURCES_BONUS += sources_bonus/ft_rr_bonus.c
 SOURCES_BONUS += sources_bonus/ft_pa_bonus.c
 SOURCES_BONUS += sources_bonus/ft_check_commands_bonus.c
 SOURCES_BONUS += sources_bonus/ft_rrr_bonus.c
+SOURCES_BONUS += sources_bonus/ft_ss_bonus.c

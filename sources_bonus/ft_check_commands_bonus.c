@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:07:15 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 21:34:46 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 08:55:39 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_check_commands(char *command, t_stack *a, t_stack *b)
 		ft_sa_bonus(a);
 	else if (ft_strncmp(command, "sb\n", 3) == 0)
 		ft_sb_bonus(*b);
+	else if (ft_strncmp(command, "ss\n", 3) == 0)
+		ft_ss_bonus(a, *b);
 	else if (ft_strncmp(command, "ra\n", 3) == 0)
 		ft_ra_bonus(a);
 	else if (ft_strncmp(command, "rb\n", 3) == 0)
@@ -36,7 +38,8 @@ void	ft_check_commands(char *command, t_stack *a, t_stack *b)
 	else if (strncmp(command, "pb\n", 3) == 0)
 		ft_pb_bonus(a, b);
 	else
-		free(command);
+		ft_error_bonus("Error\n");
+	free(command);
 }
 
 void	ft_checks_stacks_bonus(t_stack *a, t_stack *b)

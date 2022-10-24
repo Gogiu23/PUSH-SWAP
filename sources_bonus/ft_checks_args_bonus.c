@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:52:31 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/23 22:03:29 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 08:38:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,6 @@ void	ft_checks_duplicates_bonus(char **argv)
 		}
 		previous++;
 	}
-	ft_aissorted_bonus(argv);
-}
-
-void	ft_aissorted_bonus(char **argv)
-{
-	int	present;
-	int	count;
-
-	present = 1;
-	count = 0;
-	while (argv[present + 1])
-	{
-		if (ft_atoi(argv[present]) > ft_atoi(argv[present + 1]))
-			count++;
-		present++;
-	}
-	if (count == 0)
-		exit (EXIT_SUCCESS);
 }
 
 int	ft_stack_is_sorted_bonus(t_stack *a)

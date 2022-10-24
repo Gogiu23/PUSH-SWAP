@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 08:27:04 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 08:57:28 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ int	main(int argc, char **argv)
 	ft_checks_stacks_bonus(&a, &b);
 	free(command);
 	command = NULL;
+	ft_free_bonus(&a, argc);
+	ft_free_bonus(&b, argc);
 }	
