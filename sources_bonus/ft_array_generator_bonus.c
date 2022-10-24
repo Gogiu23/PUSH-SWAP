@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:54:26 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 09:01:32 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:54:56 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ t_stack	ft_array_generator_bonus(int argc, int i, int count, char **argv)
 	a.lenght = 0;
 	a.numbers = (long **)malloc(sizeof(long *) * argc);
 	if (!a.numbers)
-		ft_free_bonus(&a, argc);
+		ft_free_bonus(&a);
 	a.numbers[argc - 1] = 0;
 	while (count <= (argc - 2))
 	{
 		a.numbers[count] = (long *)malloc(sizeof(long) * 2);
 		if (!a.numbers[count])
 		{
-			ft_free_bonus(&a, argc);
+			ft_free_bonus(&a);
 			free(a.numbers);
 			break ;
 		}
@@ -49,14 +49,14 @@ t_stack	ft_array_plus_bonus(int argc)
 	count = 0;
 	b.numbers = (long **)malloc(sizeof(long *) * argc);
 	if (!b.numbers)
-		ft_free_bonus(&b, argc);
+		ft_free_bonus(&b);
 	b.numbers[argc - 1] = 0;
 	while (count <= (argc - 2))
 	{
 		b.numbers[count] = (long *)malloc(sizeof(long) * 2);
 		if (!b.numbers[count])
 		{
-			ft_free_bonus(&b, argc);
+			ft_free_bonus(&b);
 			free(b.numbers);
 			break ;
 		}

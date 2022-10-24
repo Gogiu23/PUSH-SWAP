@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 16:35:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/07/16 06:18:59 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 13:54:04 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -95,39 +95,3 @@ char	*get_next_line(int fd)
 	ptr[fd] = ft_newptr(ptr[fd]);
 	return (line);
 }
-/*
-int main()
-{
-	int		fd;
-	int		fd2;
-	int		fd3;
-	char	*line;
-	char	*line2;
-	char	*line3;
-
-	fd = open("bonus.txt", O_RDONLY);
-//	dprintf(fd, "Hola\n\n\nMe llamo Giuli");
-	fd2 = open("bonus2.txt", O_RDONLY);
-//	dprintf(fd2, "Adios\n");
-	fd3 = open("bonus3.txt", O_RDONLY);
-	line = get_next_line_bonus(fd);
-	free(line);
-	line2 = get_next_line_bonus(fd2);
-	printf("\033[1;32mPrimera linia del segundo fichero: \033[0m%s\n", line2);
-	free(line2);
-	line3 = get_next_line_bonus(fd3);
-	printf("\033[1;31mla primera lina del tercer fichero: \033[0m%s\n", line3);
-	free(line3);
-	line = get_next_line_bonus(fd);
-	free(line);
-	line2 = get_next_line_bonus(fd2);
-	printf("\033[1;32mPrimera linia del segundo fichero: \033[0m%s\n", line2);
-	free(line2);
-	line3 = get_next_line_bonus(fd3);
-	printf("\033[1;31mla primera lina del tercer fichero: \033[0m%s\n", line3);
-	free(line3);
-	close(fd);
-	close(fd2);
-	close(fd3);
-	return (0);
-}*/

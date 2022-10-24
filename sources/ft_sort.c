@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/20 21:24:03 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:42:39 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ void	ft_sort_three(t_stack *a)
 	count = 0;
 	if (a->numbers[count][1] == 1 && a->numbers[count + 2][1] == 2)
 		ft_sa(a);
-	if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 1)
+	else if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 1)
 		ft_ra(a);
-	if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 0)
+	else if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 0)
 	{
 		ft_ra(a);
 		ft_sa(a);
 	}
-	if (a->numbers[count][1] == 1 && a->numbers[count + 2][1] == 0)
+	else if (a->numbers[count][1] == 1 && a->numbers[count + 2][1] == 0)
 	{
 		ft_rra(a);
 	}
-	if (a->numbers[count][1] == 0 && a->numbers[count + 2][1] == 1)
+	else if (a->numbers[count][1] == 0 && a->numbers[count + 2][1] == 1)
 	{
 		ft_rra(a);
 		ft_sa(a);
@@ -53,7 +53,7 @@ void	ft_sort_till_five(t_stack *a, t_stack *b, int i, int argc)
 {
 	if (argc == 5)
 		ft_sort_four(a, b, i);
-	if (argc == 6)
+	else if (argc == 6)
 		ft_sort_five(a, b, i);
 }
 

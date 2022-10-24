@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:44 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 08:57:12 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 16:16:01 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 {
 	int		lenght;
 	long	**numbers;
-	long	*intervals;
 }	t_stack;
 
 //=============== CHECKS ERRORS ===================
@@ -32,7 +31,7 @@ void		ft_checks_ints_bonus(t_stack a, int argc);
 t_stack		ft_array_plus_bonus(int argc);
 t_stack		ft_assign_alias_a_bonus(t_stack *a);
 t_stack		ft_assign_alias_b_bonus(t_stack *b);
-int			ft_free_bonus(t_stack *a, int argc);
+int			ft_free_bonus(t_stack *a);
 void		ft_error_bonus(char *c);
 void		ft_aissorted_bonus(char **argv);
 void		ft_check_commands(char *command, t_stack *a, t_stack *b);
@@ -45,17 +44,17 @@ t_stack		ft_remode_stacka_bonus(t_stack a);
 
 //============== MOVEMENTS BONUS =================
 void		ft_sa_bonus(t_stack *a);
-void		ft_sb_bonus(t_stack b);
-void		ft_ss_bonus(t_stack *a, t_stack b);
-void		ft_ss2_bonus(t_stack b);
+void		ft_sb_bonus(t_stack *b);
+void		ft_ss_bonus(t_stack *a, t_stack *b);
+void		ft_ss2_bonus(t_stack *b);
 void		ft_ra_bonus(t_stack *a);
 void		ft_rb_bonus(t_stack *b);
 void		ft_rr_bonus(t_stack *a, t_stack *b);
-void		ft_second_rr_bonus(t_stack b);
+void		ft_second_rr_bonus(t_stack *b);
 void		ft_rra_bonus(t_stack *a);
 void		ft_rrb_bonus(t_stack *b);
 void		ft_rrr_bonus(t_stack *a, t_stack *b);
-void		ft_second_rrr_bonus(t_stack b);
+void		ft_second_rrr_bonus(t_stack *b);
 void		ft_pa_bonus(t_stack *a, t_stack *b);
 void		ft_pb_bonus(t_stack *a, t_stack *b);
 

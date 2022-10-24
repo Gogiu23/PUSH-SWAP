@@ -6,20 +6,20 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/08/20 21:21:07 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 16:17:43 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes/push_swap.h"
 
-int	ft_free(t_stack a, int argc)
+int	ft_free(t_stack *a)
 {
-	while (argc > 0)
+	while (a->lenght > 0)
 	{
-		free(a.numbers[argc]);
-		argc--;
+		free(a->numbers[a->lenght]);
+		a->lenght--;
 	}
-	free(a.numbers);
+	free(a->numbers);
 	return (0);
 }

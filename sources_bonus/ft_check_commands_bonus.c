@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:07:15 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 08:55:39 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 16:17:42 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_check_commands(char *command, t_stack *a, t_stack *b)
 	if (ft_strncmp(command, "sa\n", 3) == 0)
 		ft_sa_bonus(a);
 	else if (ft_strncmp(command, "sb\n", 3) == 0)
-		ft_sb_bonus(*b);
+		ft_sb_bonus(b);
 	else if (ft_strncmp(command, "ss\n", 3) == 0)
-		ft_ss_bonus(a, *b);
+		ft_ss_bonus(a, b);
 	else if (ft_strncmp(command, "ra\n", 3) == 0)
 		ft_ra_bonus(a);
 	else if (ft_strncmp(command, "rb\n", 3) == 0)

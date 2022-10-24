@@ -6,14 +6,14 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 08:29:39 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 08:35:49 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:14:35 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes_bonus/push_swap_bonus.h"
 
-void	ft_ss_bonus(t_stack *a, t_stack b)
+void	ft_ss_bonus(t_stack *a, t_stack *b)
 {
 	int		columns;
 	int		rows;
@@ -33,7 +33,7 @@ void	ft_ss_bonus(t_stack *a, t_stack b)
 	ft_ss2_bonus(b);
 }
 
-void	ft_ss2_bonus(t_stack b)
+void	ft_ss2_bonus(t_stack *b)
 {
 	int		columns;
 	int		rows;
@@ -44,7 +44,7 @@ void	ft_ss2_bonus(t_stack b)
 	temp = (long *)malloc(sizeof(long));
 	if (!temp)
 		free(temp);
-	*temp = b.numbers[rows][columns];
-	b.numbers[rows][columns] = b.numbers[rows + 1][columns];
-	b.numbers[rows + 1][columns] = *temp;
+	*temp = b->numbers[rows][columns];
+	b->numbers[rows][columns] = b->numbers[rows + 1][columns];
+	b->numbers[rows + 1][columns] = *temp;
 }

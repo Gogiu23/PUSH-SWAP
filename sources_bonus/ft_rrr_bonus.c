@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:46:54 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 08:57:25 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/24 16:17:46 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,30 @@ void	ft_rrr_bonus(t_stack *a, t_stack *b)
 		rows--;
 		i--;
 	}
-	rows = 0;
-	a->numbers[rows] = temp;
+	a->numbers[0] = temp;
 	free(temp);
-	ft_second_rrr_bonus(*b);
+	ft_second_rrr_bonus(b);
 }
 
-void	ft_second_rrr_bonus(t_stack b)
+void	ft_second_rrr_bonus(t_stack *b)
 {
 	int		rows;
 	long	*temp;
 	int		i;
 
-	i = (b.lenght - 1);
-	rows = b.lenght;
+	i = (b->lenght - 1);
+	rows = b->lenght;
 	temp = (long *)malloc(sizeof(long));
 	if (!temp)
 		free(temp);
-	temp = b.numbers[i];
+	temp = b->numbers[i];
 	while (rows > 0)
 	{
-		b.numbers[i] = b.numbers[i - 1];
+		b->numbers[i] = b->numbers[i - 1];
 		rows--;
 		i--;
 	}
 	rows = 0;
-	b.numbers[rows] = temp;
+	b->numbers[rows] = temp;
 	free(temp);
 }
