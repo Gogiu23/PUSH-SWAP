@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/19 00:27:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 16:17:43 by gdominic         ###   ########.fr       */
+/*   Created: 2022/10/25 15:29:11 by gdominic          #+#    #+#             */
+/*   Updated: 2022/10/25 15:29:20 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	ft_checks_args(int argc, char **argv)
 	a = 1;
 	if (argc <= 1)
 		exit (0);
-	if (argc <= 2)
-		ft_atoi_plus(argv[1]);
 	while (argv[a])
 	{
 		b = 0;
@@ -71,7 +69,7 @@ void	ft_aissorted(char **argv)
 	count = 0;
 	while (argv[present + 1])
 	{
-		if (ft_atoi_plus(argv[present]) > ft_atoi_plus(argv[present + 1]))
+		if (ft_atoi(argv[present]) > ft_atoi(argv[present + 1]))
 			count++;
 		present++;
 	}

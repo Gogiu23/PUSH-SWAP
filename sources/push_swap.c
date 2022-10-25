@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 15:40:28 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:53:31 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ int	main(int argc, char **argv)
 		ft_sort_till_hundred(&a, &b);
 	if (argc > 101 && argc <= 501)
 		ft_sort_beyond_hundred(&a, &b);
-	free(a.numbers);
-	free(b.numbers);
-	return (0);
+	exit (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 19:20:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/07 12:39:19 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:28:20 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_PUTS_H
@@ -21,7 +21,7 @@ void	ft_putnbr_fd(int n, int fd);
 int		ft_putnbr_u(unsigned int n, int counter);
 int		ft_putnbr(int n, int counter);
 int		ft_putstr(const char *s);
-int		ft_putstr_error(const char *s);
 void	ft_putstr_fd(char *s, int fd);
+int		ft_putstr_error(const char *s);
 
 #endif

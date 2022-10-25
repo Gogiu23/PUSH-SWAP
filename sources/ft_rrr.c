@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:30:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/09/25 16:59:46 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:42:57 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,4 @@ void	ft_second_rrr(t_stack b)
 	}
 	rows = 0;
 	b.numbers[rows] = temp;
-	free(temp);
 }

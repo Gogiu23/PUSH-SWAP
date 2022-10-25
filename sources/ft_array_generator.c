@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 15:42:41 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:41:36 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 	a.lenght = 0;
 	a.numbers = (long **)malloc(sizeof(long *) * argc);
 	if (!a.numbers)
-		ft_free(a, argc);
+		ft_free(&a, argc);
 	a.numbers[argc - 1] = 0;
 	while (count <= (argc - 2))
 	{
 		a.numbers[count] = (long *)malloc(sizeof(long) * 2);
 		if (!a.numbers[count])
 		{
-			ft_free(a, argc);
+			ft_free(&a, argc);
 			free(a.numbers);
 			break ;
 		}
@@ -49,14 +49,14 @@ t_stack	ft_array_plus(int argc)
 	count = 0;
 	b.numbers = (long **)malloc(sizeof(long *) * argc);
 	if (!b.numbers)
-		ft_free(b, argc);
+		ft_free(&b, argc);
 	b.numbers[argc - 1] = 0;
 	while (count <= (argc - 2))
 	{
 		b.numbers[count] = (long *)malloc(sizeof(long) * 2);
 		if (!b.numbers[count])
 		{
-			ft_free(b, argc);
+			ft_free(&b, argc);
 			free(b.numbers);
 			break ;
 		}

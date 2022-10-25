@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 16:17:44 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:30:06 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 }	t_stack;
 
 //=====================SRC============================
-int			ft_free(t_stack *a);
+int			ft_free(t_stack *a, int argc);
 t_stack		ft_array_generator(int argc, int i, int count, char **argv);
 t_stack		ft_assign_alias_a(t_stack *a);
 t_stack		ft_assign_alias_b(t_stack *b);

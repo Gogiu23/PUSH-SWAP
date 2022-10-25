@@ -26,7 +26,6 @@ char	*ft_strtrim(char *s1, char *set);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *dst, const char *src, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t len);
-int		ft_strcmp(char *s1, char *s2);
 char	*ft_strchr(char *ptr, int n);
 size_t	ft2_strlen(char *str);
 

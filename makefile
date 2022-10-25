@@ -30,7 +30,7 @@ DEPS			= $(SOURCES:.c=.d)
 all:
 	$(MAKE) $(NAME)
 
-$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH)
+$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) ./includes/push_swap.h
 	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
