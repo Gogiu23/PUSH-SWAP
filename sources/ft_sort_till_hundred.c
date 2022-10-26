@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 19:49:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/11 19:21:35 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:49:29 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ void	ft_coming_back(t_stack *a, t_stack *b)
 				if (b->lenght > 0 && b->numbers[0][1] >= count - 1)
 					ft_pa(a, b);
 				if (a->lenght > 1 && a->numbers[1][0] < a->numbers[0][0])
-				{
 					ft_sa(a);
-				}
 			}
 			rows++;
 		}

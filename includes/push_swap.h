@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/26 02:01:04 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:19:10 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void		ft_coming_back(t_stack *a, t_stack *b);
 void		ft_coming_back_again(t_stack *a, t_stack *b);
 
 //==================FIXED ARRAYS=======================
-t_stack		ft_remode_stacka(t_stack a);
-t_stack		ft_remode_stackb(t_stack b);
+void		ft_remode_stacka(t_stack *a);
+void		ft_remode_stackb(t_stack *b);
 void		ft_smart_rotate_a(t_stack *a, int rows);
 void		ft_smart_rotate_b(t_stack *b, int rows);
 void		ft_smart_rotate_plus_b(t_stack *a, t_stack *b, int rows);
@@ -59,7 +59,7 @@ void		ft_checks_duplicates(char **argv);
 void		ft_aissorted(char **argv);
 //==================MOVEMENTS=========================
 void		ft_sa(t_stack *a);
-void		ft_sb(t_stack b);
+void		ft_sb(t_stack *b);
 void		ft_ra(t_stack *a);
 void		ft_rb(t_stack *b);
 void		ft_rr(t_stack *a, t_stack *b);

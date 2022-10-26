@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 04:51:29 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/26 01:45:18 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:49:03 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_sort_two(t_stack *a)
 		exit (1);
 	else
 		ft_sa(a);
-//	exit (0);
 }
 
 void	ft_sort_three(t_stack *a)
@@ -33,7 +32,9 @@ void	ft_sort_three(t_stack *a)
 	if (a->numbers[count][1] == 1 && a->numbers[count + 2][1] == 2)
 		ft_sa(a);
 	else if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 1)
+	{
 		ft_ra(a);
+	}
 	else if (a->numbers[count][1] == 2 && a->numbers[count + 2][1] == 0)
 	{
 		ft_ra(a);
@@ -56,7 +57,6 @@ void	ft_sort_till_five(t_stack *a, t_stack *b, int i, int argc)
 		ft_sort_four(a, b, i);
 	else if (argc == 6)
 		ft_sort_five(a, b, i);
-//	exit (0);
 }
 
 void	ft_sort_four(t_stack *a, t_stack *b, int i)
@@ -101,5 +101,4 @@ void	ft_sort_five(t_stack *a, t_stack *b, int i)
 	ft_sort_four(a, b, i);
 	while (b->lenght > 0)
 		ft_pa(a, b);
-	exit (0);
 }

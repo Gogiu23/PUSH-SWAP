@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 21:26:34 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/11 21:27:40 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:48:30 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_go_down(t_stack *a, t_stack *b, int i)
 	int	count;
 
 	count = b->lenght - 1;
-	while (i++ <= (b->lenght))
+	while (b->lenght > 0 && i++ <= (b->lenght))
 	{
 		if (b->numbers[0] && b->numbers[0][1] >= count - 1)
 		{

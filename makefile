@@ -14,7 +14,7 @@ NAME		= push_swap
 
 MAKE_LIB		= libft.a
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -MMD -MT -MP -I ./libft  
+CFLAGS			= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I ./libft  
 RM				= rm -rf
 MKFL			= Makefile
 MD				= mkdir -p

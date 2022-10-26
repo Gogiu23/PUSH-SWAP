@@ -6,27 +6,19 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 18:23:28 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/26 01:29:20 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:23:59 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "../includes/push_swap.h"
 
-void	ft_sb(t_stack b)
+void	ft_sb(t_stack *b)
 {
-	int		columns;
-	int		rows;
-	long	*temp;
+	long	temp;
 
-	rows = 0;
-	columns = 0;
-	temp = (long *)malloc(sizeof(long));
-	if (!temp)
-		free(temp);
-	*temp = b.numbers[rows][columns];
-	b.numbers[rows][columns] = b.numbers[rows + 1][columns];
-	b.numbers[rows + 1][columns] = *temp;
+	temp = b->numbers[0][0];
+	b->numbers[0][0] = b->numbers[1][0];
+	b->numbers[1][0] = temp;
 	ft_printf("sb\n");
-	free(temp);
 }

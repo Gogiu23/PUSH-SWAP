@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 04:23:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/03 18:25:38 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:06:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,33 @@ void	ft_pb(t_stack *a, t_stack *b)
 	{
 		while (i -- > 0)
 		{
-			b->numbers[rows] = b->numbers[rows - 1];
+			b->numbers[rows][0] = b->numbers[rows - 1][0];
+			b->numbers[rows][1] = b->numbers[rows - 1][1];
 			rows--;
 		}
 	}
 	b->lenght++;
 	rows = 0;
-	b->numbers[rows] = a->numbers[rows];
+	b->numbers[rows][0] = a->numbers[rows][0];
+	b->numbers[rows][1] = a->numbers[rows][1];
 	if (a->lenght > 0)
-		ft_remode_stacka(*a);
+		ft_remode_stacka(a);
 	ft_printf("pb\n");
 	a->lenght--;
 }
 
-t_stack	ft_remode_stacka(t_stack a)
+void	ft_remode_stacka(t_stack *a)
 {
 	int	rows;
 	int	i;
 
 	i = 0;
 	rows = 0;
-	while (i < a.lenght)
+	while (i < a->lenght - 1)
 	{
-		a.numbers[rows] = a.numbers[rows + 1];
+		a->numbers[rows][0] = a->numbers[rows + 1][0];
+		a->numbers[rows][1] = a->numbers[rows + 1][1];
 		rows++;
 		i++;
 	}
-	return (a);
 }
