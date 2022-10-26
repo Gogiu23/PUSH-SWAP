@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/25 15:31:34 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 02:09:00 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,26 @@ int	ft_free(t_stack *a, int argc)
 	}
 	free(a->numbers);
 	return (0);
+}
+
+void	ft_free_stacks_a(t_stack *a)
+{
+	//while (a->lenght >= 0)
+	//{
+	//	free(a->numbers[a->lenght]);
+	//	a->lenght--;
+	//}
+	free(a->numbers);
+	a->numbers = NULL;
+}
+
+void	ft_free_stacks_b(t_stack *b)
+{
+	//while (b->lenght >= 0)
+	//{
+	//	free(b->numbers[b->lenght]);
+	//	b->lenght--;
+	//}
+	free(b->numbers);
+	b->numbers = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:30:21 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/25 15:42:57 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 01:28:27 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_rrr(t_stack *a, t_stack *b)
 	free(temp);
 	ft_second_rrr(*b);
 	ft_printf("rrr\n");
+	free(temp);
 }
 
 void	ft_second_rrr(t_stack b)
@@ -58,4 +59,5 @@ void	ft_second_rrr(t_stack b)
 	}
 	rows = 0;
 	b.numbers[rows] = temp;
+	free(temp);
 }

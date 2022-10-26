@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:34:05 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/23 22:06:47 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/26 01:47:04 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_print_stack(t_stack *a, t_stack *b)
 	while (count < a->lenght)
 	{
 		ft_printf("valor antes de ser ordenado = a->numbers[%d][%d]: %d\t%d\n"\
-		, count, a->numbers[count][0], a->numbers[count][1]);
+		, count, 1, a->numbers[count][0], a->numbers[count][1]);
 		count++;
 	}
 	count = 0;
@@ -37,7 +37,7 @@ void	ft_print_stack(t_stack *a, t_stack *b)
 	while (count < a->lenght)
 	{
 		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", \
-			count, a->numbers[count][0], a->numbers[count][1]);
+			count, 1, a->numbers[count][0], a->numbers[count][1]);
 		count++;
 	}
 }
