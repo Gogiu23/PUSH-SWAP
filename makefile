@@ -14,10 +14,11 @@ NAME		= push_swap
 
 MAKE_LIB		= libft.a
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I ./libft  
+CFLAGS			= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I $(LIB_DIR) 
 RM				= rm -rf
 MKFL			= Makefile
 MD				= mkdir -p
+LIB_DIR			= ./libft
 
 #=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=#
 
@@ -27,17 +28,22 @@ INCLUDE_PATH	= ./includes
 OBJS			= $(SOURCES:.c=.o)
 DEPS			= $(SOURCES:.c=.d)
 
-all:
-	$(MAKE) $(NAME)
+all: 
+	@$(MAKE) -C $(LIB_DIR)
+	@cp libft/libft.a .
+	@$(MAKE) gmk
+	@$(MAKE) $(NAME)
 
-$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) ./includes/push_swap.h
+#$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) $(DEPS)
+$(NAME): $(OBJS)
+	$(MAKE) gmk
 	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
 
-$(MAKE_LIB):
-	make -C libft
-	cp libft/libft.a .
+#$(MAKE_LIB):
+#	make -C libft
+#	cp libft/libft.a .
 
 #=-=-=-=-=-=-=-=-=- BONUS =-=-=-=-=-=-=-=-=-=-=-=-=-#
 
@@ -72,6 +78,11 @@ clean:
 	@$(RM) $(DEPS)
 	@$(RM) $(DEPS_BONUS)
 	@$(RM) a.out
+	@$(RM) a\ *.out
+	@$(RM) libft/*\ *.o
+	@$(RM) libft/*\ *.d
+	@$(RM) sources/*\ *.o
+	@$(RM) sources/*\ *.d
 	@echo "Cleaning all the .o in your libft and project!"
 
 fclean: clean
