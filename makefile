@@ -8,13 +8,33 @@
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
+BLACK			=	\033[0;30m
+RED				=	\033[0;31m
+GREEN			=	\033[0;32m
+ORANGE			=	\033[0;33m
+BLUE			=	\033[0;34m
+PURPLE			=	\033[0;35m
+CYAN			=	\033[0;36m
+LIGHT_GRAY		=	\033[0;37m
+DARK_GRAY		=	\033[1;30m
+LIGHT_RED		=	\033[1;31m
+LIGHT_GREEN		=	\033[1;32m
+YELLOW			=	\033[1;33m
+LIGHT_BLUE		=	\033[1;34m
+LIGHT_PURPLE	=	\033[1;35m
+LIGHT_CYAN		=	\033[1;36m
+WHITE			=	\033[1;37m
+NO_COLOR		=	\033[0m
+
+#=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
+
 NAME		= push_swap
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
 MAKE_LIB		= libft.a
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I $(LIB_DIR) 
+CFLAGS			= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I ./libft 
 RM				= rm -rf
 MKFL			= Makefile
 MD				= mkdir -p
@@ -22,28 +42,25 @@ LIB_DIR			= ./libft
 
 #=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=#
 
-INCLUDES		= $(INCLUDE_PATH)/push_swap.h
 INCLUDE_PATH	= ./includes
 
 OBJS			= $(SOURCES:.c=.o)
 DEPS			= $(SOURCES:.c=.d)
 
 all: 
-	@$(MAKE) -C $(LIB_DIR)
+	@$(MAKE) -C libft
 	@cp libft/libft.a .
 	@$(MAKE) gmk
 	@$(MAKE) $(NAME)
 
-#$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) $(DEPS)
-$(NAME): $(OBJS)
-	$(MAKE) gmk
-	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
+%.o:	%.c $(INCLUDES) 
+	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) -c $< -o $@
+	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
+
+$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL)
+#	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
-
-#$(MAKE_LIB):
-#	make -C libft
-#	cp libft/libft.a .
 
 #=-=-=-=-=-=-=-=-=- BONUS =-=-=-=-=-=-=-=-=-=-=-=-=-#
 
@@ -83,6 +100,7 @@ clean:
 	@$(RM) libft/*\ *.d
 	@$(RM) sources/*\ *.o
 	@$(RM) sources/*\ *.d
+	@$(RM) libft\ *.a
 	@echo "Cleaning all the .o in your libft and project!"
 
 fclean: clean
