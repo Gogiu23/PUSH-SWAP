@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:48:34 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 04:58:50 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/27 06:26:16 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_pa_bonus(t_stack *a, t_stack *b)
 	long	rows;
 	int		i;
 
+	if (b->lenght == 0)
+		return ;
 	i = a->lenght;
 	rows = a->lenght;
 	if (a->lenght >= 0)
