@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:36:03 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 16:17:40 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/27 05:19:19 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,14 @@ void	ft_sa_bonus(t_stack *a)
 {
 	int		columns;
 	int		rows;
-	long	**temp;
+	long	temp[2];
 
 	rows = 0;
 	columns = 0;
-	temp = (long **)malloc(sizeof(long *) * 2);
-	if (!temp)
-		free(temp);
-	temp[0] = (long *)malloc(sizeof(long) * 2);
-	if (!temp[rows])
-		free(temp);
-	temp[0] = a->numbers[0];
-	a->numbers[0] = a->numbers[1];
-	a->numbers[1] = temp[0];
-	free(temp[0]);
-	free(temp[1]);
-	free(temp);
+	temp[0] = a->numbers[0][0];
+	temp[1] = a->numbers[0][1];
+	a->numbers[0][0] = a->numbers[1][0];
+	a->numbers[0][1] = a->numbers[1][1];
+	a->numbers[1][0] = temp[0];
+	a->numbers[1][1] = temp[1];
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:44 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 16:16:01 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/27 05:08:15 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void		ft_checks_stacks_bonus(t_stack *a, t_stack *b);
 int			ft_stack_is_sorted_bonus(t_stack *a);
 
 //============== EDIT ARRAYS ====================
-t_stack		ft_remode_stackb_bonus(t_stack b);
-t_stack		ft_remode_stacka_bonus(t_stack a);
+void		ft_remode_stackb_bonus(t_stack *b);
+void		ft_remode_stacka_bonus(t_stack *a);
 
 //============== MOVEMENTS BONUS =================
 void		ft_sa_bonus(t_stack *a);
@@ -50,11 +50,11 @@ void		ft_ss2_bonus(t_stack *b);
 void		ft_ra_bonus(t_stack *a);
 void		ft_rb_bonus(t_stack *b);
 void		ft_rr_bonus(t_stack *a, t_stack *b);
-void		ft_second_rr_bonus(t_stack *b);
+void		ft_second_rr_bonus(t_stack b);
 void		ft_rra_bonus(t_stack *a);
 void		ft_rrb_bonus(t_stack *b);
 void		ft_rrr_bonus(t_stack *a, t_stack *b);
-void		ft_second_rrr_bonus(t_stack *b);
+void		ft_second_rrr_bonus(t_stack b);
 void		ft_pa_bonus(t_stack *a, t_stack *b);
 void		ft_pb_bonus(t_stack *a, t_stack *b);
 

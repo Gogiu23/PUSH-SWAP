@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 16:14:17 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/27 05:25:55 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,10 @@ int	main(int argc, char **argv)
 	while (command != 0)
 	{
 		ft_check_commands(command, &a, &b);
+		free(command);
 		command = get_next_line(0);
-		//free(command);
 	}
 	ft_checks_stacks_bonus(&a, &b);
-	free(command);
 	command = NULL;
-	ft_free_bonus(&a);
-	ft_free_bonus(&b);
-	ft_printf("valor %p\n", &b);
-	free(&a);
-	free(&b);
 	exit(0);
 }	

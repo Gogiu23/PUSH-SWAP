@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:39:49 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 08:58:20 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/27 04:59:42 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ void	ft_rb_bonus(t_stack *b)
 	int		rows;
 	int		columns;
 	int		max;
-	long	*temp;
+	long	temp[2];
 
 	columns = 0;
 	max = (b->lenght - 1);
 	rows = 0;
-	temp = (long *)malloc(sizeof(long));
-	if (!temp)
-		free(temp);
-	temp = b->numbers[rows];
+	temp[0] = b->numbers[rows][0];
+	temp[1] = b->numbers[rows][1];
 	while (rows < max)
 	{
-		b->numbers[rows] = b->numbers[rows + 1];
+		b->numbers[rows][0] = b->numbers[rows + 1][0];
+		b->numbers[rows][1] = b->numbers[rows + 1][1];
 		rows++;
 	}
-	b->numbers[rows] = temp;
+	b->numbers[rows][0] = temp[0];
+	b->numbers[rows][1] = temp[1];
 }

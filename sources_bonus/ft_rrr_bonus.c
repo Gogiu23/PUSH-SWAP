@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:46:54 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/24 16:17:46 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/27 05:08:23 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,45 +16,45 @@
 void	ft_rrr_bonus(t_stack *a, t_stack *b)
 {
 	int		rows;
-	long	*temp;
+	long	temp[2];
 	int		i;
 
 	i = (a->lenght - 1);
 	rows = a->lenght;
-	temp = (long *)malloc(sizeof(long));
-	if (!temp)
-		free(temp);
-	temp = a->numbers[i];
+	temp[0] = a->numbers[i][0];
+	temp[1] = a->numbers[i][1];
 	while (rows > 0)
 	{
-		a->numbers[i] = a->numbers[i - 1];
-		rows--;
-		i--;
-	}
-	a->numbers[0] = temp;
-	free(temp);
-	ft_second_rrr_bonus(b);
-}
-
-void	ft_second_rrr_bonus(t_stack *b)
-{
-	int		rows;
-	long	*temp;
-	int		i;
-
-	i = (b->lenght - 1);
-	rows = b->lenght;
-	temp = (long *)malloc(sizeof(long));
-	if (!temp)
-		free(temp);
-	temp = b->numbers[i];
-	while (rows > 0)
-	{
-		b->numbers[i] = b->numbers[i - 1];
+		a->numbers[i][0] = a->numbers[i - 1][0];
+		a->numbers[i][1] = a->numbers[i - 1][1];
 		rows--;
 		i--;
 	}
 	rows = 0;
-	b->numbers[rows] = temp;
-	free(temp);
+	a->numbers[rows][0] = temp[0];
+	a->numbers[rows][1] = temp[1];
+	ft_second_rrr_bonus(*b);
+	ft_printf("rrr\n");
+}
+
+void	ft_second_rrr_bonus(t_stack b)
+{
+	int		rows;
+	long	temp[2];
+	int		i;
+
+	i = (b.lenght - 1);
+	rows = b.lenght;
+	temp[0] = b.numbers[i][0];
+	temp[1] = b.numbers[i][1];
+	while (rows > 0)
+	{
+		b.numbers[i][0] = b.numbers[i - 1][0];
+		b.numbers[i][1] = b.numbers[i - 1][1];
+		rows--;
+		i--;
+	}
+	rows = 0;
+	b.numbers[rows][0] = temp[0];
+	b.numbers[rows][1] = temp[1];
 }

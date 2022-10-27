@@ -50,17 +50,19 @@ DEPS			= $(SOURCES:.c=.d)
 all: 
 	@$(MAKE) -C libft
 	@cp libft/libft.a .
-	@$(MAKE) gmk
 	@$(MAKE) $(NAME)
 
 %.o:	%.c $(INCLUDES) 
 	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) -c $< -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 
-$(NAME): $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL)
-#	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
+$(NAME):: $(MAKE_LIB) $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH)
+	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) $(OBJS) $< -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
+
+$(NAME):: 
+	@printf "\t$(LIGHT_CYAN)Programm already compiled!!$(NAME)$(RESET)\n"
 
 #=-=-=-=-=-=-=-=-=- BONUS =-=-=-=-=-=-=-=-=-=-=-=-=-#
 
