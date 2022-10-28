@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/28 06:23:22 by gdominic          #+#    #+#              #
+#    Updated: 2022/10/28 06:31:54 by gdominic         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
 -include sources.mk
@@ -54,8 +66,9 @@ all:
 	@$(MAKE) $(NAME)
 
 %.o:	%.c $(INCLUDES) 
-	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)\t"
-	$(CC) $(CFLAGS) -I $(INCLUDE_PATH) -c $< -o $@
+	@printf "\r\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)		\r"
+	@$(CC) $(CFLAGS) -I $(INCLUDE_PATH) -c $< -o $@
+	@printf "\r\033[2K\r$(YELLOW)Done......✅ $(LIGHT_BLUE)$<$(RESET)		\n"
 
 $(NAME):: $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH)
 	@$(CC) $(CFLAGS) $(LFLAGS) -I $(INCLUDE_PATH) $(OBJS) -o $@
@@ -78,7 +91,7 @@ bonus:
 	$(MAKE) $(NAME_BONUS)
 
 $(NAME_BONUS): $(MAKE_LIB) $(OBJS_BONUS) $(MKFL)
-	$(CC) $(CFLAGS) -I $(INCLUDE_PATH_BONUS) $(OBJS_BONUS) $< -o $@
+	$(CC) $(CFLAGS) -I $(INCLUDE_PATH_BONUS) $(OBJS_BONUS) -o $@
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Bonus compiled and ready[√]$(RESET)\n"
 	
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
