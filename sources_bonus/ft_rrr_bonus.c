@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:46:54 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 05:08:23 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:40:51 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,26 @@ void	ft_rrr_bonus(t_stack *a, t_stack *b)
 	long	temp[2];
 	int		i;
 
-	i = (a->lenght - 1);
-	rows = a->lenght;
-	temp[0] = a->numbers[i][0];
-	temp[1] = a->numbers[i][1];
-	while (rows > 0)
+	if (b->lenght > 0 && a->lenght > 0)
 	{
-		a->numbers[i][0] = a->numbers[i - 1][0];
-		a->numbers[i][1] = a->numbers[i - 1][1];
-		rows--;
-		i--;
+		i = a->lenght;
+		rows = a->lenght;
+		temp[0] = a->numbers[i][0];
+		temp[1] = a->numbers[i][1];
+		while (rows > 0)
+		{
+			a->numbers[i][0] = a->numbers[i - 1][0];
+			a->numbers[i][1] = a->numbers[i - 1][1];
+			rows--;
+			i--;
+		}
+		rows = 0;
+		a->numbers[rows][0] = temp[0];
+		a->numbers[rows][1] = temp[1];
+		ft_second_rrr_bonus(*b);
 	}
-	rows = 0;
-	a->numbers[rows][0] = temp[0];
-	a->numbers[rows][1] = temp[1];
-	ft_second_rrr_bonus(*b);
-	ft_printf("rrr\n");
+	else
+		write(1, "Not a movement valid, no changes in stacks\n", 43);
 }
 
 void	ft_second_rrr_bonus(t_stack b)
@@ -43,7 +47,7 @@ void	ft_second_rrr_bonus(t_stack b)
 	long	temp[2];
 	int		i;
 
-	i = (b.lenght - 1);
+	i = b.lenght;
 	rows = b.lenght;
 	temp[0] = b.numbers[i][0];
 	temp[1] = b.numbers[i][1];

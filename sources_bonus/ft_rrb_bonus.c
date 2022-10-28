@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:44:27 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 05:25:23 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:01:08 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	ft_rrb_bonus(t_stack *b)
 		b->numbers[rows][1] = temp[1];
 	}
 	else
-		ft_error_bonus("Error\n");
+		write(1, "Not a movement valid, no changes in stacks\n", 43);
 }

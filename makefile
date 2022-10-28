@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 06:23:22 by gdominic          #+#    #+#              #
-#    Updated: 2022/10/28 06:31:54 by gdominic         ###   ########.fr        #
+#    Updated: 2022/10/28 13:11:05 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ all:
 	@$(CC) $(CFLAGS) -I $(INCLUDE_PATH) -c $< -o $@
 	@printf "\r\033[2K\r$(YELLOW)Done......✅ $(LIGHT_BLUE)$<$(RESET)		\n"
 
-$(NAME):: $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH)
+$(NAME):: $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH) $(LIB_DIR)
 	@$(CC) $(CFLAGS) $(LFLAGS) -I $(INCLUDE_PATH) $(OBJS) -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
@@ -88,12 +88,15 @@ OBJS_BONUS			=$(SOURCES_BONUS:.c=.o)
 DEPS_BONUS			=$(SOURCES_BONUS:.c=.d)
 
 bonus:
-	$(MAKE) $(NAME_BONUS)
+	@$(MAKE) $(NAME_BONUS)
 
-$(NAME_BONUS): $(MAKE_LIB) $(OBJS_BONUS) $(MKFL)
-	$(CC) $(CFLAGS) -I $(INCLUDE_PATH_BONUS) $(OBJS_BONUS) -o $@
+$(NAME_BONUS):: $(OBJS_BONUS) $(INCLUDES_BONUS) $(MKFL) $(INCLUDE_PATH_BONUS)
+	@$(CC) $(CFLAGS) $(LFLAGS) -I $(INCLUDE_PATH_BONUS) $(OBJS_BONUS) -o $@
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Bonus compiled and ready[√]$(RESET)\n"
 	
+$(NAME_BONUS):: 
+	@printf "$(LIGHT_GREEN)$(NAME_BONUS) is up to date✅$(RESET)\n"
+
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
 gmk:
