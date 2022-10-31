@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:52:31 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 05:15:10 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/31 17:37:31 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_checks_args_bonus(int argc, char **argv)
 	int	b;
 
 	a = 1;
-	if (argc <= 1)
+	if (argc <= 2)
 		exit (0);
 	while (argv[a])
 	{

@@ -16,7 +16,6 @@
 -include includes.mk 
 -include sources_bonus.mk
 -include includes_bonus.mk
--include $(DEPS)
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
@@ -44,12 +43,11 @@ NAME				= push_swap
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-MAKE_LIB			= libft.a
+MAKE_LIB			= libft/libft.a
 CC					= gcc
-CFLAGS				= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I ./libft 
-LFLAGS				= -L./ -lft
+CFLAGS				= -Wall -Wextra -Werror -g3 -MMD -MP
 RM					= rm -rf
-MKFL				= Makefile
+MKFL				= makefile
 MD					= mkdir -p
 LIB_DIR				= ./libft
 
@@ -60,18 +58,17 @@ INCLUDE_PATH		= ./includes
 OBJS				= $(SOURCES:.c=.o)
 DEPS				= $(SOURCES:.c=.d)
 
-all: 
-	@$(MAKE) -C libft
-	@cp libft/libft.a .
+all:
+	$(MAKE) -C libft
 	@$(MAKE) $(NAME)
 
-%.o:	%.c $(INCLUDES)
+%.o:	%.c $(MKFL) $(MAKE_LIB)
 	@printf "\r\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)		\r"
-	@$(CC) $(CFLAGS) -I $(INCLUDE_PATH) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(INCLUDE_PATH_BONUS) -I $(INCLUDE_PATH) -I $(LIB_DIR) -c $< -o $@
 	@printf "\r\033[2K\r$(YELLOW)Done......✅ $(LIGHT_BLUE)$<$(RESET)		\n"
 
-$(NAME):: $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH) $(LIB_DIR)
-	@$(CC) $(CFLAGS) $(LFLAGS) -I $(INCLUDE_PATH) $(OBJS) -o $@
+$(NAME):: $(MAKE_LIB) $(OBJS)
+	@$(CC) $(CFLAGS) $(LFLAGS) $^ -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
 
@@ -88,12 +85,11 @@ OBJS_BONUS			=$(SOURCES_BONUS:.c=.o)
 DEPS_BONUS			=$(SOURCES_BONUS:.c=.d)
 
 bonus: 
-	@$(MAKE) -C libft
-	@cp libft/libft.a .
+	$(MAKE) -C libft
 	@$(MAKE) $(NAME_BONUS)
 
-$(NAME_BONUS):: $(OBJS_BONUS) $(INCLUDES_BONUS) $(MKFL) $(INCLUDE_PATH_BONUS)
-	@$(CC) $(CFLAGS) $(LFLAGS) -I $(INCLUDE_PATH_BONUS) $(OBJS_BONUS) -o $@
+$(NAME_BONUS):: $(MAKE_LIB) $(OBJS_BONUS)
+	@$(CC) $(CFLAGS) $(LFLAGS) $^ -o $@
 	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Bonus compiled and ready[√]$(RESET)\n"
 
@@ -112,17 +108,9 @@ gmk_bonus:
 
 clean:
 	@make fclean -C libft
-	@$(RM) $(MAKE_LIB)
 	@$(RM) $(OBJS) $(OBJS_BONUS)
 	@$(RM) $(DEPS)
 	@$(RM) $(DEPS_BONUS)
-	@$(RM) a.out
-	@$(RM) a\ *.out
-	@$(RM) libft/*\ *.o
-	@$(RM) libft/*\ *.d
-	@$(RM) sources/*\ *.o
-	@$(RM) sources/*\ *.d
-	@$(RM) libft\ *.a
 	@echo "Cleaning all the .o in your libft and project!"
 
 fclean: clean
@@ -130,6 +118,10 @@ fclean: clean
 	@echo "Cleaning all the compiled library!"
 
 re: fclean all bonus
+
+
+-include $(DEPS)
+-include $(DEPS_BONUS)
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
