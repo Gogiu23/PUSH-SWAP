@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/28 06:23:22 by gdominic          #+#    #+#              #
-#    Updated: 2022/10/28 13:11:05 by gdominic         ###   ########.fr        #
+
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,32 +40,32 @@ NO_COLOR		=	\033[0m
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-NAME		= push_swap
+NAME				= push_swap
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-MAKE_LIB		= libft.a
-CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I ./libft 
-LFLAGS			= -L./ -lft
-RM				= rm -rf
-MKFL			= Makefile
-MD				= mkdir -p
-LIB_DIR			= ./libft
+MAKE_LIB			= libft.a
+CC					= gcc
+CFLAGS				= -Wall -Wextra -Werror -g3 -MMD -MT -MP -I ./libft 
+LFLAGS				= -L./ -lft
+RM					= rm -rf
+MKFL				= Makefile
+MD					= mkdir -p
+LIB_DIR				= ./libft
 
 #=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=#
 
-INCLUDE_PATH	= ./includes
+INCLUDE_PATH		= ./includes
 
-OBJS			= $(SOURCES:.c=.o)
-DEPS			= $(SOURCES:.c=.d)
+OBJS				= $(SOURCES:.c=.o)
+DEPS				= $(SOURCES:.c=.d)
 
 all: 
 	@$(MAKE) -C libft
 	@cp libft/libft.a .
 	@$(MAKE) $(NAME)
 
-%.o:	%.c $(INCLUDES) 
+%.o:	%.c $(INCLUDES)
 	@printf "\r\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)		\r"
 	@$(CC) $(CFLAGS) -I $(INCLUDE_PATH) -c $< -o $@
 	@printf "\r\033[2K\r$(YELLOW)Done......✅ $(LIGHT_BLUE)$<$(RESET)		\n"
@@ -76,25 +76,28 @@ $(NAME):: $(OBJS) $(INCLUDES) $(MKFL) $(INCLUDE_PATH) $(LIB_DIR)
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Push_swap Compiled and ready![√]$(RESET)\n"
 
 $(NAME):: 
-	@printf "\t$(LIGHT_CYAN)Programm already compiled!! $(NAME)$(RESET)\n"
+	@printf "\t$(LIGHT_CYAN)$(NAME)Programm already compiled!! $(RESET)\n"
 
 #=-=-=-=-=-=-=-=-=- BONUS =-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-NAME_BONUS				= checker
+NAME_BONUS			= checker
 
 INCLUDE_PATH_BONUS	=./includes_bonus
 
 OBJS_BONUS			=$(SOURCES_BONUS:.c=.o)
 DEPS_BONUS			=$(SOURCES_BONUS:.c=.d)
 
-bonus:
+bonus: 
+	@$(MAKE) -C libft
+	@cp libft/libft.a .
 	@$(MAKE) $(NAME_BONUS)
 
 $(NAME_BONUS):: $(OBJS_BONUS) $(INCLUDES_BONUS) $(MKFL) $(INCLUDE_PATH_BONUS)
 	@$(CC) $(CFLAGS) $(LFLAGS) -I $(INCLUDE_PATH_BONUS) $(OBJS_BONUS) -o $@
+	@printf "\033[2K\r$(YELLOW)$(NAME): $(LIGHT_BLUE)$<$(RESET)"
 	@printf "\033[2K\r$(BLUE)$(NAME): $(GREEN)Bonus compiled and ready[√]$(RESET)\n"
-	
-$(NAME_BONUS):: 
+
+$(NAME_BONUS)::
 	@printf "$(LIGHT_GREEN)$(NAME_BONUS) is up to date✅$(RESET)\n"
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
@@ -126,7 +129,7 @@ fclean: clean
 	@$(RM) $(NAME) $(NAME_BONUS)
 	@echo "Cleaning all the compiled library!"
 
-re: fclean all
+re: fclean all bonus
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
