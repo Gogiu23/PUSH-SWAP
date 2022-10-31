@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 19:15:59 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 21:29:59 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/31 22:47:42 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_CHECKS_H
@@ -22,6 +22,6 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_strlen(const char *s);
-void	ft_check_arg_atoi(const char *str, int i);
+void	ft_check_arg_atoi(const char *str, long result, int i);
 
 #endif

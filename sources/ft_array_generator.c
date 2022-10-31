@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/26 18:19:17 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/31 22:59:07 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack	ft_array_generator(int argc, int i, int count, char **argv)
 		count++;
 		i++;
 	}
+	ft_aissorted(argv);
 	ft_assign_alias_a(&a);
 	return (a);
 }

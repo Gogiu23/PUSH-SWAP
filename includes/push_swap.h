@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 04:31:34 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/31 23:01:13 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void		ft_go_down(t_stack *a, t_stack *b, int i);
 void		ft_go_up(t_stack *a, t_stack *b, int i);
 //==================CHECKS ERRORS=====================
 void		ft_checks_args(int argc, char **argv);
-void		ft_checks_ints(t_stack a, int argc);
 void		ft_checks_duplicates(char **argv);
 void		ft_aissorted(char **argv);
 //==================MOVEMENTS=========================

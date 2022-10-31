@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:21:53 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/21 21:24:14 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/31 22:58:42 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ long	ft_atoi_plus(const char *str)
 		i++;
 	}
 	result *= r;
-	ft_check_arg_atoi(str, i);
+	ft_check_arg_atoi(str, result, i);
 	return (result);
 }
 	//1 while espacios avanzo ++
@@ -47,8 +47,13 @@ long	ft_atoi_plus(const char *str)
 	//4 devuelo resultado * signo
 	//result = (result * 10) + (str[i] - '0');
 
-void	ft_check_arg_atoi(const char *str, int i)
+void	ft_check_arg_atoi(const char *str, long result, int i)
 {
+	if (result < -2147483648 || result > 2147483647)
+	{
+		ft_putstr_error("Error\n");
+		exit(0);
+	}
 	if (ft_strlen(str) == i)
 		return ;
 	else

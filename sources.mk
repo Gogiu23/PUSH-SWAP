@@ -12,7 +12,6 @@ SOURCES += sources/ft_sb.c
 SOURCES += sources/ft_rrr.c
 SOURCES += sources/ft_free_mem.c
 SOURCES += sources/ft_sort.c
-SOURCES += sources/ft_checks_ints.c
 SOURCES += sources/ft_rb.c
 SOURCES += sources/ft_array_generator.c
 SOURCES += sources/push_swap.c

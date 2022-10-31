@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/31 19:43:25 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/10/31 22:59:44 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ int	main(int argc, char **argv)
 	ft_checks_args(argc, argv);
 	a = ft_array_generator(argc, i, count, argv);
 	b = ft_array_plus(argc);
-	printf("hola\n");
-	printf("%lu\n", a.numbers[1][0]);
-	ft_checks_ints(a, argc);
 	if (argc == 3)
 		ft_sort_two(&a);
 	if (argc == 4)
