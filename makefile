@@ -98,13 +98,13 @@ $(NAME_BONUS)::
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-gmk:
-	@find sources -name '*.c' | sed 's/^/SOURCES += /' > sources.mk
-	@find includes -name '*.h' | sed 's/^/INCLUDES += /' > includes.mk
-
-gmk_bonus:
-	@find sources_bonus -name '*.c' | sed 's/^/SOURCES_BONUS += /' > sources_bonus.mk
-	@find includes_bonus -name '*.h' | sed 's/^/INCLUDES_BONUS += /' > includes_bonus.mk
+#gmk:
+#	@find sources -name '*.c' | sed 's/^/SOURCES += /' > sources.mk
+#	@find includes -name '*.h' | sed 's/^/INCLUDES += /' > includes.mk
+#
+#gmk_bonus:
+#	@find sources_bonus -name '*.c' | sed 's/^/SOURCES_BONUS += /' > sources_bonus.mk
+#	@find includes_bonus -name '*.h' | sed 's/^/INCLUDES_BONUS += /' > includes_bonus.mk
 
 clean:
 	@make fclean -C libft
@@ -119,12 +119,11 @@ fclean: clean
 
 re: fclean all bonus
 
-
 -include $(DEPS)
 -include $(DEPS_BONUS)
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-.PHONY: all clean fclean re gmk bonus gmk_bonus
+.PHONY: all clean fclean re bonus
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
