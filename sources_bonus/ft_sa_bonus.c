@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:36:03 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 05:19:19 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:35:03 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,15 @@ void	ft_sa_bonus(t_stack *a)
 
 	rows = 0;
 	columns = 0;
-	temp[0] = a->numbers[0][0];
-	temp[1] = a->numbers[0][1];
-	a->numbers[0][0] = a->numbers[1][0];
-	a->numbers[0][1] = a->numbers[1][1];
-	a->numbers[1][0] = temp[0];
-	a->numbers[1][1] = temp[1];
+	if (a->lenght > 1)
+	{
+		temp[0] = a->numbers[0][0];
+		temp[1] = a->numbers[0][1];
+		a->numbers[0][0] = a->numbers[1][0];
+		a->numbers[0][1] = a->numbers[1][1];
+		a->numbers[1][0] = temp[0];
+		a->numbers[1][1] = temp[1];
+	}
+	else
+		write(1, "Not a movement valid, no changes in stacks 👋\n", 49);
 }

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:26:14 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 05:25:55 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/01 13:35:09 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main(int argc, char **argv)
 	ft_checks_args_bonus(argc, argv);
 	a = ft_array_generator_bonus(argc, i, count, argv);
 	b = ft_array_plus_bonus(argc);
-	ft_checks_ints_bonus(a, argc);
 	command = get_next_line(0);
 	while (command != 0)
 	{
