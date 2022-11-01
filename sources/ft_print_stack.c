@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:34:05 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/26 21:52:28 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/01 20:23:47 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,28 @@ void	ft_print_stack(t_stack *a, t_stack *b)
 	int	count;
 
 	count = 0;
-	while (count++ < a->lenght)
+	while (count < a->lenght)
 	{
 		ft_printf("valor antes de ser ordenado = a->numbers[%d][%d]: %d\t%d\n"\
-		, count, 1, a->numbers[count][0], a->numbers[count][1]);
+			, count, 1, a->numbers[count][0], a->numbers[count][1]);
+		count++;
 	}
 	ft_printf("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
 	count = 0;
-	while (count++ < b->lenght)
+	while (count < b->lenght)
 	{
 		ft_printf("valor despues de ser ordenado = b->numbers[%d]: %d\t%d\n", \
 			count, b->numbers[count][0], b->numbers[count][1]);
+		count++;
 	}
 	count = 0;
-	ft_printf("Valor de a.lenght: %d\n", a->lenght - 1);
-	ft_printf("Valor de b->lenght: %d\n", b->lenght - 1);
+	ft_printf("Valor de a.lenght: %d\n", a->lenght);
+	ft_printf("Valor de b->lenght: %d\n", b->lenght);
 	ft_printf("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n");
-	while (count++ < a->lenght)
+	while (count < a->lenght)
 	{
 		ft_printf("valor despues de ser ordenado = a.numbers[%d][%d]: %d\t%d\n", \
 			count, 1, a->numbers[count][0], a->numbers[count][1]);
+		count++;
 	}
 }
