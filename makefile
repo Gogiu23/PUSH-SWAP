@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 23:54:30 by gdominic          #+#    #+#              #
-#    Updated: 2022/10/31 23:54:36 by gdominic         ###   ########.fr        #
+#    Updated: 2022/11/03 01:29:03 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ NAME				= push_swap
 
 MAKE_LIB			= libft/libft.a
 CC					= gcc
-CFLAGS				= -Wall -Wextra -Werror -g3 -MMD -MP
+CFLAGS				= -Wall -Wextra -Werror -g -MMD -MP
 RM					= rm -rf
 MKFL				= makefile
 MD					= mkdir -p
