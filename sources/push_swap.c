@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/04 10:37:12 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:03:29 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 		ft_sort_till_five(&a, &b, i, argc);
 	if (argc > 6 && argc <= 101)
 		ft_sort_till_hundred(&a, &b);
-	if (argc > 101 && argc <= 501)
+	if (argc > 101)
 		ft_sort_beyond_hundred(&a, &b);
 	ft_free_stacks_a(&a);
 	exit(-1);

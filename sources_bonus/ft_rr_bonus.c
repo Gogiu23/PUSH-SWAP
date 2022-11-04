@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:40:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/04 01:22:29 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 14:19:10 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	ft_rr_bonus(t_stack *a, t_stack *b)
 	int		max;
 	long	temp[2];
 
-//	if (b->lenght == 0 && a->lenght == 0)
-//		return ;
 	max = (a->lenght - 1);
 	rows = 0;
 	temp[0] = a->numbers[rows][0];
