@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:07:15 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 05:20:24 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 00:58:48 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	ft_check_commands(char *command, t_stack *a, t_stack *b)
 		ft_rb_bonus(b);
 	else if (ft_strncmp(command, "rr\n", 3) == 0)
 		ft_rr_bonus(a, b);
-	else if (strncmp(command, "rra\n", 4) == 0)
+	else if (ft_strncmp(command, "rra\n", 4) == 0)
 		ft_rra_bonus(a);
-	else if (strncmp(command, "rrb\n", 4) == 0)
+	else if (ft_strncmp(command, "rrb\n", 4) == 0)
 		ft_rrb_bonus(b);
-	else if (strncmp(command, "rrr\n", 4) == 0)
+	else if (ft_strncmp(command, "rrr\n", 4) == 0)
 		ft_rrr_bonus(a, b);
-	else if (strncmp(command, "pa\n", 3) == 0)
+	else if (ft_strncmp(command, "pa\n", 3) == 0)
 		ft_pa_bonus(a, b);
-	else if (strncmp(command, "pb\n", 3) == 0)
+	else if (ft_strncmp(command, "pb\n", 3) == 0)
 		ft_pb_bonus(a, b);
 	else
 		ft_error_bonus("Error\n");

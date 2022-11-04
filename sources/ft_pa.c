@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:50:00 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/26 19:05:48 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:50:32 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_pa(t_stack *a, t_stack *b)
 	rows = a->lenght;
 	if (a->lenght >= 0)
 	{
-		while (i-- > 0)
+		while (rows >= 1)
 		{
 			a->numbers[rows][0] = a->numbers[rows - 1][0];
 			a->numbers[rows][1] = a->numbers[rows - 1][1];

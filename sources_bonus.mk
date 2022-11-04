@@ -11,6 +11,7 @@ SOURCES_BONUS += sources_bonus/ft_checks_ints_bonus.c
 SOURCES_BONUS += sources_bonus/ft_free_bonus.c
 SOURCES_BONUS += sources_bonus/ft_pb_bonus.c
 SOURCES_BONUS += sources_bonus/ft_checks_args_bonus.c
+SOURCES_BONUS += sources_bonus/ft_print_stack.c
 SOURCES_BONUS += sources_bonus/ft_rr_bonus.c
 SOURCES_BONUS += sources_bonus/ft_pa_bonus.c
 SOURCES_BONUS += sources_bonus/ft_check_commands_bonus.c

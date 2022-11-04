@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:40:52 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/01 13:34:58 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:22:29 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,21 @@ void	ft_rr_bonus(t_stack *a, t_stack *b)
 	int		max;
 	long	temp[2];
 
-	if (b->lenght > 0 && a->lenght > 0)
+//	if (b->lenght == 0 && a->lenght == 0)
+//		return ;
+	max = (a->lenght - 1);
+	rows = 0;
+	temp[0] = a->numbers[rows][0];
+	temp[1] = a->numbers[rows][1];
+	while (rows < max)
 	{
-		max = (a->lenght - 1);
-		rows = 0;
-		temp[0] = a->numbers[rows][0];
-		temp[1] = a->numbers[rows][1];
-		while (rows < max)
-		{
-			a->numbers[rows][0] = a->numbers[rows + 1][0];
-			a->numbers[rows][1] = a->numbers[rows + 1][1];
-			rows++;
-		}
-		a->numbers[rows][0] = temp[0];
-		a->numbers[rows][1] = temp[1];
-		ft_second_rr_bonus(*b);
+		a->numbers[rows][0] = a->numbers[rows + 1][0];
+		a->numbers[rows][1] = a->numbers[rows + 1][1];
+		rows++;
 	}
-	else
-		write(1, "Not a movement valid, no changes in stacks\n", 43);
+	a->numbers[rows][0] = temp[0];
+	a->numbers[rows][1] = temp[1];
+	ft_second_rr_bonus(*b);
 }
 
 void	ft_second_rr_bonus(t_stack b)

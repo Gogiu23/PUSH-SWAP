@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 23:54:30 by gdominic          #+#    #+#              #
-#    Updated: 2022/11/03 01:29:03 by gdominic         ###   ########.fr        #
+#    Updated: 2022/11/04 01:36:26 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,13 +98,13 @@ $(NAME_BONUS)::
 
 #=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#
 
-#gmk:
-#	@find sources -name '*.c' | sed 's/^/SOURCES += /' > sources.mk
-#	@find includes -name '*.h' | sed 's/^/INCLUDES += /' > includes.mk
-#
-#gmk_bonus:
-#	@find sources_bonus -name '*.c' | sed 's/^/SOURCES_BONUS += /' > sources_bonus.mk
-#	@find includes_bonus -name '*.h' | sed 's/^/INCLUDES_BONUS += /' > includes_bonus.mk
+gmk:
+	@find sources -name '*.c' | sed 's/^/SOURCES += /' > sources.mk
+	@find includes -name '*.h' | sed 's/^/INCLUDES += /' > includes.mk
+
+gmk_bonus:
+	@find sources_bonus -name '*.c' | sed 's/^/SOURCES_BONUS += /' > sources_bonus.mk
+	@find includes_bonus -name '*.h' | sed 's/^/INCLUDES_BONUS += /' > includes_bonus.mk
 
 clean:
 	@make fclean -C libft

@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:44 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/27 05:08:15 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:34:33 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void		ft_aissorted_bonus(char **argv);
 void		ft_check_commands(char *command, t_stack *a, t_stack *b);
 void		ft_checks_stacks_bonus(t_stack *a, t_stack *b);
 int			ft_stack_is_sorted_bonus(t_stack *a);
+void		ft_print_stack(t_stack *a, t_stack *b);
 
 //============== EDIT ARRAYS ====================
 void		ft_remode_stackb_bonus(t_stack *b);

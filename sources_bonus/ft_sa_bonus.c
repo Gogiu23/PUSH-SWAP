@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:36:03 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/01 13:35:03 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:10:17 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	ft_sa_bonus(t_stack *a)
 		a->numbers[1][1] = temp[1];
 	}
 	else
-		write(1, "Not a movement valid, no changes in stacks 👋\n", 49);
+		return ;
 }

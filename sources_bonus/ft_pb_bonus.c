@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:51:25 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/28 12:53:18 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:45:21 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,26 @@ void	ft_pb_bonus(t_stack *a, t_stack *b)
 {
 	long	rows;
 
-	if (a->lenght > 0)
+//	if (a->lenght == 0)
+//		return ;
+	rows = b->lenght;
+	if (b->lenght >= 0)
 	{
-		rows = b->lenght;
-		if (b->lenght >= 0)
+		while (rows >= 1)
 		{
-			while (rows -- > 1)
-			{
-				b->numbers[rows][0] = b->numbers[rows - 1][0];
-				b->numbers[rows][1] = b->numbers[rows - 1][1];
-			}
+			b->numbers[rows][0] = b->numbers[rows - 1][0];
+			b->numbers[rows][1] = b->numbers[rows - 1][1];
+			rows--;
 		}
-		b->lenght++;
-		rows = 0;
-		b->numbers[rows][0] = a->numbers[rows][0];
-		b->numbers[rows][1] = a->numbers[rows][1];
-		if (a->lenght > 0)
-			ft_remode_stacka_bonus(a);
-		a->lenght--;
 	}
-	else
-		write(1, "Not a movement valid, no changes in stacks\n", 43);
-}
+	b->lenght++;
+	rows = 0;
+	b->numbers[rows][0] = a->numbers[rows][0];
+	b->numbers[rows][1] = a->numbers[rows][1];
+	if (a->lenght > 0)
+		ft_remode_stacka_bonus(a);
+	a->lenght--;
+	}
 
 void	ft_remode_stacka_bonus(t_stack *a)
 {

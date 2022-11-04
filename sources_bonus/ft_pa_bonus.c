@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:48:34 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/01 13:35:04 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 01:46:00 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	ft_pa_bonus(t_stack *a, t_stack *b)
 	long	rows;
 	int		i;
 
-	if (b->lenght == 0)
-		return ;
+//	if (b->lenght == 0)
+//		return ;
 	i = a->lenght;
 	rows = a->lenght;
 	if (a->lenght >= 0)
 	{
-		while (i-- > 0)
+		while (rows >= 1)
 		{
 			a->numbers[rows][0] = a->numbers[rows - 1][0];
 			a->numbers[rows][1] = a->numbers[rows - 1][1];
