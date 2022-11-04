@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:05:44 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/04 01:34:33 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:20:18 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ t_stack		ft_array_plus_bonus(int argc);
 t_stack		ft_assign_alias_a_bonus(t_stack *a);
 t_stack		ft_assign_alias_b_bonus(t_stack *b);
 int			ft_free_bonus(t_stack *a);
+void		ft_free_stacks_a_bonus(t_stack *a);
+void		ft_free_stacks_b_bonus(t_stack *b);
 void		ft_error_bonus(char *c);
 void		ft_aissorted_bonus(char **argv);
 void		ft_check_commands(char *command, t_stack *a, t_stack *b);

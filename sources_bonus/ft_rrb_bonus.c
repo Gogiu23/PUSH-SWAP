@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:44:27 by gdominic          #+#    #+#             */
-/*   Updated: 2022/11/04 01:22:45 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:10:06 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_rrb_bonus(t_stack *b)
 	long	temp[2];
 	int		i;
 
-//	if (b->lenght == 0)
-//		return ;
+	if (b->lenght == 0)
+		return ;
 	i = (b->lenght - 1);
 	rows = b->lenght;
 	temp[0] = b->numbers[i][0];

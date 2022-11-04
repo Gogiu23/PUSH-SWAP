@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 21:58:45 by gdominic          #+#    #+#             */
-/*   Updated: 2022/10/26 16:37:24 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:37:28 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,12 @@ void	ft_free_stacks_a(t_stack *a)
 
 void	ft_free_stacks_b(t_stack *b)
 {
-	while (b->lenght >= 0)
+	while (b->lenght > 0)
 	{
 		free(b->numbers[b->lenght]);
 		b->lenght--;
 	}
 	free(b->numbers);
+	free(b);
 	b->numbers = NULL;
 }
