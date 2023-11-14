@@ -8,7 +8,7 @@ BLACK	libft/Makefile	/^BLACK			=	\\033[0;30m$/;"	m
 BLACK	makefile	/^BLACK		=\\034[0;30m$/;"	m
 BLUE	libft/Makefile	/^BLUE			=	\\033[0;34m$/;"	m
 BLUE	makefile	/^BLUE		=	\\033[0;34m$/;"	m
-BUFFER_SIZE	libft/get_next_line_bonus.h	/^#  define BUFFER_SIZE /;"	d
+BUFFER_SIZE	libft/get_next_line_bonus.h	16;"	d
 CC	libft/Makefile	/^CC 				= gcc$/;"	m
 CC	makefile	/^CC					= gcc$/;"	m
 CFLAGS	libft/Makefile	/^CFLAGS 			= -Wall -Wextra -Werror -O3 -Ofast -flto -march=native -ffast-math$/;"	m
@@ -19,20 +19,20 @@ DARK_GRAY	libft/Makefile	/^DARK_GRAY		=	\\033[1;30m$/;"	m
 DARK_GRAY	makefile	/^DARK_GRAY	=	\\033[1;30m$/;"	m
 DEPS	makefile	/^DEPS				= $(SOURCES:.c=.d)$/;"	m
 DEPS_BONUS	makefile	/^DEPS_BONUS			=$(SOURCES_BONUS:.c=.d)$/;"	m
-GET_NEXT_LINE_BONUS_H	libft/get_next_line_bonus.h	/^# define GET_NEXT_LINE_BONUS_H$/;"	d
+GET_NEXT_LINE_BONUS_H	libft/get_next_line_bonus.h	13;"	d
 GREEN	libft/Makefile	/^GREEN			=	\\033[0;32m$/;"	m
 GREEN	makefile	/^GREEN		=	\\033[0;32m$/;"	m
 INCLUDE_PATH	libft/Makefile	/^INCLUDE_PATH	= .\/$/;"	m
 INCLUDE_PATH	makefile	/^INCLUDE_PATH		= .\/includes$/;"	m
 INCLUDE_PATH_BONUS	makefile	/^INCLUDE_PATH_BONUS	=.\/includes_bonus$/;"	m
-LIBFTPRINTF_H	libft/libftprintf.h	/^# define LIBFTPRINTF_H$/;"	d
-LIBFT_CHECKS_H	libft/libft_checks.h	/^# define LIBFT_CHECKS_H$/;"	d
-LIBFT_CONVERSE_H	libft/libft_converse.h	/^# define LIBFT_CONVERSE_H$/;"	d
-LIBFT_H	libft/libft.h	/^# define LIBFT_H$/;"	d
-LIBFT_LIST_H	libft/libft_list.h	/^# define LIBFT_LIST_H$/;"	d
-LIBFT_MEMORY_H	libft/libft_memory.h	/^# define LIBFT_MEMORY_H$/;"	d
-LIBFT_PUTS_H	libft/libft_puts.h	/^# define LIBFT_PUTS_H$/;"	d
-LIBFT_STRINGS_H	libft/libft_strings.h	/^# define LIBFT_STRINGS_H$/;"	d
+LIBFTPRINTF_H	libft/libftprintf.h	13;"	d
+LIBFT_CHECKS_H	libft/libft_checks.h	13;"	d
+LIBFT_CONVERSE_H	libft/libft_converse.h	13;"	d
+LIBFT_H	libft/libft.h	14;"	d
+LIBFT_LIST_H	libft/libft_list.h	13;"	d
+LIBFT_MEMORY_H	libft/libft_memory.h	13;"	d
+LIBFT_PUTS_H	libft/libft_puts.h	13;"	d
+LIBFT_STRINGS_H	libft/libft_strings.h	13;"	d
 LIB_DIR	makefile	/^LIB_DIR				= .\/libft$/;"	m
 LIGHT_BLUE	libft/Makefile	/^LIGHT_BLUE		=	\\033[1;34m$/;"	m
 LIGHT_BLUE	makefile	/^LIGHT_BLUE	=	\\033[1;34m$/;"	m
@@ -61,8 +61,8 @@ ORANGE	libft/Makefile	/^ORANGE			=	\\033[0;33m$/;"	m
 ORANGE	makefile	/^ORANGE		=	\\033[0;33m$/;"	m
 PURPLE	libft/Makefile	/^PURPLE			=	\\033[0;35m$/;"	m
 PURPLE	makefile	/^PURPLE		=	\\033[0;35m$/;"	m
-PUSH_SWAP_BONUS_H	includes_bonus/push_swap_bonus.h	/^# define PUSH_SWAP_BONUS_H$/;"	d
-PUSH_SWAP_H	includes/push_swap.h	/^# define PUSH_SWAP_H$/;"	d
+PUSH_SWAP_BONUS_H	includes_bonus/push_swap_bonus.h	14;"	d
+PUSH_SWAP_H	includes/push_swap.h	14;"	d
 RED	libft/Makefile	/^RED				=	\\033[0;31m$/;"	m
 RED	makefile	/^RED	 		=	\\033[0;31m$/;"	m
 RM	libft/Makefile	/^RM	 			= rm -f$/;"	m
@@ -213,7 +213,6 @@ ft_substr	libft/get_next_line_utils_bonus.c	/^char	*ft_substr(char *s, unsigned 
 ft_tolower	libft/ft_tolower.c	/^int	ft_tolower(int c)$/;"	f
 ft_toupper	libft/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
 get_next_line	libft/get_next_line_bonus.c	/^char	*get_next_line(int fd)$/;"	f
-intervals	includes/push_swap.h	/^	long	*intervals;$/;"	m	struct:s_stack
 lenght	includes/push_swap.h	/^	int		lenght;$/;"	m	struct:s_stack
 lenght	includes_bonus/push_swap_bonus.h	/^	int		lenght;$/;"	m	struct:s_stack
 main	sources/push_swap.c	/^int	main(int argc, char **argv)$/;"	f
